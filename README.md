@@ -1,11 +1,8 @@
-# Welcome to [Astro](https://astro.build)
+# ayco.io on [Astro](https://astro.build)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![basics](./public/screenshot.png)](https://new.ayco.io)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
-
+-----
 
 ## 🚀 Project Structure
 
