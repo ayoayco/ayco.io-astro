@@ -8,25 +8,23 @@ import Footer from '../components/Footer.astro';
 	<main>
             <nav><a href="/">Back</a></nav>
             <h1>Social <span class="text-gradient">Links</span></h1>
-            <div class="content">
-                <ul role="list" style="list-style:none">
-                    <Card
-                            href="https://twitter.com/ayoayco/"
-                            title="Twitter"
-                            body="Tweets about my takes on technology and current events"
-                    />
-                    <Card
-                            href="https://www.linkedin.com/in/ayoayco/"
-                            title="LinkedIn"
-                            body="Connect with me and my professional network"
-                    />
-                    <Card
-                            href="https://soundcloud.com/ayoayco/"
-                            title="SoundCloud"
-                            body="Yes, I make music... until I moved to a new contry this year"
-                    />
-                </ul>
-            </div>
+            <ul role="list" class="link-card-grid">
+                <Card
+                        href="https://twitter.com/ayoayco/"
+                        title="Twitter"
+                        body="Tweets about my takes on technology and current events"
+                />
+                <Card
+                        href="https://www.linkedin.com/in/ayoayco/"
+                        title="LinkedIn"
+                        body="Connect with me and my professional network"
+                />
+                <Card
+                        href="https://soundcloud.com/ayoayco/"
+                        title="SoundCloud"
+                        body="Some music I made as a hobby"
+                />
+            </ul>
             <Footer></Footer>
         </main>
 </Layout>
@@ -35,10 +33,6 @@ import Footer from '../components/Footer.astro';
 	:root {
 		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
 	}
-
-        div.content {
-            margin-left: -40px;
-        }
 
 	h1 {
 		margin: 2rem 0;
@@ -53,12 +47,12 @@ import Footer from '../components/Footer.astro';
 	.text-gradient {
 		font-weight: 900;
 		background-image: var(--astro-gradient);
+		animation: pulse 4s ease-in-out infinite;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-size: 100% 200%;
 		background-position-y: 100%;
 		border-radius: 0.4rem;
-		animation: pulse 4s ease-in-out infinite;
 	}
 
 	@keyframes pulse {
@@ -89,7 +83,6 @@ import Footer from '../components/Footer.astro';
 
 	.link-card-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 1rem;
 		padding: 0;
 	}
