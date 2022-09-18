@@ -23,7 +23,6 @@ import Footer from '../components/Footer.astro';
 </html>
 <style>
 	:root {
-                --ayo-gradient: linear-gradient(45deg, #3054bf, #416fff);
                 --content-width: 700px;
 		--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
 		--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
@@ -32,6 +31,14 @@ import Footer from '../components/Footer.astro';
 		--color-text: hsl(12, 5%, 4%);
 		--color-bg: hsl(10, 21%, 95%);
 		--color-border: hsl(17, 24%, 90%);
+
+                --color-brand-blue-1: #3054bf;
+                --color-brand-blue-2: #203880;
+                --color-brand-blue-3: #416fff;
+                --color-brand-blue-4: #101c40;
+                --color-brand-blue-5: #3964e6;
+
+                --ayo-gradient: linear-gradient(45deg, #3054bf, #203880);
 	}
 
 	html {
@@ -70,5 +77,11 @@ import Footer from '../components/Footer.astro';
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
+
+        a {
+            font-weight: 900;
+            color: var(--color-brand-blue-2);
+            border-radius: 0.4rem;
+        }
 
 </style>
