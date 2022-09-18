@@ -5,124 +5,117 @@ import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Ayo Ayco | Software Engineer + Web Developer">
-  <main>
-    <h1>Hi, I'm <span class="text-gradient">Ayo!</span></h1>
-    <ul role="list" class="highlighted-content">
-      <li>👨🏻‍💻 Software Extraordinaire</li>
-      <li>🕵🏻‍♂️ Frontend Detective Consultant</li>
-      <li>📚 BS Computer Science</li>
-    </ul>
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://blog.ayco.io/"
-        title="Blog"
-        body="Read my articles on technology, productivity, and life in general."
-      />
-      <Card
-        href="https://drive.google.com/file/d/1MhN8qWRJnSHM_epU9GFQL9lEsMFtHWQK/view?usp=sharing"
-        title="CV / Resume"
-        body="Download and peruse my skills and experience."
-      />
-      <Card
-        href="/social"
-        title="Social"
-        body="Explore a galaxy of my social accounts."
-      />
-      <Card
-        href="https://github.com/ayoayco"
-        title="Github"
-        body="See my public projects over at Github. ❤️"
-      />
-    </ul>
-    <Footer />
-  </main>
+<main>
+    <div class="highlighted-section">
+        <div class="top-content">
+            <h1>Ayo Ayco</h1>
+            <ul role="list">
+              <li>👨🏻‍💻 Software Extraordinaire</li>
+              <li>🕵🏻‍♂️ Frontend Detective Consultant</li>
+              <li>📚 BS Computer Science</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <ul role="list" class="link-card-grid">
+          <Card
+            href="https://blog.ayco.io/"
+            title="Blog"
+            body="Read my articles on technology, productivity, and life in general."
+          />
+          <Card
+            href="https://drive.google.com/file/d/1MhN8qWRJnSHM_epU9GFQL9lEsMFtHWQK/view?usp=sharing"
+            title="CV / Resume"
+            body="Download and peruse my skills and experience."
+          />
+          <Card
+            href="/social"
+            title="Social"
+            body="Explore a galaxy of my social accounts."
+          />
+          <Card
+            href="https://github.com/ayoayco"
+            title="Github"
+            body="See my public projects over at Github. ❤️"
+          />
+        </ul>
+        <Footer />
+    </div>
+</main>
 </Layout>
 
 <style>
-  :root {
-    --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-  }
-
-  h1 {
-    margin: 2rem 0;
-  }
-
-  main {
-    margin: auto;
-    padding: 1em;
-    max-width: 60ch;
-  }
-
-  .text-gradient {
-    font-weight: 900;
-    background: var(--astro-gradient);
-    animation: pulse 4s ease-in-out infinite;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 100% 200%;
-    background-position-y: 100%;
-    border-radius: 0.4rem;
-  }
-
-  @keyframes pulse {
-    0%,
-    100% {
-      background-position-y: 0%;
+    :root {
+        --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+        --content-width: 800px;
     }
-    50% {
-      background-position-y: 80%;
-    }
-  }
 
-  .highlighted-content {
-    line-height: 1.6;
-    margin: 1rem 0 1.75rem;
-    background: var(--astro-gradient);
-    background-size: 400% 400%;
-    background-color: var(--);
-    animation: gradient 15s ease-in-out infinite;
-    padding: 2rem;
-    border-radius: 0.4rem;
-    color: var(--color-bg);
-    list-style-type: none;
-    font-size: x-large;
-    font-weight: bold;
-    box-shadow: 0 8px 8px -4px lightblue;
-  }
-
-  .highlighted-content code {
-    font-size: 0.875em;
-    border: 0.1em solid var(--color-border);
-    border-radius: 4px;
-    padding: 0.15em 0.25em;
-  }
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
+    h1 {
+        margin: 0 0 2rem 0;
     }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
 
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
-  }
+    .top-content {
+        margin: auto;
+        padding: 1em;
+        max-width: var(--content-width);
+        font-weight: bold;
+        font-size: x-large;
+        color: var(--color-bg);
+        line-height: 1.6;
+    }
+
+    .top-content ul {
+        list-style-type: none;
+    }
+
+    .main-content {
+        margin: auto;
+        padding: 1em;
+        max-width: var(--content-width);
+    }
+
+    .highlighted-section {
+        background: var(--astro-gradient);
+        background-size: 400% 400%;
+        background-color: var(--);
+        animation: gradient 15s ease-in-out infinite;
+        padding: 2rem;
+        box-shadow: 0 8px 8px -4px lightblue;
+    }
+
+    .highlighted-section code {
+        font-size: 0.875em;
+        border: 0.1em solid var(--color-border);
+        border-radius: 4px;
+        padding: 0.15em 0.25em;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .link-card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+        gap: 1rem;
+        padding: 0;
+    }
 
     @media only screen 
-      and (min-device-width: 360px) 
-      and (max-device-width: 812px) {
-
-        .highlighted-content {
+    and (min-device-width: 360px) 
+    and (max-device-width: 812px) {
+        .section-content {
             font-size: 16px;
             font-weight: bold;
         }
-    }
+}
 </style>
