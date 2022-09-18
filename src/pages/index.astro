@@ -8,7 +8,7 @@ import Footer from "../components/Footer.astro";
 <main>
     <div class="highlighted-section">
         <div class="top-content">
-            <h1>Ayo Ayco</h1>
+            <h1 title="Ayo Ayco | Software Engineer + Web Developer"><span class="heavy-text">Ayo</span>Ayco</h1>
             <ul role="list">
               <li>👨🏻‍💻 Software Extraordinaire</li>
               <li>🕵🏻‍♂️ Frontend Detective Consultant</li>
@@ -54,6 +54,12 @@ import Footer from "../components/Footer.astro";
 
     h1 {
         margin: 0 0 2rem 0;
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    h1 span.heavy-text {
+        font-weight: 900;
+        color: white;
     }
 
     .top-content {
@@ -82,7 +88,6 @@ import Footer from "../components/Footer.astro";
         background-size: 400% 400%;
         background-color: var(--);
         animation: gradient 15s ease-in-out infinite;
-        padding: 2rem;
         box-shadow: 0 8px 8px -4px lightblue;
     }
 
