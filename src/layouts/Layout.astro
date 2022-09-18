@@ -23,6 +23,7 @@ import Footer from '../components/Footer.astro';
 </html>
 <style>
 	:root {
+                --ayo-gradient: linear-gradient(45deg, #3054bf, #416fff);
                 --content-width: 700px;
 		--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
 		--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
@@ -44,6 +45,15 @@ import Footer from '../components/Footer.astro';
 		margin: 0;
 	}
 
+	@keyframes pulse {
+		0%,
+		100% {
+			background-position-y: 0%;
+		}
+		50% {
+			background-position-y: 80%;
+		}
+	}
 
 </style>
 
@@ -60,4 +70,5 @@ import Footer from '../components/Footer.astro';
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
+
 </style>

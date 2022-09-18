@@ -47,10 +47,6 @@ import Footer from "../components/Footer.astro";
 </Layout>
 
 <style>
-    :root {
-        --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-    }
-
     h1 {
         margin: 0;
         color: rgba(255, 255, 255, 0.75);
@@ -83,10 +79,10 @@ import Footer from "../components/Footer.astro";
     }
 
     .highlighted-section {
-        background: var(--astro-gradient);
+        background: var(--ayo-gradient);
         background-size: 400% 400%;
         background-color: var(--);
-        animation: gradient 15s ease-in-out infinite;
+        animation: pulse 15s ease-in-out infinite;
         box-shadow: 0 8px 8px -4px lightblue;
     }
 
@@ -95,18 +91,6 @@ import Footer from "../components/Footer.astro";
         border: 0.1em solid var(--color-border);
         border-radius: 4px;
         padding: 0.15em 0.25em;
-    }
-
-    @keyframes gradient {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
     }
 
     .link-card-grid {

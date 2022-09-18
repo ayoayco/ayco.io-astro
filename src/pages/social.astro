@@ -30,10 +30,6 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <style>
-	:root {
-		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-	}
-
 	h1 {
 		margin: 2rem 0;
 	}
@@ -46,23 +42,13 @@ import Footer from '../components/Footer.astro';
 
 	.text-gradient {
 		font-weight: 900;
-		background-image: var(--astro-gradient);
+		background-image: var(--ayo-gradient);
 		animation: pulse 4s ease-in-out infinite;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-size: 100% 200%;
 		background-position-y: 100%;
 		border-radius: 0.4rem;
-	}
-
-	@keyframes pulse {
-		0%,
-		100% {
-			background-position-y: 0%;
-		}
-		50% {
-			background-position-y: 80%;
-		}
 	}
 
 	.highlighted-content {
