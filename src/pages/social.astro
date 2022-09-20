@@ -2,11 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Footer from '../components/Footer.astro';
+import Back from '../components/Back.astro';
 ---
 
 <Layout title="Ayo Ayco | Software Engineer + Web Developer">
 	<main>
-            <nav><a href="/">Back</a></nav>
+		<Back />
             <h1>Social <span class="text-gradient">Links</span></h1>
             <ul role="list" class="link-card-grid">
                 <Card
@@ -74,7 +75,4 @@ import Footer from '../components/Footer.astro';
 		padding: 0;
 	}
 
-        nav {
-            margin-bottom: -1rem;
-        }
 </style>
