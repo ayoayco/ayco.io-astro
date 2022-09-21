@@ -4,6 +4,3 @@
 
 This is my personal website [ayco.io](https://ayco.io) built with [astro](https://astro.build).
 
------
-
-[![basics](./public/screenshot.png)](https://new.ayco.io)
