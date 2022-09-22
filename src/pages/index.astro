@@ -5,141 +5,159 @@ import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Ayo Ayco | Software Engineer + Web Developer">
-<main>
+  <main>
     <div class="highlighted-section">
-        <div class="top-content">
-            <h1 title="Ayo Ayco | Software Engineer + Web Developer"><span class="heavy-text">Ayo</span>Ayco</h1>
-            <ul role="list">
-                <li>👨🏻‍💻 Software Extraordinaire</li>
-                <li>🕵🏻‍♂️ Frontend Detective Consultant</li>
-                <li>📚 BS Computer Science</li>
-            </ul>
-            <a href="/now" class="now-wrapper">
-                <span class="now-label">Now</span>
-                <span class="status">Settling in The Netherlands &rarr;</a>
-            </a>
-        </div>
+      <div class="top-content">
+        <h1 title="Ayo Ayco | Software Engineer + Web Developer">
+          <span class="heavy-text">Ayo</span>Ayco
+        </h1>
+        <ul role="list">
+          <li><span>👨🏻‍💻 Software Extraordinaire</span></li>
+          <li><span>🕵🏻‍♂️ Frontend Detective Consultant</span></li>
+          <li><span>📚 BS Computer Science</span></li>
+        </ul>
+        <span class="now-item">
+          <a href="/now" class="now-wrapper">
+            <span class="now-label">Now</span>
+            <span class="status">Settling in The Netherlands &rarr;</span>
+          </a>
+        </span>
+      </div>
     </div>
 
     <div class="main-content">
-        <ul role="list" class="link-card-grid">
-          <Card
-            href="https://drive.google.com/file/d/1MhN8qWRJnSHM_epU9GFQL9lEsMFtHWQK/view?usp=sharing"
-            title="CV / Resume"
-            body="Download and peruse my skills and experience."
-          />
-          <Card
-            href="https://github.com/ayoayco"
-            title="Github"
-            body="See my public projects over at Github. ❤️"
-          />
-          <Card
-            href="/social"
-            title="Social"
-            body="Explore a galaxy of my social accounts."
-          />
-          <Card
-            href="https://blog.ayco.io/"
-            title="Blog"
-            body="Read my articles on technology, productivity, and life in general."
-          />
-        </ul>
-        <Footer />
+      <ul role="list" class="link-card-grid">
+        <Card
+          href="https://drive.google.com/file/d/1MhN8qWRJnSHM_epU9GFQL9lEsMFtHWQK/view?usp=sharing"
+          title="CV / Resume"
+          body="Download and peruse my skills and experience."
+        />
+        <Card
+          href="https://github.com/ayoayco"
+          title="Github"
+          body="See my public projects over at Github. ❤️"
+        />
+        <Card
+          href="/social"
+          title="Social"
+          body="Explore a galaxy of my social accounts."
+        />
+        <Card
+          href="https://blog.ayco.io/"
+          title="Blog"
+          body="Read my articles on technology, productivity, and life in general."
+        />
+      </ul>
+      <Footer />
     </div>
-</main>
+  </main>
 </Layout>
 
 <style>
-    h1 {
-        margin: 0;
-        color: rgba(255, 255, 255, 0.75);
-    }
+  h1 {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.75);
+  }
 
-    h1 span.heavy-text {
-        font-weight: 900;
-        color: white;
-    }
+  h1 span.heavy-text {
+    font-weight: 900;
+    color: white;
+  }
 
-    .top-content {
-        margin: auto;
-        padding: 1em;
-        max-width: var(--content-width);
-        font-weight: bold;
-        font-size: x-large;
-        color: var(--color-bg);
-        line-height: 1.6;
-    }
+  .top-content {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+    font-weight: bold;
+    font-size: x-large;
+    color: var(--color-bg);
+    line-height: 1.6;
+  }
 
-    .now-wrapper {
-        border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 40px;
-        padding: 8px 4px;
-        font-weight: normal;
-        color: white;
-        font-size: small;
-        text-decoration: none;
-    }
+  .now-wrapper {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 32px;
+    padding: 8px 4px;
+    font-weight: normal;
+    font-size: small;
+    text-decoration: none;
+    color: white;
+  }
 
-    .now-label {
-        border-radius: 40px;
-        background-color: rgba(0,0,0,0.3);
-        padding: 4px 8px;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
+  .now-label {
+    border-radius: 24px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 4px 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+  }
 
-    .status {
-        padding-right: 4px;
-    }
+  .status {
+    padding-right: 4px;
+  }
 
-    .top-content ul {
-        list-style-type: none;
-        padding: 0;
-    }
+  .top-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    padding-left: 1em;
+  }
 
-    .main-content {
-        margin: auto;
-        padding: 1em;
-        max-width: var(--content-width);
-    }
+  .top-content ul li {
+    border: dotted var(--color-brand-blue-3);
+    border-width: 0 0 2px 2px;
+    padding-left: 16px;
+    width: fit-content;
+    color: rgba(255, 255, 255, 0.75);
+  }
 
-    .highlighted-section {
-        background: var(--ayo-gradient);
-        background-size: 500% 500%;
-        background-color: var(--);
-        animation: pulse 15s ease-in-out infinite;
-        box-shadow: 0 8px 8px -4px lightblue;
-    }
+  .top-content ul li span {
+    position: relative;
+    top: 24px;
+    background: var(--color-brand-blue-3);
+    padding: 4px 12px;
+  }
 
-    .highlighted-section code {
-        font-size: 0.875em;
-        border: 0.1em solid var(--color-border);
-        border-radius: 4px;
-        padding: 0.15em 0.25em;
-    }
+  .main-content {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+  }
 
-    .link-card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-        gap: 1rem;
-        padding: 0;
-    }
+  .highlighted-section {
+    background: var(--ayo-gradient);
+    background-size: 500% 500%;
+    background-color: var(--);
+    animation: pulse 15s ease-in-out infinite;
+    box-shadow: 0 8px 8px -4px lightblue;
+  }
 
-    @media only screen 
-    and (min-device-width: 280px) 
-    and (max-device-width: 653px) {
-        .top-content ul li {
-            font-size: 14px;
-            font-weight: bold;
-        }
-    }
+  .highlighted-section code {
+    font-size: 0.875em;
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
 
-    @media only screen 
-    and (min-device-width: 360px) 
-    and (max-device-width: 812px) {
-        .top-content ul li {
-            font-size: 20px;
-            font-weight: bold;
-        }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+
+  @media only screen and (min-device-width: 280px) and (max-device-width: 653px) {
+    .top-content ul li {
+      font-size: 14px;
+      font-weight: bold;
     }
+  }
+
+  @media only screen and (min-device-width: 360px) and (max-device-width: 812px) {
+    .top-content ul li {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
 </style>
