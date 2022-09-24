@@ -2,146 +2,143 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
+import GithubStats from "astro-github-stats";
 ---
 
 <Layout title="Ayo Ayco | Software Engineer + Web Developer">
-    <main>
-        <section class="highlighted-section">
-            <div class="highlighted-section__content">
-                <h1 title="Ayo Ayco | Software Engineer + Web Developer">
-                    <span class="heavy-text">Ayo</span>Ayco
-                </h1>
-                <ul role="list">
-                    <li>👨🏻‍💻 Software Extraordinaire</li>
-                    <li>🕵🏻‍♂️ Frontend Detective Consultant</li>
-                    <li>📚 BS Computer Science</li>
-                </ul>
-                <a href="/now" class="now-wrapper">
-                    <span class="now-label">Now</span>
-                    <span class="status">Settling in The Netherlands &rarr;</a>
-                </a>
-            </div>
-        </section>
-        <section class="cards-section">
-            <ul role="list" class="cards-section__grid">
-              <Card
-                href="https://drive.google.com/file/d/1MhN8qWRJnSHM_epU9GFQL9lEsMFtHWQK/view?usp=sharing"
-                title="CV / Resume"
-                body="Download and peruse my skills and experience."
-              />
-              <Card
-                href="https://github.com/ayoayco"
-                title="Github"
-                body="See my public projects over at Github. ❤️"
-              />
-              <Card
-                href="/social"
-                title="Social"
-                body="Explore a galaxy of my social accounts."
-              />
-              <Card
-                href="https://blog.ayco.io/"
-                title="Blog"
-                body="Read my articles on technology, productivity, and life in general."
-              />
-            </ul>
-            <Footer />
-        </section>
-    </main>
+  <main>
+    <section class="highlighted-section">
+      <div class="highlighted-section__content">
+        <h1 title="Ayo Ayco | Software Engineer + Web Developer">
+          <span class="heavy-text">Ayo</span>Ayco
+        </h1>
+        <ul role="list">
+          <li>👨🏻‍💻 Software Extraordinaire</li>
+          <li>🕵🏻‍♂️ Frontend Detective Consultant</li>
+          <li>📚 BS Computer Science</li>
+        </ul>
+        <a href="/now" class="now-wrapper">
+          <span class="now-label">Now</span>
+          <span class="status">Settling in The Netherlands &rarr;</span>
+        </a>
+      </div>
+    </section>
+    <section class="cards-section">
+      <ul role="list" class="cards-section__grid">
+        <Card
+          href="https://drive.google.com/file/d/1MhN8qWRJnSHM_epU9GFQL9lEsMFtHWQK/view?usp=sharing"
+          title="CV / Resume"
+          body="Download and peruse my skills and experience."
+        />
+        <Card
+          href="https://github.com/ayoayco"
+          title="Github"
+          body="See my public projects over at Github. ❤️"
+        />
+        <Card
+          href="/social"
+          title="Social"
+          body="Explore a galaxy of my social accounts."
+        />
+        <Card
+          href="https://blog.ayco.io/"
+          title="Blog"
+          body="Read my articles on technology, productivity, and life in general."
+        />
+      </ul>
+      <GithubStats username="ayoayco" />
+      <Footer />
+    </section>
+  </main>
 </Layout>
 
 <style>
-    h1 {
-        margin: 0;
-        color: rgba(255, 255, 255, 0.75);
-    }
+  h1 {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.75);
+  }
 
-    h1 span.heavy-text {
-        font-weight: 900;
-        color: white;
-    }
+  h1 span.heavy-text {
+    font-weight: 900;
+    color: white;
+  }
 
-    .highlighted-section__content {
-        margin: auto;
-        padding: 1em;
-        max-width: var(--content-width);
-        font-weight: bold;
-        font-size: x-large;
-        color: var(--color-bg);
-        line-height: 1.6;
-    }
+  .highlighted-section__content {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+    font-weight: bold;
+    font-size: x-large;
+    color: var(--color-bg);
+    line-height: 1.6;
+  }
 
-    .now-wrapper {
-        border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 40px;
-        padding: 8px 4px;
-        font-weight: normal;
-        color: white;
-        font-size: small;
-        text-decoration: none;
-    }
+  .now-wrapper {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    padding: 8px 4px;
+    font-weight: normal;
+    color: white;
+    font-size: small;
+    text-decoration: none;
+  }
 
-    .now-label {
-        border-radius: 40px;
-        background-color: rgba(0,0,0,0.3);
-        padding: 4px 8px;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
+  .now-label {
+    border-radius: 40px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 4px 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
 
-    .status {
-        padding-right: 4px;
-    }
+  .status {
+    padding-right: 4px;
+  }
 
-    .highlighted-section {
-        background: var(--ayo-gradient);
-        background-size: 500% 500%;
-        background-color: var(--);
-        animation: pulse 15s ease-in-out infinite;
-        box-shadow: 0 8px 8px -4px lightblue;
-    }
+  .highlighted-section {
+    background: var(--ayo-gradient);
+    background-size: 500% 500%;
+    background-color: var(--);
+    animation: pulse 15s ease-in-out infinite;
+    box-shadow: 0 8px 8px -4px lightblue;
+  }
 
-    .highlighted-section__content ul {
-        list-style-type: none;
-        padding: 0;
-    }
+  .highlighted-section__content ul {
+    list-style-type: none;
+    padding: 0;
+  }
 
+  .highlighted-section code {
+    font-size: 0.875em;
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
 
-    .highlighted-section code {
-        font-size: 0.875em;
-        border: 0.1em solid var(--color-border);
-        border-radius: 4px;
-        padding: 0.15em 0.25em;
-    }
+  .cards-section {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+  }
 
-    .cards-section {
-        margin: auto;
-        padding: 1em;
-        max-width: var(--content-width);
-    }
+  .cards-section__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
 
-    .cards-section__grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-        gap: 1rem;
-        padding: 0;
+  @media only screen and (min-device-width: 280px) and (max-device-width: 653px) {
+    .highlighted-section__content ul li {
+      font-size: 14px;
+      font-weight: bold;
     }
+  }
 
-    @media only screen 
-    and (min-device-width: 280px) 
-    and (max-device-width: 653px) {
-        .highlighted-section__content ul li {
-            font-size: 14px;
-            font-weight: bold;
-        }
+  @media only screen and (min-device-width: 360px) and (max-device-width: 812px) {
+    .highlighted-section__content ul li {
+      font-size: 20px;
+      font-weight: bold;
     }
-
-    @media only screen 
-    and (min-device-width: 360px) 
-    and (max-device-width: 812px) {
-        .highlighted-section__content ul li {
-            font-size: 20px;
-            font-weight: bold;
-        }
-    }
+  }
 </style>
