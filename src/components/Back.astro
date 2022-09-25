@@ -1,4 +1,7 @@
-<nav><a href="/">&larr; Back</a></nav>
+---
+const {url}= Astro.props;
+---
+<nav><a href={url}>&larr; Back</a></nav>
 
 <style>
   nav {

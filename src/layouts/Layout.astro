@@ -64,9 +64,16 @@ import Footer from '../components/Footer.astro';
 		}
 	}
 
+
 </style>
 
 <style is:global>
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: var(--content-width);
+	}
+
 	h1 {
 		font-size: var(--font-size-xl);
 	}
@@ -80,10 +87,23 @@ import Footer from '../components/Footer.astro';
 			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
 
-        a {
-            font-weight: 900;
-            color: var(--color-link);
-            border-radius: 0.4rem;
-        }
+	a {
+			font-weight: 900;
+			color: var(--color-link);
+			border-radius: 0.4rem;
+	}
+
+	.text-gradient {
+		font-weight: 900;
+		background-image: var(--ayo-gradient);
+		animation: pulse 4s ease-in-out infinite;
+                background-size: 500% 500%;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 100% 200%;
+		background-position-y: 100%;
+		border-radius: 0.4rem;
+	}
+
 
 </style>

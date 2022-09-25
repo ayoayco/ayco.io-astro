@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Back from "../../components/Back.astro";
+import GithubStats from "astro-github-stats";
+---
+<Layout>
+  <main>
+    <Back url="/showcase" />
+    <h1>Astro Github Stats</h1>
+    <GithubStats username="ayoayco" />
+    <h2>Links</h2>
+    <ol>
+      <li>
+        Github repo: <a href="https://github.com/ayoayco/astro-github-stats">astro-github-stats</a>
+      </li>
+      <li>
+        NPM registry: <a href="https://npmjs.org/astro-github-stats">astro-github-stats</a>
+      </li>
+    </ol>
+    <Footer />
+  </main>
+</Layout>

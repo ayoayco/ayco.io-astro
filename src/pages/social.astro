@@ -7,50 +7,32 @@ import Back from '../components/Back.astro';
 
 <Layout title="Ayo Ayco | Software Engineer + Web Developer">
 	<main>
-		<Back />
-            <h1>Social <span class="text-gradient">Links</span></h1>
-            <ul role="list" class="link-card-grid">
-                <Card
-                        href="https://twitter.com/ayoayco/"
-                        title="Twitter"
-                        body="Tweets about my takes on technology and current events"
-                />
-                <Card
-                        href="https://www.linkedin.com/in/ayoayco/"
-                        title="LinkedIn"
-                        body="Connect with me and my professional network"
-                />
-                <Card
-                        href="https://soundcloud.com/ayoayco/"
-                        title="SoundCloud"
-                        body="Some music I made as a hobby"
-                />
-            </ul>
-            <Footer />
-        </main>
+    <Back url="/" />
+			<h1>Social <span class="text-gradient">Links</span></h1>
+			<ul role="list" class="link-card-grid">
+					<Card
+									href="https://twitter.com/ayoayco/"
+									title="Twitter"
+									body="Tweets about my takes on technology and current events"
+					/>
+					<Card
+									href="https://www.linkedin.com/in/ayoayco/"
+									title="LinkedIn"
+									body="Connect with me and my professional network"
+					/>
+					<Card
+									href="https://soundcloud.com/ayoayco/"
+									title="SoundCloud"
+									body="Some music I made as a hobby"
+					/>
+			</ul>
+			<Footer />
+	</main>
 </Layout>
 
 <style>
 	h1 {
 		margin: 2rem 0;
-	}
-
-	main {
-		margin: auto;
-		padding: 1em;
-		max-width: var(--content-width);
-	}
-
-	.text-gradient {
-		font-weight: 900;
-		background-image: var(--ayo-gradient);
-		animation: pulse 4s ease-in-out infinite;
-                background-size: 500% 500%;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 100% 200%;
-		background-position-y: 100%;
-		border-radius: 0.4rem;
 	}
 
 	.highlighted-content {
