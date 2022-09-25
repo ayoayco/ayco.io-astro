@@ -1,0 +1,37 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Back from "../../components/Back.astro";
+import Form, {FormGroup} from "astro-reactive-form";
+const form = new FormGroup([
+  {
+    name: 'first-name',
+    value: 'Ayo',
+    label: 'First Name'
+  },
+   {
+    name: 'last-name',
+    value: 'Ayco',
+    label: 'Last Name'
+  },
+])
+---
+<Layout>
+  <main>
+    <Back url="/showcase" />
+    <h1>Astro Github Stats</h1>
+
+    <Form formGroup={form} />
+
+    <h2>Links</h2>
+    <ol>
+      <li>
+        Github repo: <a href="https://github.com/ayoayco/astro-github-stats">astro-github-stats</a>
+      </li>
+      <li>
+        NPM registry: <a href="https://npmjs.org/astro-github-stats">astro-github-stats</a>
+      </li>
+    </ol>
+    <Footer />
+  </main>
+</Layout>
