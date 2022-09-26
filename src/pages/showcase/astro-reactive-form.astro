@@ -2,21 +2,36 @@
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import Back from "../../components/Back.astro";
-import Form, {FormGroup} from "astro-reactive-form";
+import Form, { FormGroup } from "astro-reactive-form";
 const form = new FormGroup([
   {
-    name: 'first-name',
-    value: 'Ayo',
-    label: 'First Name'
+    name: "first-name",
+    value: "Ayo",
+    label: "First Name",
   },
-   {
-    name: 'last-name',
-    value: 'Ayco',
-    label: 'Last Name'
+  {
+    name: "last-name",
+    value: "Ayco",
+    label: "Last Name",
   },
-])
+  {
+    name: "is-awesome",
+    type: "checkbox",
+    value: "checked",
+    label: "Is Awesome?",
+    labelPosition: "right",
+  },
+  {
+    name: "is-good-looking",
+    type: "radio",
+    value: "checked",
+    label: "Is Good-Looking?",
+    labelPosition: "right",
+  },
+]);
 ---
-<Layout>
+
+<Layout title="Ayo Ayco | Showcase | Astro Reactive Form">
   <main>
     <Back url="/showcase" />
     <h1>Astro Reactive Form 🔥</h1>
@@ -26,10 +41,14 @@ const form = new FormGroup([
     <h2>Links</h2>
     <ol>
       <li>
-        GitHub repo: <a href="https://github.com/ayoayco/astro-reactive-form">astro-reactive-form</a>
+        GitHub repo: <a href="https://github.com/ayoayco/astro-reactive-form"
+          >astro-reactive-form</a
+        >
       </li>
       <li>
-        NPM registry: <a href="https://npmjs.org/astro-reactive-form">astro-reactive-form</a>
+        NPM registry: <a href="https://npmjs.org/astro-reactive-form"
+          >astro-reactive-form</a
+        >
       </li>
     </ol>
     <Footer />
