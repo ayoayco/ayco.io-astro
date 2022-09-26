@@ -1,109 +1,104 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
-
-import Footer from '../components/Footer.astro';
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-                <meta name="theme-color" content="#3054bf">
-                <link rel="shortcut icon" type="image/png" href="/favicon.ico">
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
-<style>
-	:root {
-    --content-width: 700px;
-		--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-		--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
-		--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#3054bf" />
+    <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
 
-		--color-text: hsl(12, 5%, 4%);
-		--color-bg: hsl(10, 21%, 95%);
-		--color-border: hsl(17, 24%, 90%);
-    --color-link: #416fff;
+    <style>
+      :root {
+        --content-width: 700px;
+        --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+        --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+        --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
 
-		--color-brand-blue-1: #3054bf;
-		--color-brand-blue-2: #203880;
-		--color-brand-blue-3: #416fff;
-		--color-brand-blue-4: #101c40;
-		--color-brand-blue-5: #3964e6;
+        --color-text: hsl(12, 5%, 4%);
+        --color-bg: hsl(10, 21%, 95%);
+        --color-border: hsl(17, 24%, 90%);
+        --color-link: #416fff;
 
-    --ayo-gradient: linear-gradient(45deg, #3054bf, #416fff);
-	}
+        --color-brand-blue-1: #3054bf;
+        --color-brand-blue-2: #203880;
+        --color-brand-blue-3: #416fff;
+        --color-brand-blue-4: #101c40;
+        --color-brand-blue-5: #3964e6;
 
-	html {
-		font-family: system-ui, sans-serif;
-		font-size: var(--font-size-base);
-		color: var(--color-text);
-		background-color: var(--color-bg);
+        --ayo-gradient: linear-gradient(45deg, #3054bf, #416fff);
+      }
+
+      html {
+        font-family: system-ui, sans-serif;
+        font-size: var(--font-size-base);
+        color: var(--color-text);
+        background-color: var(--color-bg);
+      }
+
+      body {
+        margin: 0;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          background-position-y: 0%;
         }
+        50% {
+          background-position-y: 80%;
+        }
+      }
+    </style>
 
-	body {
-		margin: 0;
-	}
+    <style is:global>
+      main {
+        margin: auto;
+        max-width: var(--content-width);
+        padding: 1em;
+      }
 
-	@keyframes pulse {
-		0%,
-		100% {
-			background-position-y: 0%;
-		}
-		50% {
-			background-position-y: 80%;
-		}
-	}
+      h1 {
+        font-size: var(--font-size-xl);
+      }
 
+      h2 {
+        font-size: var(--font-size-lg);
+      }
 
-</style>
+      code {
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+      }
 
-<style is:global>
-	main {
-		margin: auto;
-		padding: 1em;
-		max-width: var(--content-width);
-	}
+      a {
+        font-weight: 900;
+        color: var(--color-link);
+        border-radius: 0.4rem;
+      }
 
-	h1 {
-		font-size: var(--font-size-xl);
-	}
-
-	h2 {
-		font-size: var(--font-size-lg);
-	}
-
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-
-	a {
-			font-weight: 900;
-			color: var(--color-link);
-			border-radius: 0.4rem;
-	}
-
-	.text-gradient {
-		font-weight: 900;
-		background-image: var(--ayo-gradient);
-		animation: pulse 4s ease-in-out infinite;
-                background-size: 500% 500%;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 100% 200%;
-		background-position-y: 100%;
-		border-radius: 0.4rem;
-	}
-
-
-</style>
+      .text-gradient {
+        font-weight: 900;
+        background-image: var(--ayo-gradient);
+        animation: pulse 4s ease-in-out infinite;
+        background-size: 500% 500%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 100% 200%;
+        background-position-y: 100%;
+        border-radius: 0.4rem;
+      }
+    </style>
+  </body>
+</html>

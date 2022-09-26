@@ -5,23 +5,23 @@ import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Ayo Ayco | Software Engineer + Web Developer">
+  <section class="highlighted-section">
+    <div class="highlighted-section__content">
+      <h1 title="Ayo Ayco | Software Engineer + Web Developer">
+        <span class="heavy-text">Ayo</span>Ayco
+      </h1>
+      <ul role="list">
+        <li>👨🏻‍💻 Software Extraordinaire</li>
+        <li>🕵🏻‍♂️ Frontend Detective Consultant</li>
+        <li>📚 BS Computer Science</li>
+      </ul>
+      <a href="/now" class="now-wrapper">
+        <span class="now-label">Now</span>
+        <span class="status">Settling in The Netherlands &rarr;</span>
+      </a>
+    </div>
+  </section>
   <main>
-    <section class="highlighted-section">
-      <div class="highlighted-section__content">
-        <h1 title="Ayo Ayco | Software Engineer + Web Developer">
-          <span class="heavy-text">Ayo</span>Ayco
-        </h1>
-        <ul role="list">
-          <li>👨🏻‍💻 Software Extraordinaire</li>
-          <li>🕵🏻‍♂️ Frontend Detective Consultant</li>
-          <li>📚 BS Computer Science</li>
-        </ul>
-        <a href="/now" class="now-wrapper">
-          <span class="now-label">Now</span>
-          <span class="status">Settling in The Netherlands &rarr;</span>
-        </a>
-      </div>
-    </section>
     <section class="cards-section">
       <ul role="list" class="cards-section__grid">
         <Card
@@ -124,7 +124,6 @@ import Footer from "../components/Footer.astro";
 
   .cards-section {
     margin: auto;
-    padding: 1em;
     max-width: var(--content-width);
   }
 
