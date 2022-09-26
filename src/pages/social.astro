@@ -1,60 +1,59 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Footer from '../components/Footer.astro';
-import Back from '../components/Back.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Footer from "../components/Footer.astro";
+import Back from "../components/Back.astro";
 ---
 
 <Layout title="Ayo Ayco | Software Engineer + Web Developer">
-	<main>
+  <main>
     <Back url="/" />
-			<h1>Social <span class="text-gradient">Links</span></h1>
-			<ul role="list" class="link-card-grid">
-					<Card
-									href="https://twitter.com/ayoayco/"
-									title="Twitter"
-									body="Tweets about my takes on technology and current events"
-					/>
-					<Card
-									href="https://www.linkedin.com/in/ayoayco/"
-									title="LinkedIn"
-									body="Connect with me and my professional network"
-					/>
-					<Card
-									href="https://soundcloud.com/ayoayco/"
-									title="SoundCloud"
-									body="Some music I made as a hobby"
-					/>
-			</ul>
-			<Footer />
-	</main>
+    <h1>Social <span class="text-gradient">Links</span></h1>
+    <ul role="list" class="link-card-grid">
+      <Card
+        href="https://twitter.com/ayoayco/"
+        title="Twitter"
+        body="Tweets about my takes on technology and current events"
+      />
+      <Card
+        href="https://www.linkedin.com/in/ayoayco/"
+        title="LinkedIn"
+        body="Connect with me and my professional network"
+      />
+      <Card
+        href="https://soundcloud.com/ayoayco/"
+        title="SoundCloud"
+        body="Some music I made as a hobby"
+      />
+    </ul>
+    <Footer />
+  </main>
 </Layout>
 
 <style>
-	h1 {
-		margin: 2rem 0;
-	}
+  h1 {
+    margin: 2rem 0;
+  }
 
-	.highlighted-content {
-		line-height: 1.6;
-		margin: 1rem 0;
-		background: #4f39fa;
-		padding: 1rem;
-		border-radius: 0.4rem;
-		color: var(--color-bg);
-	}
+  .highlighted-content {
+    line-height: 1.6;
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
 
-	.highlighted-content code {
-		font-size: 0.875em;
-		border: 0.1em solid var(--color-border);
-		border-radius: 4px;
-		padding: 0.15em 0.25em;
-	}
+  .highlighted-content code {
+    font-size: 0.875em;
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
 
-	.link-card-grid {
-		display: grid;
-		gap: 1rem;
-		padding: 0;
-	}
-
+  .link-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
 </style>
