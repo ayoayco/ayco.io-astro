@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "astro": "^1.2.6",
-    "astro-github-stats": "^0.2.1",
-    "astro-reactive-form": "^0.0.10"
+    "astro-github-stats": "^0.3.1",
+    "astro-reactive-form": "^0.1.1"
   }
 }

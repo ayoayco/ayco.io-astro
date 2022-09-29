@@ -9,9 +9,17 @@ import GithubStats from "astro-github-stats";
   <main>
     <Back url="/showcase" />
     <h1>Astro GitHub Stats ✨</h1>
+
+    <h3>Account Stats</h3>
     <GithubStats username="ayoayco" />
+
+    <h3>Account Top Languages</h3>
+    <GithubStats username="ayoayco" topLanguages={true} />
+
+    <h3>Repo card</h3>
     <GithubStats username="withastro" repo="astro" />
-    <h2>Links</h2>
+
+    <h3>Links</h3>
     <ol>
       <li>
         GitHub repo: <a href="https://github.com/ayoayco/astro-github-stats"
@@ -24,6 +32,7 @@ import GithubStats from "astro-github-stats";
         >
       </li>
     </ol>
+
     <Footer />
   </main>
 </Layout>
