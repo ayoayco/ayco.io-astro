@@ -61,12 +61,6 @@ const characteristicsForm: FormGroup = new FormGroup(
     <h1>Astro Reactive Form </h1>
     <p>Generate a dynamic form based on your data, and modify programatically.</p>
 
-    <h3>Simple single form group</h3>
-    <Form formGroups={simpleForm} />
-
-    <h3>Multiple Form Groups</h3>
-    <Form formGroups={[nameForm, characteristicsForm]} />
-
     <h3>Links</h3>
     <ol>
       <li>
@@ -80,6 +74,14 @@ const characteristicsForm: FormGroup = new FormGroup(
         >
       </li>
     </ol>
+
+    <h3>Simple single form group</h3>
+    <Form formGroups={simpleForm} />
+
+    <h3>Multiple Form Groups</h3>
+    <Form formGroups={[nameForm, characteristicsForm]} />
+
+
     <Footer />
   </main>
 </Layout>
