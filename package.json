@@ -13,6 +13,6 @@
   "dependencies": {
     "astro": "^1.2.6",
     "astro-github-stats": "^0.4.0",
-    "astro-reactive-form": "^0.1.1"
+    "astro-reactive-form": "^0.2.6"
   }
 }

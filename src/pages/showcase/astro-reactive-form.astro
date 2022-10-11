@@ -2,7 +2,8 @@
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import Back from "../../components/Back.astro";
-import Form, { FormControl, FormGroup } from "astro-reactive-form";
+import {FormControl, FormGroup} from "astro-reactive-form/core";
+import Form from "astro-reactive-form";
 
 const simpleForm = new FormGroup([
   {
@@ -61,7 +62,7 @@ const characteristicsForm: FormGroup = new FormGroup(
     <p>Generate a dynamic form based on your data, and modify programatically.</p>
 
     <h3>Simple single form group</h3>
-    <Form formGroups={[simpleForm]} />
+    <Form formGroups={simpleForm} />
 
     <h3>Multiple Form Groups</h3>
     <Form formGroups={[nameForm, characteristicsForm]} />
