@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import Back from "../../components/Back.astro";
-import {FormControl, FormGroup} from "astro-reactive-form/core";
+import { FormControl, FormGroup } from "astro-reactive-form/core";
 import Form from "astro-reactive-form";
 
 const simpleForm = new FormGroup([
@@ -58,11 +58,11 @@ const characteristicsForm: FormGroup = new FormGroup(
 <Layout title="Ayo Ayco | Showcase | Astro Reactive Form">
   <main>
     <Back url="/showcase" />
-    <h1>Astro Reactive Form </h1>
-    <p>Generate a dynamic form based on your data, and modify programatically.</p>
-
-    <h3>Links</h3>
-    <ol>
+    <h1>Astro Reactive Form</h1>
+    <p>
+      Generate a dynamic form based on your data, and modify programatically.
+    </p>
+    <ul>
       <li>
         GitHub repo: <a href="https://github.com/ayoayco/astro-reactive-library"
           >astro-reactive-library</a
@@ -73,14 +73,13 @@ const characteristicsForm: FormGroup = new FormGroup(
           >astro-reactive-form</a
         >
       </li>
-    </ol>
+    </ul>
 
-    <h3>Simple single form group</h3>
+    <h2>Simple single form group</h2>
     <Form formGroups={simpleForm} />
 
-    <h3>Multiple Form Groups</h3>
+    <h2>Multiple Form Groups</h2>
     <Form formGroups={[nameForm, characteristicsForm]} />
-
 
     <Footer />
   </main>
