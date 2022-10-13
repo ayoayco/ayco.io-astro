@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import Back from "../../components/Back.astro";
-import { FormControl, FormGroup } from "astro-reactive-form/core";
+import { FormGroup, ControlConfig } from "astro-reactive-form/core";
 import Form from "astro-reactive-form";
 
 const simpleForm = new FormGroup([
@@ -18,7 +18,7 @@ const simpleForm = new FormGroup([
   },
 ]);
 
-const name: FormControl[] = [
+const name: ControlConfig[] = [
   {
     name: "first-name",
     value: "Ayo",
@@ -31,7 +31,7 @@ const name: FormControl[] = [
   },
 ];
 
-const characteristics: FormControl[] = [
+const characteristics: ControlConfig[] = [
   {
     name: "is-good-looking",
     type: "radio",
