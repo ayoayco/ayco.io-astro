@@ -129,6 +129,19 @@ import Footer from "../components/Footer.astro";
     padding: 0;
   }
 
+  @media only screen and (max-device-width: 360px) {
+    .now-wrapper {
+      border: 0px;
+      font-size: x-small;
+      line-height: normal;
+    }
+    .now-label {
+      background-color: transparent;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
   @media only screen and (min-device-width: 280px) and (max-device-width: 653px) {
     .highlighted-section__content ul li {
       font-size: 14px;
