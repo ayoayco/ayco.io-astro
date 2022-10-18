@@ -5,14 +5,15 @@ export interface Props {
 const { url } = Astro.props;
 ---
 
-<nav><a href={url}>&larr; Back</a></nav>
+<nav><a class="back-link" href={url}>&larr; Back</a></nav>
 
 <style>
   nav {
     margin-bottom: -1rem;
   }
 
-  nav a {
+  nav a.back-link {
+    font-size: var(--font-size-lg);
     text-decoration: none;
   }
 </style>

@@ -3,16 +3,21 @@ export interface Props {
   title: string;
   body: string;
   href: string;
+  newTab?: boolean;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, newTab = false } = Astro.props;
 ---
 
 <li class="link-card">
-  <a href={href}>
+  <a href={href} target={newTab ? '_blank' : null}>
     <h2>
       {title}
-      <span>&rarr;</span>
+      {
+        newTab
+      ? (<span>&nearr;</span>)
+      : (<span>&rarr; </span>)
+      }
     </h2>
     <p>
       {body}
