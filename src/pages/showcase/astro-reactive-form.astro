@@ -2,8 +2,10 @@
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import Back from "../../components/Back.astro";
-import { FormGroup, ControlConfig } from "astro-reactive-form/core";
-import Form from "astro-reactive-form";
+
+import Form, {ControlConfig, FormGroup} from '@astro-reactive/form';
+import { Validators } from "@astro-reactive/validator";
+
 
 const simpleForm = new FormGroup([
   {
@@ -11,11 +13,11 @@ const simpleForm = new FormGroup([
     label: "Simple Text Control",
   },
   {
-    name: "a-checkbox",
-    label: "A Checkbox with Label on the left",
-    type: "checkbox",
-    value: "checked",
-  },
+    name: 'email',
+    label: 'Email',
+    value: 'invalid-email',
+    validators: [Validators.email]
+  }
 ]);
 
 const name: ControlConfig[] = [
@@ -23,11 +25,12 @@ const name: ControlConfig[] = [
     name: "first-name",
     value: "Ayo",
     label: "First Name",
+    validators: [Validators.required]
   },
   {
     name: "last-name",
-    value: "Ayco",
     label: "Last Name",
+    validators: [Validators.required]
   },
 ];
 
@@ -36,7 +39,7 @@ const characteristics: ControlConfig[] = [
     name: "is-good-looking",
     type: "radio",
     label: "Is Good Looking?",
-    value: "checked",
+    value: ["checked"],
     labelPosition: "right",
   },
   {
@@ -69,17 +72,23 @@ const characteristicsForm: FormGroup = new FormGroup(
         >
       </li>
       <li>
-        NPM registry: <a href="https://npmjs.org/package/@astro-reactive/form"
-                         >@astro-reactive/form</a
-        >
+        NPM registry:
+          <ul>
+            <li>
+              <a href="https://npmjs.org/package/@astro-reactive/form">@astro-reactive/form</a>
+            </li>
+            <li>
+              <a href="https://npmjs.org/package/@astro-reactive/validator">@astro-reactive/validator</a>
+            </li>
+          </ul>
       </li>
     </ul>
 
     <h2>Simple single form group</h2>
-    <Form formGroups={simpleForm} />
+    <Form showValidationHints={true} formGroups={simpleForm} />
 
     <h2>Multiple Form Groups</h2>
-    <Form formGroups={[nameForm, characteristicsForm]} />
+    <Form showValidationHints={true} formGroups={[nameForm, characteristicsForm]} />
 
     <Footer />
   </main>

@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "astro": "^1.2.6",
-    "astro-github-stats": "^0.5.0",
-    "astro-reactive-form": "^0.3.0"
+    "@astro-reactive/form": "^0.5.1",
+    "@astro-reactive/validator": "^0.1.0",
+    "astro-github-stats": "^0.5.0"
   }
 }
