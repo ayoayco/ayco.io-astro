@@ -39,9 +39,9 @@ const characteristics: ControlConfig[] = [
     name: "is-good-looking",
     type: "radio",
     label: "Is Good Looking?",
-    value: ["checked"],
-    labelPosition: "right",
+    value: [{value: "checked", label: "checked", checked: true}, {value: "not checked", label: "not checked", checked: false}],
   },
+  {name: 'required', label: 'Required Field', placeholder: 'but empty 😔', validators: [Validators.required]},
   {
     name: "is-awesome",
     type: "checkbox",
