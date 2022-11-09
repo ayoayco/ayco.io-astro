@@ -11,9 +11,9 @@ import Footer from "../components/Footer.astro";
         <span class="heavy-text">Ayo</span>Ayco
       </h1>
       <ul role="list">
+        <li>🚀 Building <a href="https://astro-reactive.dev">Astro Reactive</a></li>
         <li>👨🏻‍💻 Software Extraordinaire</li>
         <li>🕵🏻‍♂️ Frontend Detective Consultant</li>
-        <li>📚 BS Computer Science</li>
       </ul>
       <a href="/now" class="now-wrapper">
         <span class="now-label">Now</span>
@@ -23,7 +23,7 @@ import Footer from "../components/Footer.astro";
   </section>
   <main>
     <section class="cards-section">
-      <ul role="list" class="cards-section__grid">
+     <ul role="list" class="cards-section__grid">
         <Card
           newTab={true}
           href="https://drive.google.com/file/d/1MhN8qWRJnSHM_epU9GFQL9lEsMFtHWQK/view?usp=sharing"
@@ -71,8 +71,8 @@ import Footer from "../components/Footer.astro";
     margin: auto;
     padding: 1em;
     max-width: var(--content-width);
-    font-weight: bold;
-    font-size: x-large;
+    font-weight: normal;
+    font-size: large;
     color: var(--color-bg);
     line-height: 1.6;
   }
@@ -102,21 +102,17 @@ import Footer from "../components/Footer.astro";
   .highlighted-section {
     background: var(--ayo-gradient);
     background-size: 500% 500%;
-    background-color: var(--);
     animation: pulse 15s ease-in-out infinite;
     box-shadow: 0 8px 8px -4px lightblue;
+  }
+  .highlighted-section a {
+    color: white;
+    font-weight: normal;
   }
 
   .highlighted-section__content ul {
     list-style-type: none;
     padding: 0;
-  }
-
-  .highlighted-section code {
-    font-size: 0.875em;
-    border: 0.1em solid var(--color-border);
-    border-radius: 4px;
-    padding: 0.15em 0.25em;
   }
 
   .cards-section {
@@ -147,14 +143,12 @@ import Footer from "../components/Footer.astro";
   @media only screen and (min-device-width: 280px) and (max-device-width: 653px) {
     .highlighted-section__content ul li {
       font-size: 14px;
-      font-weight: bold;
     }
   }
 
   @media only screen and (min-device-width: 360px) and (max-device-width: 812px) {
     .highlighted-section__content ul li {
       font-size: 20px;
-      font-weight: bold;
     }
   }
 </style>
