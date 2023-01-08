@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import Back from "../../components/Back.astro";
 
-import Form, {ControlConfig, FormGroup} from '@astro-reactive/form';
+import Form, { ControlConfig, FormGroup } from "@astro-reactive/form";
 import { Validators } from "@astro-reactive/validator";
 
 const simpleForm = new FormGroup([
@@ -12,11 +12,11 @@ const simpleForm = new FormGroup([
     label: "Simple Text Control",
   },
   {
-    name: 'email',
-    label: 'Email',
-    value: 'invalid-email',
-    validators: [Validators.email]
-  }
+    name: "email",
+    label: "Email",
+    value: "invalid-email",
+    validators: [Validators.email],
+  },
 ]);
 
 const name: ControlConfig[] = [
@@ -24,12 +24,12 @@ const name: ControlConfig[] = [
     name: "first-name",
     value: "Ayo",
     label: "First Name",
-    validators: [Validators.required]
+    validators: [Validators.required],
   },
   {
     name: "last-name",
     label: "Last Name",
-    validators: [Validators.required]
+    validators: [Validators.required],
   },
 ];
 
@@ -38,15 +38,23 @@ const characteristics: ControlConfig[] = [
     name: "is-good-looking",
     type: "radio",
     label: "Is Good Looking?",
-    value: [{value: "checked", label: "checked", checked: true}, {value: "not checked", label: "not checked", checked: false}],
+    value: "checked",
+    options: [
+      { value: "checked", label: "checked" },
+      { value: "not checked", label: "not checked" },
+    ],
   },
-  {name: 'required', label: 'Required Field', placeholder: 'but empty 😔', validators: [Validators.required]},
+  {
+    name: "required",
+    label: "Required Field",
+    placeholder: "but empty 😔",
+    validators: [Validators.required],
+  },
   {
     name: "is-awesome",
     type: "checkbox",
     label: "Is Awesome?",
     value: "checked",
-    labelPosition: "right",
   },
 ];
 
@@ -57,7 +65,9 @@ const characteristicsForm: FormGroup = new FormGroup(
 );
 ---
 
-<Layout title="Astro Reactive Form | Ayo Ayco | Software Engineer + Web Developer ">
+<Layout
+  title="Astro Reactive Form | Ayo Ayco | Software Engineer + Web Developer "
+>
   <main>
     <Back url="/showcase" />
     <h1>Astro Reactive Form</h1>
@@ -72,27 +82,33 @@ const characteristicsForm: FormGroup = new FormGroup(
       </li>
       <li>
         NPM registry:
-          <ul>
-            <li>
-              <a href="https://npmjs.org/package/@astro-reactive/form">@astro-reactive/form</a>
-            </li>
-            <li>
-              <a href="https://npmjs.org/package/@astro-reactive/validator">@astro-reactive/validator</a>
-            </li>
-          </ul>
+        <ul>
+          <li>
+            <a href="https://npmjs.org/package/@astro-reactive/form"
+              >@astro-reactive/form</a
+            >
+          </li>
+          <li>
+            <a href="https://npmjs.org/package/@astro-reactive/validator"
+              >@astro-reactive/validator</a
+            >
+          </li>
+        </ul>
       </li>
     </ul>
 
-
-
     <h2>Simple single form group</h2>
     <p>Here's an example of a simple form with email validation</p>
-    <Form showValidationHints={true} formGroups={simpleForm} />
+    <Form showValidationHints validateOnLoad formGroups={simpleForm} />
     <!--Code lang="typescript" theme="github-light" code={simpleFormCode} /-->
 
     <h2>Multiple Form Groups</h2>
     <p>Here's a more complex example of a form with multiple fieldsets</p>
-    <Form showValidationHints={true} formGroups={[nameForm, characteristicsForm]} />
+    <Form
+      showValidationHints
+      validateOnLoad
+      formGroups={[nameForm, characteristicsForm]}
+    />
     <!--Code lang="typescript" theme="dark-plus" code={multipleFormGroupCode} /-->
 
     <Footer />
