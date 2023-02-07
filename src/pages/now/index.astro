@@ -1,7 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Footer.astro";
-import Back from "../components/Back.astro";
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Back from "../../components/Back.astro";
+import Posts from "../../components/Posts.astro";
+
+const posts = await Astro.glob("./and-then/*.astro");
 ---
 
 <Layout title="Now | Ayo Ayco | Software Engineer + Web Developer">
@@ -24,6 +27,9 @@ import Back from "../components/Back.astro";
       I have also found a renewed joy in exploring opensource projects in my
       spare time.
     </p>
+
+    <Posts posts={posts} title="...and then" />
+
     <hr />
     <em><a href="https://nownownow.com/about">About now pages</a></em>
     <Footer />

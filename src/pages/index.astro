@@ -25,27 +25,28 @@ import Footer from "../components/Footer.astro";
     <section class="cards-section">
      <ul role="list" class="cards-section__grid">
         <Card
+          href="/showcase"
+          title="Fun Side Projects"
+          body="See demos of opensource side projects I created"
+        />
+        <Card
+          href="/social"
+          title="Social"
+          body="Connect with me on various social platforms"
+        />
+        <Card
           newTab={true}
           href="https://drive.google.com/file/d/1MhN8qWRJnSHM_epU9GFQL9lEsMFtHWQK/view?usp=sharing"
           title="CV / Resume"
-          body="Download and peruse my skills and experience."
+          body="Download and peruse my skills and experience"
         />
         <Card
           newTab={true}
           href="https://github.com/ayoayco"
           title="Github"
-          body="See my public projects over at Github."
+          body="See my public projects over at Github"
         />
-        <Card
-          href="/social"
-          title="Social"
-          body="Connect with me on various social platforms."
-        />
-        <Card
-          href="/showcase"
-          title="UI Components"
-          body="See demos of opensource components I created."
-        />
+
       </ul>
       <Footer />
     </section>

@@ -1,0 +1,74 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Footer from "../../../components/Footer.astro";
+import Back from "../../../components/Back.astro";
+---
+
+<Layout title="Now | Ayo Ayco | Software Engineer + Web Developer">
+  <main>
+    <Back url="/now" />
+    <h1><span class="text-gradient">Sep. 20, 2022</span></h1>
+    <p>
+      This year (2022) I have moved to The Netherlands with my family;
+      specifically to the northern area of Amsterdam.
+    </p>
+    <p>
+      For work, I'm busy being a consultant, doing mostly frontend development.
+    </p>
+    <p>
+      If I'm not working, I am playing games on Xbox with my kid, Kahel, or most
+      probably trying to annoy my wife, Jen, with silly jokes.
+    </p>
+    <p>
+      I have also found a renewed joy in exploring opensource projects in my
+      spare time.
+    </p>
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  h1 {
+    margin: 2rem 0;
+  }
+
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--ayo-gradient);
+    animation: pulse 4s ease-in-out infinite;
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .highlighted-content {
+    line-height: 1.6;
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .highlighted-content code {
+    font-size: 0.875em;
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>

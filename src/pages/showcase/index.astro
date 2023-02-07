@@ -5,11 +5,18 @@ import Card from "../../components/Card.astro";
 import Back from "../../components/Back.astro";
 ---
 
-<Layout title="UI Components | Ayo Ayco | Software Engineer + Web Developer">
+<Layout title="Fun Side Projects | Ayo Ayco | Software Engineer + Web Developer">
   <main>
     <Back url="/" />
-    <h1>UI <span class="text-gradient">Components</span></h1>
+    <h1>Fun <span class="text-gradient">Side Projects</span></h1>
     <ul role="list">
+      <Card
+        newTab
+        href="https://kaboom.ayco.io"
+        title="Kaboom!"
+        body="A simple physics simulation with Matter.js 👨🏻‍🔬"
+      />
+
       <Card
         href="/showcase/astro-reactive-form"
         title="Astro Reactive Form"
