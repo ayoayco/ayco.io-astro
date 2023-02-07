@@ -11,10 +11,16 @@ const postUrls: string[] = posts.map((post) => post.url || "");
 ---
 
 <h2>{title}</h2>
-{
-  postUrls
-    .filter((url) => url !== "")
-    .map((url) => (
-      <Card href={url} title={url?.replace("/now/and-then/", "")} body="" />
-    ))
-}
+<ul>
+  {
+    postUrls
+      .filter((url) => url !== "")
+      .map((url) => (
+        <li>
+          <a href={url} title={url?.replace("/now/and-then/", "")}>
+            {url?.replace("/now/and-then/", "")}
+          </a>
+        </li>
+      ))
+  }
+</ul>
