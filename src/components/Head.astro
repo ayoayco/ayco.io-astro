@@ -11,6 +11,8 @@ let { title, description = defaultDescription } = Astro.props;
 title = `${
   title ? `${title} | ` : ""
 }Ayo Ayco | Software Engineer + Web Developer`;
+
+const baseURL = "https://ayo.ayco.io";
 ---
 
 <head>
@@ -21,7 +23,7 @@ title = `${
   <meta name="theme-color" content="#3054bf" />
   <meta name="description" content={description} />
   <meta name="author" content="Ayo Ayco" />
-  <meta name="origin" content={Astro.url} />
+  <meta name="origin" content={baseURL + Astro.url.pathname} />
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -34,7 +36,7 @@ title = `${
   <!-- Open Graph data -->
   <meta property="og:title" content={title} />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content={Astro.url} />
+  <meta property="og:url" content={baseURL + Astro.url.pathname} />
   <meta property="og:image" content="/ayo.png" />
   <meta property="og:image:alt" content={description} />
   <meta property="og:description" content={description} />
