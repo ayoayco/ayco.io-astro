@@ -8,10 +8,6 @@ const defaultDescription =
 
 let { title, description = defaultDescription } = Astro.props;
 
-title = `${
-  title ? `${title} | ` : ""
-}Ayo Ayco | Software Engineer + Web Developer`;
-
 const baseURL = "https://ayo.ayco.io";
 ---
 
@@ -34,13 +30,13 @@ const baseURL = "https://ayo.ayco.io";
   <meta name="twitter:image:src" content="/ayo.png" />
 
   <!-- Open Graph data -->
+  <meta property="og:site_name" content="Ayo Ayco" />
   <meta property="og:title" content={title} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={baseURL + Astro.url.pathname} />
   <meta property="og:image" content="/ayo.png" />
   <meta property="og:image:alt" content={description} />
   <meta property="og:description" content={description} />
-  <meta property="og:site_name" content={title} />
 
   <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
 </head>
