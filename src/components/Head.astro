@@ -1,22 +1,44 @@
 ---
 export interface Props {
-  title: string;
+  title: string | undefined;
+  description: string | undefined;
 }
-const { title } = Astro.props;
-const description =
-  "Ayo Ayco is a software engineer and consultant, expecializing in web development | " +
-  title;
+const defaultDescription =
+  "Ayo Ayco is a professional software engineer specializing in web development with a decade of experience building web applications for both private businesses and government-funded high-impact projects utilizing web technologies, IoT, data viz/insights, remote sensing, and GIS";
+
+let { title, description = defaultDescription } = Astro.props;
+
+title = `${
+  title ? `${title} | ` : ""
+}Ayo Ayco | Software Engineer + Web Developer`;
 ---
 
 <head>
+  <title>{title}</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
   <meta name="theme-color" content="#3054bf" />
-
-  <!-- SEO -->
   <meta name="description" content={description} />
+  <meta name="author" content="Ayo Ayco" />
+  <meta name="origin" content={Astro.url} />
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@ayoayco" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:creator" content="@ayoayco" />
+  <meta name="twitter:image:src" content="/ayo.png" />
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content={title} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={Astro.url} />
+  <meta property="og:image" content="/ayo.png" />
+  <meta property="og:image:alt" content={description} />
+  <meta property="og:description" content={description} />
+  <meta property="og:site_name" content={title} />
 
   <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
-  <title>{title}</title>
 </head>

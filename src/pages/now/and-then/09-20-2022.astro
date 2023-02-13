@@ -2,12 +2,15 @@
 import Layout from "../../../layouts/Layout.astro";
 import Footer from "../../../components/Footer.astro";
 import Back from "../../../components/Back.astro";
+const title = "Settling in The Netherlands";
+const description =
+  "This year (2022) I have moved to The Netherlands with my family; specifically to the northern area of Amsterdam.";
 ---
 
-<Layout title="Now | Ayo Ayco | Software Engineer + Web Developer">
+<Layout title={title} description={description}>
   <main>
     <Back url="/now" />
-    <h1><span class="text-gradient">Settling in The Netherlands</span></h1>
+    <h1><span class="text-gradient">{title}</span></h1>
     <p>
       This year (2022) I have moved to The Netherlands with my family;
       specifically to the northern area of Amsterdam.
