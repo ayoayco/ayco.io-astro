@@ -91,7 +91,8 @@ import Footer from "../components/Footer.astro";
 
   .now-label {
     border-radius: 40px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--color-brand-complement);
+    color: var(--color-brand-blue-1);
     padding: 4px 8px;
     text-transform: uppercase;
     font-weight: bold;
@@ -134,12 +135,28 @@ import Footer from "../components/Footer.astro";
     .now-wrapper {
       border: 0px;
       font-size: x-small;
-      line-height: normal;
+      width: 100%;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
     }
     .now-label {
       background-color: transparent;
+      color: var(--color-brand-complement);
       padding: 0;
       margin: 0;
+    }
+
+    .now-label::before {
+      content: "* ";
+    }
+
+    .now-label::after {
+      content: ":";
     }
   }
 
