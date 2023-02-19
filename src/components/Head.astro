@@ -41,8 +41,9 @@ const baseURL = "https://ayo.ayco.io";
 
   <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
   <script>
-    const title = document.querySelector("title");
-    if (title && !title.textContent?.includes("Ayo Ayco"))
-      title.textContent = title.textContent + " | Ayo Ayco";
+    const title = document.title;
+    document.title = title?.includes("Ayo Ayco")
+      ? title
+      : `${title} | Ayo Ayco`;
   </script>
 </head>
