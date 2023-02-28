@@ -1,0 +1,161 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+
+const description = "Have you tried turning it off and on again?";
+---
+
+<Layout title="Not Found" description={description}>
+  <section class="highlighted-section">
+    <div class="highlighted-section__content">
+      <h1 title="Ayo Ayco | Software Engineer + Web Developer">
+        <span class="heavy-text">Not</span>Found
+      </h1>
+      <p>{description}</p>
+    </div>
+  </section>
+  <main>
+    <section class="cards-section">
+      <p>
+        Well there's always a chance that you mistyped the URL, or maybe the
+        person who shared it made a mistake.
+      </p>
+      <p>For your convenience, here are some possibly interesting links:</p>
+      <ol>
+        <li>
+          <a href="https://ayo.ayco.io">Home</a>
+        </li>
+        <li>
+          <a href="https://socisl.ayco.io">Social</a>
+        </li>
+        <li>
+          <a href="https://ayo.ayco.io/showcase">Fun Side Projects</a>
+        </li>
+        <li>
+          <a href="https://ayo.ayco.io/now">Now: What I'm currently up to</a>
+        </li>
+      </ol>
+      <Footer />
+    </section>
+  </main>
+</Layout>
+
+<style>
+  h1 {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  h1 span.heavy-text {
+    font-weight: 900;
+    color: white;
+  }
+
+  main {
+    max-width: 100% !important;
+  }
+
+  .highlighted-section__content {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+    font-weight: normal;
+    font-size: large;
+    color: var(--color-bg);
+    line-height: 1.6;
+  }
+
+  .now-wrapper {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    padding: 8px 4px;
+    font-weight: normal;
+    color: white;
+    font-size: small;
+    text-decoration: none;
+  }
+
+  .now-label {
+    border-radius: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 4px 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .status {
+    padding-right: 4px;
+  }
+
+  .highlighted-section {
+    background: var(--ayo-gradient);
+    background-size: 500% 500%;
+    animation: pulse 15s ease-in-out infinite;
+    box-shadow: 0 8px 8px -4px lightblue;
+  }
+
+  .highlighted-section__content ul a {
+    color: white;
+    font-weight: normal;
+  }
+
+  .highlighted-section__content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .cards-section {
+    margin: auto;
+    max-width: var(--content-width);
+  }
+
+  .cards-section__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+
+  @media only screen and (max-device-width: 360px) {
+    .now-wrapper {
+      border: 0px;
+      font-size: x-small;
+      width: 100%;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+    }
+    .now-label {
+      background-color: transparent;
+      color: white;
+      text-decoration: underline;
+      padding: 0;
+      margin: 0;
+    }
+
+    .now-label::before {
+      content: "* ";
+    }
+
+    .now-label::after {
+      content: ":";
+    }
+  }
+
+  @media only screen and (min-device-width: 280px) and (max-device-width: 653px) {
+    .highlighted-section__content ul li {
+      font-size: 14px;
+    }
+  }
+
+  @media only screen and (min-device-width: 360px) and (max-device-width: 812px) {
+    .highlighted-section__content ul li {
+      font-size: 20px;
+    }
+  }
+</style>
