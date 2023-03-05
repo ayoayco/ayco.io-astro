@@ -6,6 +6,8 @@ export interface Props {
 const defaultDescription =
   "Ayo Ayco is a professional software engineer specializing in web development with a decade of experience building web applications for both private businesses and government-funded high-impact projects utilizing web technologies, IoT, data viz/insights, remote sensing, and GIS";
 
+const defaultTitle = "Ayo Ayco | Software Engineer, Web Developer, Consultant";
+
 let {
   title = "Ayo Ayco | Software Engineer, Web Developer, Consultant",
   description = defaultDescription,
@@ -15,7 +17,7 @@ const baseURL = "https://ayo.ayco.io";
 ---
 
 <head>
-  <title>{title}</title>
+  <title>{title ? title + ` | ${defaultTitle}` : defaultTitle}</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
@@ -40,10 +42,4 @@ const baseURL = "https://ayo.ayco.io";
   <meta property="og:description" content={description} />
 
   <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
-  <script>
-    const title = document.title;
-    document.title = title?.includes("Ayo Ayco")
-      ? title
-      : `${title} | Ayo Ayco`;
-  </script>
 </head>
