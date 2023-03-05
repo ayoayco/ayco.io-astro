@@ -8,16 +8,13 @@ const defaultDescription =
 
 const defaultTitle = "Ayo Ayco | Software Engineer, Web Developer, Consultant";
 
-let {
-  title = "Ayo Ayco | Software Engineer, Web Developer, Consultant",
-  description = defaultDescription,
-} = Astro.props;
+let { title, description = defaultDescription } = Astro.props;
 
 const baseURL = "https://ayo.ayco.io";
 ---
 
 <head>
-  <title>{title ? title + ` | ${defaultTitle}` : defaultTitle}</title>
+  <title>{title || defaultTitle}</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
@@ -43,4 +40,17 @@ const baseURL = "https://ayo.ayco.io";
   <meta property="og:image" content="/ayo.png" />
 
   <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
+
+  {
+    title ? (
+      <script>
+        const title = document.title; if(title){" "}
+        {
+          (document.title = `${title} | Ayo Ayco | Software Engineer, Web Developer, Consultant`)
+        }
+      </script>
+    ) : (
+      <meta />
+    )
+  }
 </head>
