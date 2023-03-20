@@ -7,19 +7,29 @@ import Footer from "../components/Footer.astro";
 <Layout>
   <section class="highlighted-section">
     <div class="highlighted-section__content">
-      <h1 title="Ayo Ayco | Software Engineer + Web Developer">
-        <span class="heavy-text">Ayo</span>Ayco
-      </h1>
-      <ul role="list">
-        <li>🚀 Building <a href="https://astro-reactive.dev">Astro Reactive</a></li>
-        <li>🦌 Contributing to <a href="https://elk.zone">Elk</a></li>
-        <li>👨🏻‍💻 Software Extraordinaire</li>
-        <li>🕵🏻‍♂️ Frontend Detective</li>
-      </ul>
-      <a href="/now" class="now-wrapper">
-        <span class="now-label">Now</span>
-        <span class="status">The Fediverse and Other Passion Projects</span>
-      </a>
+      <img
+        class="highlighted-section__content__profile-picture"
+        alt="Ayo Ayco's picture"
+        src="/ayo.png"
+        width="150"
+      />
+      <div class="highlighted-section__content__text">
+        <h1 title="Ayo Ayco | Software Engineer + Web Developer">
+          <span class="heavy-text">Ayo</span>Ayco
+        </h1>
+        <ul role="list">
+          <li>👨🏻‍💻 Software Extraordinaire</li>
+          <li>🕵🏻‍♂️ Frontend Detective</li>
+          <li>
+            🚀 Building <a href="https://astro-reactive.dev">Astro Reactive</a>
+          </li>
+          <li>🦌 Contributing to <a href="https://elk.zone">Elk</a></li>
+        </ul>
+        <a href="/now" class="now-wrapper">
+          <span class="now-label">Now</span>
+          <span class="status">The Fediverse and Other Passion Projects</span>
+        </a>
+      </div>
     </div>
   </section>
   <main>
@@ -68,16 +78,6 @@ import Footer from "../components/Footer.astro";
     max-width: 100% !important;
   }
 
-  .highlighted-section__content {
-    margin: auto;
-    padding: 1em;
-    max-width: var(--content-width);
-    font-weight: normal;
-    font-size: large;
-    color: var(--color-bg);
-    line-height: 1.6;
-  }
-
   .now-wrapper {
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 40px;
@@ -105,7 +105,26 @@ import Footer from "../components/Footer.astro";
     background: var(--ayo-gradient);
     background-size: 500% 500%;
     animation: pulse 15s ease-in-out infinite;
-    box-shadow: 0 8px 8px -4px lightblue;
+    border-bottom: 1px solid var(--color-brand-blue-1);
+  }
+
+  .highlighted-section__content {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+    font-weight: normal;
+    font-size: large;
+    color: var(--color-bg);
+    line-height: 1.6;
+  }
+
+  .highlighted-section__content__profile-picture {
+    float: right;
+    width: 20%;
+    margin: 30px 0 0;
+    border: 1px solid var(--color-brand-blue-1);
+    display: block;
+    border-radius: 50%;
   }
 
   .highlighted-section__content ul a {
@@ -158,9 +177,18 @@ import Footer from "../components/Footer.astro";
     .now-label::after {
       content: ":";
     }
+
+    .highlighted-section__content__profile-picture {
+      float: none;
+      width: 100px;
+    }
   }
 
   @media only screen and (min-device-width: 280px) and (max-device-width: 653px) {
+    .highlighted-section__content__profile-picture {
+      float: none;
+      width: 100px;
+    }
     .highlighted-section__content ul li {
       font-size: 14px;
     }
