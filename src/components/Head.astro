@@ -50,9 +50,10 @@ const baseURL = "https://ayo.ayco.io";
   {
     title !== defaultTitle ? (
       <script>
-        const title = document.title; if(title){" "}
-        {
-          (document.title = `${title} | Ayo Ayco | Software Engineer, Web Developer, Consultant`)
+        const title = document.title; 
+        const defaultTitle = "Ayo Ayco | Software Engineer, Web Developer, Consultant"
+        if(title) {
+          (document.title = `${title} | ${defaultTitle}`)
         }
       </script>
     ) : (
