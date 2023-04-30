@@ -1,11 +1,12 @@
 ---
 export interface Props {
   url: string;
+  text?: string;
 }
-const { url } = Astro.props;
+const { text = "Back", url } = Astro.props;
 ---
 
-<nav><a class="back-link" href={url}>&larr; Back</a></nav>
+<nav><a class="back-link" href={url}>&larr; {text}</a></nav>
 
 <style>
   nav {
