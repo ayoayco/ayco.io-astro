@@ -3,7 +3,6 @@ import Icon from "astro-icon";
 export type Link = {
   url: string;
   icon: string;
-  newTab?: boolean;
 };
 
 export interface Props {
@@ -19,7 +18,7 @@ const { links } = Astro.props;
         links
           .filter((link) => link.url !== "")
           .map((link) => (
-            <a href={link.url} target={link.newTab ? "_blank" : null}>
+            <a href={link.url}>
               <Icon pack="mdi" name={link.icon} /> {link.icon}
             </a>
           ))
