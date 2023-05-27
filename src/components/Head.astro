@@ -31,6 +31,7 @@ const baseURL = "https://ayo.ayco.io";
   <meta property="og:description" content={description} />
   <meta property="og:image" content="/ayo.png" />
 
+  <link rel="me" href="https://ayos.blog" />
   <link rel="me" href="https://social.ayco.io/@ayo" />
   <link rel="me" href="https://mastodon.ph/@ayo" />
   <link rel="me" href="https://shrediverse.net/@ayo" />
@@ -40,7 +41,7 @@ const baseURL = "https://ayo.ayco.io";
   <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
 
   {
-    title !== defaultTitle ? (
+    title !== defaultTitle && (
       <script>
         const title = document.title; 
         const defaultTitle = "Ayo Ayco | Software Engineer, Web Developer, Consultant"
@@ -48,8 +49,6 @@ const baseURL = "https://ayo.ayco.io";
           (document.title = `${title} | ${defaultTitle}`)
         }
       </script>
-    ) : (
-      <meta />
     )
   }
 </head>
