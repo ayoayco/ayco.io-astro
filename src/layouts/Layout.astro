@@ -1,4 +1,5 @@
 ---
+import "./reset.css";
 import Head from "../components/Head.astro";
 import Nav from "../components/Nav.astro";
 import type { Link } from "../components/Nav.astro";
@@ -9,10 +10,6 @@ export interface Props {
 
 const { title, description } = Astro.props;
 const links: Link[] = [
-  {
-    url: "/",
-    icon: "home",
-  },
   {
     url: "https://ayos.blog",
     icon: "blog",

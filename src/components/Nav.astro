@@ -6,6 +6,8 @@ export type Link = {
   newTab?: boolean;
 };
 
+const url = Astro.url.pathname.toString();
+
 export interface Props {
   links: Array<Link>;
 }
@@ -13,43 +15,57 @@ export interface Props {
 const { links } = Astro.props;
 ---
 
-<nav>
-  <div id="wrapper">
-    {
-      links
-        .filter((link) => link.url !== "")
-        .map((link) => (
-          <a
-            href={link.url}
-            target={link.newTab ? "_blank" : null}
-            title={link.icon}
-          >
-            <Icon pack="mdi" name={link.icon} />
-          </a>
-        ))
-    }
-  </div>
-</nav>
+<div class="nav-wrapper">
+  <nav>
+    <div id="left-wrapper">
+      {
+        (url !== "/") &&
+        (<a href="/"><Icon pack="mdi" name="home" />Home</a>)
+      }
+    </div>
+    <div id="right-wrapper">
+      {
+        links
+          .filter((link) => link.url !== "")
+          .map((link) => (
+            <a href={link.url} target={link.newTab ? "_blank" : null}>
+              <Icon pack="mdi" name={link.icon} /> {link.icon}
+            </a>
+          ))
+      }
+    </div>
+  </nav>
+</div>
 
 <style>
-  nav {
-    width: 100%;
+  div.nav-wrapper {
     background: var(--ayo-gradient);
   }
-  nav a {
-    text-decoration: none;
+  nav {
+    display: flex;
+    width: var(--content-width);
+    margin: 0 auto;
   }
-  nav a:hover svg {
+  nav a {
+    display: inline-block;
+    text-decoration: underline;
+    font-weight: normal;
+    color: var(--color-bg);
+    padding: 5px;
+  }
+  nav a:hover {
     color: var(--color-brand-complement);
   }
+
   nav a svg {
-    color: var(--color-bg);
-    width: 1rem;
-    padding: 1rem;
+    width: 0.75rem;
   }
-  #wrapper {
-    max-width: var(--content-width);
-    margin: 0 auto;
+
+  #left-wrapper,
+  #right-wrapper {
+    flex: 1;
+  }
+  #right-wrapper {
     text-align: right;
   }
 </style>
