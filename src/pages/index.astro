@@ -84,7 +84,7 @@ import Footer from "../components/Footer.astro";
     padding: 8px 4px;
     font-weight: normal;
     color: white;
-    font-size: small;
+    font-size: var(--font-size-sm);
     text-decoration: none;
   }
 
@@ -110,12 +110,11 @@ import Footer from "../components/Footer.astro";
 
   .highlighted-section__content {
     margin: auto;
-    padding: 1em;
+    padding: 0.5em 1em;
     max-width: var(--content-width);
     font-weight: normal;
-    font-size: large;
+    font-size: var(--font-size-lg);
     color: var(--color-bg);
-    line-height: 1.6;
   }
 
   .highlighted-section__content__profile-picture {
@@ -152,7 +151,7 @@ import Footer from "../components/Footer.astro";
   @media only screen and (max-device-width: 360px) {
     .now-wrapper {
       border: 0px;
-      font-size: x-small;
+      font-size: var(--font-size-sm);
       width: 100%;
 
       display: -webkit-box;
@@ -187,16 +186,17 @@ import Footer from "../components/Footer.astro";
   @media only screen and (min-device-width: 280px) and (max-device-width: 653px) {
     .highlighted-section__content__profile-picture {
       float: none;
+      margin: 0;
       width: 100px;
     }
     .highlighted-section__content ul li {
-      font-size: 14px;
+      font-size: var(--font-size-sm);
     }
   }
 
   @media only screen and (min-device-width: 360px) and (max-device-width: 812px) {
     .highlighted-section__content ul li {
-      font-size: 20px;
+      font-size: var(--font-size-base);
     }
   }
 </style>

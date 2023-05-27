@@ -6,8 +6,6 @@ export type Link = {
   newTab?: boolean;
 };
 
-const url = Astro.url.pathname.toString();
-
 export interface Props {
   links: Array<Link>;
 }
@@ -15,15 +13,8 @@ export interface Props {
 const { links } = Astro.props;
 ---
 
-<div class="nav-wrapper">
   <nav>
-    <div id="left-wrapper">
-      {
-        (url !== "/") &&
-        (<a href="/"><Icon pack="mdi" name="home" />Home</a>)
-      }
-    </div>
-    <div id="right-wrapper">
+    <div id="wrapper">
       {
         links
           .filter((link) => link.url !== "")
@@ -35,37 +26,32 @@ const { links } = Astro.props;
       }
     </div>
   </nav>
-</div>
 
 <style>
-  div.nav-wrapper {
-    background: var(--ayo-gradient);
-  }
   nav {
+    background: var(--ayo-gradient);
     display: flex;
-    width: var(--content-width);
     margin: 0 auto;
   }
   nav a {
     display: inline-block;
     text-decoration: underline;
-    font-weight: normal;
     color: var(--color-bg);
-    padding: 5px;
+    padding: 0.5em 1em;
+    font-size: var(--font-size-sm);
   }
   nav a:hover {
     color: var(--color-brand-complement);
   }
 
   nav a svg {
-    width: 0.75rem;
+    width: 1.5rem;
   }
 
-  #left-wrapper,
-  #right-wrapper {
+  #wrapper {
     flex: 1;
-  }
-  #right-wrapper {
+    max-width: var(--content-width);
+    margin: 0 auto;
     text-align: right;
   }
 </style>

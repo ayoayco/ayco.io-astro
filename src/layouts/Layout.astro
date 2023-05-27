@@ -11,6 +11,10 @@ export interface Props {
 const { title, description } = Astro.props;
 const links: Link[] = [
   {
+    url: "/",
+    icon: "home",
+  },
+  {
     url: "https://ayos.blog",
     icon: "blog",
     newTab: true,
@@ -35,10 +39,10 @@ const links: Link[] = [
   <body>
     <Nav links={links} />
     <slot />
-
     <style>
       :root {
         --content-width: 700px;
+        --font-size-sm: clamp(0.75rem, 0.20vw + 0.66rem, 0.8rem);
         --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
         --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
         --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
@@ -105,6 +109,14 @@ const links: Link[] = [
         font-weight: 900;
         color: var(--color-link);
         border-radius: 0.4rem;
+      }
+
+      p,
+      img,
+      table,
+      ul {
+        margin: 1em 0;
+        font-size: var(--font-size-base);
       }
 
       .text-gradient {

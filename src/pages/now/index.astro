@@ -51,10 +51,6 @@ const posts = await Astro.glob("./and-then/posts/*.astro");
 </Layout>
 
 <style>
-  h1 {
-    margin: 2rem 0;
-  }
-
   main {
     margin: auto;
     padding: 1em;
@@ -74,7 +70,6 @@ const posts = await Astro.glob("./and-then/posts/*.astro");
   }
 
   .highlighted-content {
-    line-height: 1.6;
     margin: 1rem 0;
     background: #4f39fa;
     padding: 1rem;
@@ -83,7 +78,7 @@ const posts = await Astro.glob("./and-then/posts/*.astro");
   }
 
   .highlighted-content code {
-    font-size: 0.875em;
+    font-size: var(--font-size-base);
     border: 0.1em solid var(--color-border);
     border-radius: 4px;
     padding: 0.15em 0.25em;

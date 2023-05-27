@@ -38,12 +38,8 @@ import Footer from "../components/Footer.astro";
 </Layout>
 
 <style>
-  h1 {
-    margin: 2rem 0;
-  }
 
   .highlighted-content {
-    line-height: 1.6;
     margin: 1rem 0;
     background: #4f39fa;
     padding: 1rem;
@@ -52,7 +48,7 @@ import Footer from "../components/Footer.astro";
   }
 
   .highlighted-content code {
-    font-size: 0.875em;
+    font-size: var(--font-size-base);
     border: 0.1em solid var(--color-border);
     border-radius: 4px;
     padding: 0.15em 0.25em;
