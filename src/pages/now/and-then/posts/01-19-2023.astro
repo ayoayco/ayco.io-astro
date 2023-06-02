@@ -1,18 +1,15 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Footer from "../../components/Footer.astro";
-import Posts from "../../components/Posts.astro";
-
-const posts = await Astro.glob("./and-then/posts/*.astro");
+import Layout from "../../../../layouts/Layout.astro";
+import Footer from "../../../../components/Footer.astro";
+const title = "The Fediverse and Other Passion Projects";
+const description = "I have been living now in Amsterdam for a little over a year with my wife and son."
 ---
 
-<Layout title="Now" description="What is Ayo Ayco currently up to?">
+<Layout title={title} description={description}>
   <main>
-    <h1><span class="text-gradient">Now</span></h1>
-    <em>What am I currently up to?</em>
+    <h1><span class="text-gradient">The Fediverse and Other Passion Projects</span></h1>
     <p>
-      I have been living now in Amsterdam for a little over a year with my wife
-      and son.
+      I have been living now in Amsterdam for a little over a year with my wife and son.
     </p>
     <p>
       I am employed as a frontend web developer by <a
@@ -43,9 +40,6 @@ const posts = await Astro.glob("./and-then/posts/*.astro");
         >Kaboom!</a
       >
     </p>
-    <Posts posts={posts} title="Previously..." />
-    <hr />
-    <em><a href="https://nownownow.com/about">About now pages</a></em>
     <Footer />
   </main>
 </Layout>

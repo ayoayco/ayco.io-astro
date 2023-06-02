@@ -3,6 +3,7 @@ import Icon from "astro-icon";
 export type Link = {
   url: string;
   icon: string;
+  text?: string;
 };
 
 export interface Props {
@@ -26,7 +27,7 @@ if (Astro.url.pathname !== "/") {
           .filter((link) => link.url !== "")
           .map((link) => (
             <a href={link.url}>
-              <Icon pack="mdi" name={link.icon} /> {link.icon}
+              <Icon pack="mdi" name={link.icon} /> {link.text ?? link.icon}
             </a>
           ))
       }

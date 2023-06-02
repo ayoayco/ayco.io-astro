@@ -19,7 +19,7 @@ const links: Link[] = [
     icon: "mastodon",
   },
   {
-    url: "https://ayco.io/github",
+    url: "https://ayco.io/gh",
     icon: "github",
   },
 ];
@@ -56,15 +56,11 @@ const links: Link[] = [
         --ayo-gradient: linear-gradient(45deg, #3054bf, #416fff);
       }
 
-      html {
+      html, body, * {
         font-family: system-ui, sans-serif;
         font-size: var(--font-size-base);
         color: var(--color-text);
         background-color: var(--color-bg);
-      }
-
-      body {
-        margin: 0;
       }
 
       @keyframes pulse {
