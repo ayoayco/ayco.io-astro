@@ -2,6 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
+
+const response = await fetch('https://social.ayco.io/api/v1/accounts/109547735999980313')
+const {
+  avatar,
+  followers_count,
+  following_count,
+  note
+} =  await response.json();
 ---
 
 <Layout>
@@ -10,18 +18,17 @@ import Footer from "../components/Footer.astro";
       <img
         class="highlighted-section__content__profile-picture"
         alt="Ayo Ayco's picture"
-        src="/ayo.png"
+        src={avatar}
         width="150"
       />
       <div class="highlighted-section__content__text">
         <h1 title="Ayo Ayco | Software Engineer + Web Developer">
           <span class="heavy-text">Ayo</span>Ayco
         </h1>
+        <div class="highlighted__note" set:html={note} />
         <ul role="list">
-          <li>🧸 Creator of <a href="https://cozy-reader.netlify.app/">Cozy</a></li>
-          <li>🦌 Contributor to <a href="https://elk.zone">Elk</a></li>
-          <li>👨🏻‍💻 Software Extraordinaire</li>
-          <li>🕵🏻‍♂️ Frontend Detective</li>
+          <li><a href="https://social.ayco.io/@ayo/followers">{followers_count}</a> Followers</li>
+          <li><a href="https://social.ayco.io/@ayo/following">{following_count} </a>Following</li>
         </ul>
         <a href="/now" class="now-wrapper">
           <span class="now-label">Now</span>
@@ -191,5 +198,11 @@ import Footer from "../components/Footer.astro";
     .highlighted-section__content ul li {
       font-size: var(--font-size-base);
     }
+  }
+</style>
+
+<style is:inline>
+  .highlighted__note a {
+    color: white;
   }
 </style>
