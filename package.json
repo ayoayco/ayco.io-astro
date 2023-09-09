@@ -9,7 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "npm run build && scp -r dist ayo@ayco.io:~/ayco.io-astro"
+    "deploy": "npm run build && scp -prq dist/. ayo@ayco.io:~/ayco.io-astro/dist"
   },
   "dependencies": {
     "@astro-reactive/form": "^0.8.1",
