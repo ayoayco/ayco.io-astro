@@ -5,10 +5,12 @@ import Footer from "../components/Footer.astro";
 
 const response = await fetch('https://social.ayco.io/api/v1/accounts/109547735999980313')
 let {
+  display_name,
   avatar,
   note
 } =  await response.json();
 
+const [first_name, last_name] = display_name.split(' ')
 note = note.replace('<span class="">ayco.io/gh/', '<span class="">').replace('<span class="">ayco.io/sh/', '<span class="">')
 
 ---
@@ -24,7 +26,7 @@ note = note.replace('<span class="">ayco.io/gh/', '<span class="">').replace('<s
       />
       <div class="highlighted-section__content__text">
         <h1 title="Ayo Ayco | Software Engineer + Web Developer">
-          <span class="heavy-text">Ayo</span>Ayco
+          <span class="heavy-text">{first_name}</span>{last_name}
         </h1>
         <div class="highlighted__note" set:html={note} />
         <a href="/now" class="now-wrapper">
