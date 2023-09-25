@@ -6,34 +6,11 @@ import type { Link } from "../components/Nav.astro";
 export interface Props {
   title?: string;
   description?: string;
+  links?: Link[];
 }
 
-const { title, description } = Astro.props;
-const links: Link[] = [
-  {
-    url: "https://ayos.blog",
-    icon: "blog",
-  },
-  {
-    url: "https://ayco.io/@ayo",
-    icon: "mastodon",
-    text: "social"
-  },
-  {
-    url: "https://ayco.io/gh/",
-    icon: "github",
-  },
-  // {
-  //   url: "https://codepen.io/ayoayco-the-styleful",
-  //   icon: "codepen",
-  //   text: "pens"
-  // },
-  {
-    url: "https://www.npmjs.com/~aayco",
-    icon: "npm",
-    set: "gg"
-  }
-];
+const { links = [], title, description } = Astro.props;
+
 ---
 
 <!DOCTYPE html>
