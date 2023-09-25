@@ -1,11 +1,6 @@
 ---
-import Icon from "astro-icon";
-export type Link = {
-  url: string;
-  icon: string;
-  set?: string;
-  text?: string;
-};
+import Icon from "astro-iconify";
+import type { Link } from "../constants/links";
 
 export interface Props {
   links: Array<Link>;
@@ -14,26 +9,29 @@ export interface Props {
 let { links } = Astro.props;
 
 if (Astro.url.pathname !== "/") {
-  links = [{
-    url: "/",
-    icon: "home",
-  }].concat(links);
+  links = [
+    {
+      url: "/",
+      icon: "home",
+    },
+  ].concat(links);
 }
 ---
 
-  <nav>
-    <div id="wrapper">
-      {
-        links
-          .filter((link) => link.url !== "")
-          .map((link) => (
-            <a href={link.url}>
-              <Icon pack={link.set ?? "mdi"} name={link.icon} /> {link.text ?? link.icon}
-            </a>
-          ))
-      }
-    </div>
-  </nav>
+<nav>
+  <div id="wrapper">
+    {
+      links
+        .filter((link) => link.url !== "")
+        .map((link) => (
+          <a href={link.url}>
+            <Icon pack={link.set ?? "mdi"} name={link.icon} />{" "}
+            {link.text ?? link.icon}
+          </a>
+        ))
+    }
+  </div>
+</nav>
 
 <style>
   nav {
@@ -64,11 +62,11 @@ if (Astro.url.pathname !== "/") {
   }
 
   @media only screen and (max-device-width: 360px) {
-    #wrapper { text-align: center; }
+    #wrapper {
+      text-align: center;
+    }
     nav a {
       padding: 0.5em;
     }
   }
-
-
 </style>
