@@ -3,7 +3,7 @@ import Icon from "astro-iconify";
 import type { Link } from "../constants/links";
 
 export interface Props {
-  links: Array<Link>;
+  links: readonly Link[];
 }
 
 let { links } = Astro.props;
