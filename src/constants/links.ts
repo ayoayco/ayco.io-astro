@@ -6,7 +6,7 @@ export type Link = {
 };
 
 
-const links: Link[] = [
+const links: readonly Link[] = [
   {
     url: "https://ayos.blog",
     icon: "blog",
@@ -25,6 +25,6 @@ const links: Link[] = [
     icon: "npm",
     set: "gg"
   }
-];
+] as const;
 
 export default links;
