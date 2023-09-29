@@ -3,7 +3,7 @@ import Icon from "astro-iconify";
 import type { Link } from "../constants/links";
 
 export interface Props {
-  links: readonly Link[];
+  links: Link[];
 }
 
 let { links } = Astro.props;
@@ -16,6 +16,7 @@ if (Astro.url.pathname !== "/") {
     },
   ].concat(links);
 }
+
 ---
 
 <nav>
