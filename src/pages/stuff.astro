@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout
+  title="Stuff: Smaller Building Blocks"
+  description="See demos of side projects Ayo Ayco created"
+>
+  <main>
+    <h1 class="text-gradient">Stuff</h1>
+    <p>Because software is not just a huge pile of code, but a combination of reusable stuff...</p>
+    <ul>
+      <Card
+        newTab
+        href="https://ayco.io/n/web-component-base"
+        title="Web Component Base"
+        body="This provides a minimal vanilla JS base class that aims to reduce the complexity of creating reactive custom elements."
+      />
+      <Card
+        newTab
+        href="https://ayco.io/n/@ayco/astro-resume"
+        title="Astro Resume"
+        body="This facilitates the creation and usage of global, immutable data for Astro apps"
+      />
+    </ul>
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  ul {
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>

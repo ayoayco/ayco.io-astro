@@ -11,7 +11,8 @@ let { display_name, avatar, note } = await response.json();
 const [first_name, last_name] = display_name.split(" ");
 note = note
   .replace('<span class="">ayco.io/gh/', '<span class="">')
-  .replace('<span class="">ayco.io/sh/', '<span class="">');
+  .replace('<a href="https://ayco.io/stuff" target="_blank" rel="nofollow', '<a href="/stuff"')
+  .replace('<span class="">ayco.io/stuff', '<span class="">stuff')
 ---
 
 <Layout>
@@ -39,7 +40,7 @@ note = note
   </section>
   <main>
     <section class="cards-section">
-      <ul role="list" class="cards-section__grid">
+      <ul class="cards-section__grid">
         <Card
           href="/showcase"
           title="Fun Side Projects"
