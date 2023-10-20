@@ -21,21 +21,21 @@ export const stuff: {
     }
   },
   {
-    icon: '🚀',
+    icon: '🧸',
     text: 'Creator of',
     link: {
       url: 'https://cozy-reader.vercel.app',
       text: 'Cozy'
     }
   },
-  {
-    icon: '🧱',
-    text: '...and some',
-    link: {
-      url: '/stuff',
-      text: 'small stuff'
-    }
-  },
+//   {
+//     icon: '🧱',
+//     text: '...and some',
+//     link: {
+//       url: '/stuff',
+//       text: 'small stuff'
+//     }
+//   },
   {
     icon: '🦌',
     text: 'Contributor to',
