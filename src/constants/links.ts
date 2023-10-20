@@ -6,7 +6,7 @@ export type Link = {
 };
 
 
-const links: Link[] = [
+export const links: Link[] = [
   {
     url: "https://ayos.blog",
     icon: "blog",

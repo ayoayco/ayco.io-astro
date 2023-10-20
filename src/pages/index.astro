@@ -2,17 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
-
-const response = await fetch(
-  "https://social.ayco.io/api/v1/accounts/109547735999980313"
-);
-let { display_name, avatar, note } = await response.json();
-
-const [first_name, last_name] = display_name.split(" ");
-note = note
-  .replace('<span class="">ayco.io/gh/', '<span class="">')
-  .replace('<a href="https://ayco.io/stuff" target="_blank" rel="nofollow', '<a href="/stuff"')
-  .replace('<span class="">ayco.io/stuff', '<span class="">stuff')
+import { stuff } from '../constants/stuff';
 ---
 
 <Layout>
@@ -21,14 +11,24 @@ note = note
       <img
         class="highlighted-section__content__profile-picture"
         alt="Ayo Ayco's picture"
-        src={avatar}
+        src='/ayo.png'
         width="150"
       />
       <div class="highlighted-section__content__text">
         <h1 title="Ayo Ayco | Software Engineer + Web Developer">
-          <span class="heavy-text">{first_name}</span>{last_name}
+          <span class="heavy-text">Ayo</span>Ayco
         </h1>
-        <div class="highlighted__note" set:html={note} />
+        <ul>
+          {
+            stuff.map(({ icon, text, link }) => (
+              <li style="display:flex;gap:0.25em">
+                <span class="icon">{icon}</span>
+                <span class="text">{text}</span>
+                {link && <a href={link.url}>{link.text}</a>}
+              </li>
+            ))
+          }
+        </ul>
         <a href="/now" class="now-wrapper">
           <span class="now-label">Now</span>
           <span class="status"
@@ -88,6 +88,7 @@ note = note
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
     padding: 4px 8px;
+    margin-right: 0.25em;
     text-transform: uppercase;
     font-weight: bold;
   }
@@ -146,6 +147,7 @@ note = note
   @media only screen and (max-device-width: 360px) {
     .now-wrapper {
       border: 0px;
+      border-radius: 0;
       font-size: var(--font-size-sm);
       width: 100%;
 
@@ -156,20 +158,18 @@ note = note
       padding: 0;
       margin: 0;
     }
+
     .now-label {
-      background-color: transparent;
-      color: white;
+      display:none
+    }
+
+    .status::before {
+      content: 'Now: '
+    }
+
+    .status {
       text-decoration: underline;
-      padding: 0;
-      margin: 0;
-    }
-
-    .now-label::before {
-      content: "* ";
-    }
-
-    .now-label::after {
-      content: ":";
+      cursor: pointer;
     }
 
     .highlighted-section__content__profile-picture {
@@ -199,15 +199,5 @@ note = note
     .highlighted-section__content ul li {
       font-size: var(--font-size-base);
     }
-  }
-</style>
-
-<style is:inline>
-  .invisible {
-    display: none;
-  }
-  .highlighted__note a {
-    color: white;
-    font-weight: normal;
   }
 </style>
