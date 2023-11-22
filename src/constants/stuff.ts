@@ -4,14 +4,14 @@ export const stuff: {
   text: string;
   link?: {url: string, text: string};
 }[] = [
-  {
-    icon: '🧐',
-    text: 'Software Extraordinaire'
-  },
-  {
-    icon: '🕵🏻‍♂️',
-    text: 'Frontend Detective'
-  },
+  // {
+  //   icon: '🧐',
+  //   text: 'Software Extraordinaire'
+  // },
+  // {
+  //   icon: '🕵🏻‍♂️',
+  //   text: 'Frontend Detective'
+  // },
   {
     icon: '😱',
     text: 'Building',
@@ -26,6 +26,14 @@ export const stuff: {
     link: {
       url: 'https://cozy-reader.vercel.app',
       text: 'Cozy'
+    }
+  },
+  {
+    icon: '🧱',
+    text: 'Creator of',
+    link: {
+      url: 'https://WebComponent.io',
+      text: 'WebComponent.io'
     }
   },
 //   {
