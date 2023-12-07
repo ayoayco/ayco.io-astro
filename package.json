@@ -12,10 +12,10 @@
     "deploy": "astro build && scp -r dist/. ayo@ayco.io:~/ayco.io-astro/dist"
   },
   "dependencies": {
-    "@astro-reactive/form": "^0.9.0",
-    "@astro-reactive/validator": "^0.4.0",
-    "astro": "^3.1.4",
-    "astro-github-stats": "^0.6.0",
+    "@astro-reactive/form": "^0.10.0",
+    "@astro-reactive/validator": "^0.5.0",
+    "astro": "^4.0.3",
+    "astro-github-stats": "^0.7.0",
     "astro-iconify": "^1.2.0"
   }
 }
