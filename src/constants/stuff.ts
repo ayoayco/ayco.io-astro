@@ -16,7 +16,7 @@ export const stuff: {
     icon: '😱',
     text: 'Building',
     link: {
-      url: 'https://mc-fly.vercel.app',
+      url: 'https://ayco.io/gh/mcfly#readme',
       text: 'McFly'
     }
   },
@@ -24,7 +24,7 @@ export const stuff: {
     icon: '🧸',
     text: 'Creator of',
     link: {
-      url: 'https://cozy-reader.vercel.app',
+      url: 'https://ayco.io/gh/cozy#readme',
       text: 'Cozy'
     }
   },
@@ -32,7 +32,7 @@ export const stuff: {
     icon: '🧱',
     text: 'Creator of',
     link: {
-      url: 'https://WebComponent.io',
+      url: 'https://ayco.io/gh/web-component-base#readme',
       text: 'WebComponent.io'
     }
   },
