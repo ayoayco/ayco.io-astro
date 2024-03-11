@@ -16,7 +16,7 @@ export const stuff: {
     icon: '😱',
     text: 'Building',
     link: {
-      url: 'https://ayco.io/gh/mcfly#readme',
+      url: 'https://mcfly.js.org',
       text: 'McFly'
     }
   },
