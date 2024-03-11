@@ -32,7 +32,7 @@ export const stuff: {
     icon: '🧱',
     text: 'Creator of',
     link: {
-      url: 'https://ayco.io/gh/web-component-base#readme',
+      url: 'https://webcomponent.io',
       text: 'WebComponent.io'
     }
   },
