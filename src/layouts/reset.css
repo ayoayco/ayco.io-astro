@@ -23,6 +23,7 @@ THANKS TO JOSH COMEAU FOR HIS CUSTOM CSS RESET
 html,
 body {
   height: 100%;
+  background: #fff;
 }
 /*
     Typographic tweaks!

@@ -9,10 +9,9 @@ export interface Props {
 }
 
 const { title, description } = Astro.props;
-
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <Head title={title} description={description} />
 
@@ -22,15 +21,13 @@ const { title, description } = Astro.props;
     <style>
       :root {
         --content-width: 700px;
-        --font-size-sm: clamp(0.75rem, 0.20vw + 0.66rem, 0.8rem);
+        --font-size-sm: clamp(0.75rem, 0.2vw + 0.66rem, 0.8rem);
         --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
         --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
         --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
 
-        --color-text: hsl(12, 5%, 4%);
-        --color-bg: hsl(10, 21%, 95%);
         --color-border: hsl(17, 24%, 90%);
-        --color-link: var(--color-brand-blue-2);
+        --color-link: var(--color-brand-blue-3);
 
         --color-brand-blue-1: #3054bf;
         --color-brand-blue-2: #203880;
@@ -41,13 +38,29 @@ const { title, description } = Astro.props;
         --color-brand-complement: orange;
 
         --ayo-gradient: linear-gradient(45deg, #3054bf, #416fff);
+        --text-color-dark: black;
+        --text-color-light: #f8f9fa;
+
+        --bg-dark: #343a40;
+        --bg-darker: #212529;
+        --bg-darkest: #000;
       }
 
-      html, body, * {
+      html,
+      body,
+      * {
         font-family: system-ui, sans-serif;
         font-size: var(--font-size-base);
-        color: var(--color-text);
-        background-color: var(--color-bg);
+        color: var(--text-color-dark);
+        background-color: var(--text-color-light);
+      }
+      @media (prefers-color-scheme: dark) {
+        html,
+        body,
+        * {
+          background: var(--bg-darker);
+          color: var(--text-color-light);
+        }
       }
 
       @keyframes pulse {
@@ -77,13 +90,15 @@ const { title, description } = Astro.props;
       }
 
       code {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-      }
-
-      a {
-        font-weight: bold;
-        color: var(--color-link);
+        font-family:
+          Menlo,
+          Monaco,
+          Lucida Console,
+          Liberation Mono,
+          DejaVu Sans Mono,
+          Bitstream Vera Sans Mono,
+          Courier New,
+          monospace;
       }
 
       p,
@@ -104,6 +119,16 @@ const { title, description } = Astro.props;
         background-size: 100% 200%;
         background-position-y: 100%;
         border-radius: 0.4rem;
+      }
+
+      a {
+        font-weight: bold;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        a {
+          color: var(--color-brand-complement);
+        }
       }
     </style>
   </body>

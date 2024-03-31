@@ -17,7 +17,7 @@ export const links: Link[] = [
     text: "social"
   },
   {
-    url: "https://metapixl.com/@ayo",
+    url: "https://metapixl.com/i/portfolio/ayo",
     icon: "image",
     text: "photos"
   },
