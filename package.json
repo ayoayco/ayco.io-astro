@@ -1,5 +1,5 @@
 {
-  "name": "@example/basics",
+  "name": "@ayco/personal-website",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -8,13 +8,14 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "astro build && scp -r dist/. ayo@ayco.io:~/ayco.io-astro/dist"
   },
   "dependencies": {
-    "@astro-reactive/form": "^0.8.1",
-    "@astro-reactive/validator": "^0.3.4",
-    "astro": "^2.5.5",
-    "astro-github-stats": "^0.5.0",
-    "astro-icon": "^0.8.0"
+    "@astro-reactive/form": "^0.10.0",
+    "@astro-reactive/validator": "^0.5.0",
+    "astro": "^4.0.3",
+    "astro-github-stats": "^0.7.0",
+    "astro-iconify": "^1.2.0"
   }
 }

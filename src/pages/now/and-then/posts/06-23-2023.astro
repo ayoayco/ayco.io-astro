@@ -1,0 +1,66 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Footer from "../../../../components/Footer.astro";
+const title = "Building a Cozy Web without borders...";
+const description = "A project that aims to be a modern-day reading assistant"
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <h1><span class="text-gradient">{title}</span></h1>
+    <p>
+      Recently started a new project that aims to be a modern-day reading assistant, called <a href="https://ayco.io/gh/cozy">Cozy 🧸</a>.
+    </p>
+    <p>
+      The full motivation as of the moment, I've written on <a href="https://ayos.blog/building-a-cozy-web/">my blog</a>. 
+    </p>
+    <p>
+      Also started exploring ways to interact on the web without being confined on a centralized solution that big tech companies have lured us into.
+    </p>
+    <p>
+      I mean protocols that allow websites and people to exchange messages with each other without borders, like <a href="https://www.w3.org/TR/webmention/">webmention</a>, <a href="https://www.w3.org/TR/activitypub/">activitypub</a>, and the likes.
+    </p>
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--ayo-gradient);
+    animation: pulse 4s ease-in-out infinite;
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .highlighted-content {
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .highlighted-content code {
+    font-size: var(--font-size-base);
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>

@@ -11,10 +11,15 @@ import Card from "../components/Card.astro";
   <main>
     <h1>Fun <span class="text-gradient">Side Projects</span></h1>
     <p>See more of my previous projects at <a href="https://ayos.blog/projects">my blog</a>.</p>
-    <ul role="list">
+    <ul>
+      <Card
+        href="/stuff"
+        title="Small Stuff 🧱"
+        body="Building blocks for projects"
+      />
       <Card
         newTab
-        href="https://cozy-reader.netlify.app"
+        href="https://ayco.io/gh/cozy#readme"
         title="Cozy 🧸"
         body="Your modern-day reading assistant"
       />
@@ -22,22 +27,22 @@ import Card from "../components/Card.astro";
         newTab
         href="https://kaboom.ayco.io"
         title="Kaboom!"
-        body="A simple physics simulation with Matter.js 👨🏻‍🔬"
+        body="Simple physics simulation with Matter.js 👨🏻‍🔬"
       />
       <Card
         newTab
         href="https://mnswpr.com"
         title="Minesweeper"
-        body="Recreated the classic game that Microsoft discontinued 💣"
+        body="Recreated the classic game for the web 💣"
       />
       <Card
         href="/showcase/astro-reactive-form"
-        title="Astro Reactive Form"
+        title="Reactive Form"
         body="The reactive form component for Astro 🔥"
       />
       <Card
         href="/showcase/astro-github-stats"
-        title="Astro GitHub Stats"
+        title="GitHub Stats"
         body="Embed GitHub stats on your Astro page ✨"
       />
     </ul>

@@ -31,6 +31,7 @@ body {
   */
 body {
   line-height: 1.5;
+  letter-spacing: 0.25px;
   -webkit-font-smoothing: antialiased;
 }
 /*
