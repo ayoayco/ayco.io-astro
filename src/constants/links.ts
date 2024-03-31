@@ -17,6 +17,11 @@ export const links: Link[] = [
     text: "social"
   },
   {
+    url: "https://metapixl.com/@ayo",
+    icon: "image",
+    text: "photos"
+  },
+  {
     url: "https://www.npmjs.com/~aayco",
     icon: "npm",
     set: "gg"
