@@ -17,10 +17,6 @@ export const links: Link[] = [
     text: "social"
   },
   {
-    url: "https://ayco.io/gh/",
-    icon: "github",
-  },
-  {
     url: "https://www.npmjs.com/~aayco",
     icon: "npm",
     set: "gg"
