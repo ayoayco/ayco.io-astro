@@ -14,6 +14,7 @@
   "dependencies": {
     "@astro-reactive/form": "^0.10.0",
     "@astro-reactive/validator": "^0.5.0",
+    "@astrojs/sitemap": "^3.1.2",
     "astro": "^4.0.3",
     "astro-github-stats": "^0.7.0",
     "astro-iconify": "^1.2.0"
