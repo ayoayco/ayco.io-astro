@@ -4,8 +4,8 @@ import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
 import { stuff } from '../constants/stuff';
 
-const isDev = import.meta.env.DEV;
-const getOriginUrl = (path: string) => isDev ? `http://localhost:5000/${path}` : path;
+// const isDev = import.meta.env.DEV;
+// const getOriginUrl = (path: string) => isDev ? `http://localhost:5000/${path}` : path;
 ---
 
 <Layout>
@@ -58,7 +58,7 @@ const getOriginUrl = (path: string) => isDev ? `http://localhost:5000/${path}` :
         />
       </ul>
       <Footer />
-      <iframe style="width:100%" loading="lazy" src={getOriginUrl('p/feed')}></iframe>
+      <!-- iframe style="width:100%" loading="lazy" src={getOriginUrl('p/feed')}></iframe -->
     </section>
   </main>
 </Layout>
