@@ -1,0 +1,63 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Footer from "../../../../components/Footer.astro";
+
+const title = "Certified Software Architecture Professional";
+const description = "I am now a Certified Professional for Software Architecture (CPSA-F®)";
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <h1><span class="text-gradient">{title}</span></h1>
+    <!--em>What am I currently up to? Updated on the 9th of September, 2024</em-->
+    <em>Updated on the 9th of September, 2023</em>
+
+    <p>🎉 Thrilled to share I am now a Certified Professional for Software Architecture (CPSA-F®) after having completed and passed the <a href="https://www.isaqb.org/" target="_blank">iSAQB® – International Software Architecture Qualification Board</a>'s intensive training and examination.</p>
+
+    <p>This means I have the necessary basis for facilitating / participating in architectural design activities for software development.</p>
+    
+    <p>Having a consistent language in Software Architecture is beneficial when communicating with stakeholders and clarifying consistent patterns and principles that guide the development of software products.</p>
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--ayo-gradient);
+    animation: pulse 4s ease-in-out infinite;
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .highlighted-content {
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .highlighted-content code {
+    font-size: var(--font-size-base);
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
