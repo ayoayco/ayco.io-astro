@@ -13,6 +13,7 @@ const postUrls: string[] = posts.map((post) => post.url || "");
 <ul>
   {
     postUrls
+      .reverse()
       .filter((url) => url !== "")
       .map((url) => (
         <li>
