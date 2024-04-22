@@ -14,7 +14,7 @@ export const stuff: {
   // },
   {
     icon: '😱',
-    text: 'Creator of',
+    text: 'Experimenting with',
     link: {
       url: 'https://mcfly.js.org',
       text: 'McFly'
