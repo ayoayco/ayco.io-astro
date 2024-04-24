@@ -11,11 +11,13 @@ export const links: Link[] = [
     url: "https://ayos.blog",
     icon: "blog",
   },
+  /*
   {
     url: "https://ayco.io/@ayo",
     icon: "mastodon",
     text: "social"
   },
+  */
   {
     url: "/threads",
     text: "threads",
@@ -27,13 +29,11 @@ export const links: Link[] = [
     icon: "image",
     text: "photos"
   },
-  /*
   {
     url: "https://www.npmjs.com/~aayco",
     icon: "npm",
     set: "gg"
   }
-  */
 ];
 
 export default links;
