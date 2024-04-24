@@ -17,15 +17,23 @@ export const links: Link[] = [
     text: "social"
   },
   {
+    url: "/threads",
+    text: "threads",
+    icon: "needle-thread",
+    set: "tabler"
+  },
+  {
     url: "https://metapixl.com/i/portfolio/ayo",
     icon: "image",
     text: "photos"
   },
+  /*
   {
     url: "https://www.npmjs.com/~aayco",
     icon: "npm",
     set: "gg"
   }
+  */
 ];
 
 export default links;
