@@ -48,7 +48,7 @@ export const stuff: {
     icon: '🦌',
     text: 'Contributor to',
     link: {
-      url: 'https://github.com/ayoayco/ayoayco/blob/main/elk.md',
+      url: 'https://github.com/ayoayco/ayoayco/blob/main/elk.md#elk-contributions',
       text: 'Elk.zone'
     }
   }
