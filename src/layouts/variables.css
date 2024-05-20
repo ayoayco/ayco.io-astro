@@ -1,0 +1,28 @@
+:root {
+	--content-width: 700px;
+	--font-size-sm: clamp(0.75rem, 0.2vw + 0.66rem, 0.8rem);
+	--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+	--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+	--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+
+	--color-border: hsl(17, 24%, 90%);
+	--color-link: var(--color-brand-blue-5);
+
+	--color-brand-blue-1: #3054bf;
+	--color-brand-blue-2: #203880;
+	--color-brand-blue-3: #416fff;
+	--color-brand-blue-4: #101c40;
+	--color-brand-blue-5: #3964e6;
+
+	--color-brand-complement: orange;
+
+	--ayo-gradient: linear-gradient(45deg, #3054bf, #416fff);
+	--text-color-dark: #232323;
+	--text-color-dark-faded: #555;
+	--text-color-light: #f8f9fa;
+	--text-color-light-faded: #999;
+
+	--bg-dark: #343a40;
+	--bg-darker: #212529;
+	--bg-darkest: #000;
+}
