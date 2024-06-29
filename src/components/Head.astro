@@ -6,7 +6,7 @@ export interface Props {
 const defaultDescription =
   "Professional software engineer specializing in web development with a decade of experience building web applications for both private businesses and government-funded high-impact projects utilizing web technologies, IoT, data viz/insights, remote sensing, and GIS";
 
-const defaultTitle = "Ayo Ayco | Software Engineer, Web Developer, Consultant";
+const defaultTitle = "Ayo Ayco | Engineering Leader, Software Engineer, Web Developer";
 
 let { title = defaultTitle, description = defaultDescription } = Astro.props;
 
@@ -45,7 +45,7 @@ const baseURL = "https://ayo.ayco.io";
     title !== defaultTitle && (
       <script>
         const title = document.title; 
-        const defaultTitle = "Ayo Ayco | Software Engineer, Web Developer, Consultant"
+        const defaultTitle = "Ayo Ayco | Engineering Leader, Software Engineer, Web Developer"
         if(title) {
           (document.title = `${title} | ${defaultTitle}`)
         }
