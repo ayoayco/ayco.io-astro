@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Posts from "../components/Posts.astro";
+
+const posts = await Astro.glob("./now/and-then/posts/*.astro");
+const page = {
+  title: 'New Page',
+  description: 'A template for a new page'
+}
+---
+
+<Layout title={{page.title}} description={{page.description}}>
+  <main>
+    <h1><span class="text-gradient">{{page.title}}</span></h1>
+    <p>
+      <em>Published on the <time datetime="2024-06-17">17th of June, 2024</time></em>
+    </p>
+
+    <p>{{page.description}}</p>
+
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--ayo-gradient);
+    animation: pulse 4s ease-in-out infinite;
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .highlighted-content {
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .highlighted-content code {
+    font-size: var(--font-size-base);
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
