@@ -1,12 +1,12 @@
 ---
 const year = new Date().getFullYear();
-const links = [
+const leftLinks = [
   {
-    text: 'Blog',
+    text: 'Ayo\'s Blog',
     url: 'https://ayos.blog'
   },
   {
-    text: 'Social',
+    text: 'Ayco Social',
     url: 'https://social.ayco.io'
   },
   {
@@ -17,6 +17,9 @@ const links = [
     text: 'SourceHut',
     url: 'https://sr.ht/~ayoayco'
   },
+]
+
+const rightLinks = [
   {
     text: 'LinkedIn',
     url: 'https://www.linkedin.com/in/ayoayco'
@@ -38,7 +41,7 @@ const links = [
     url: 'https://instagram.com/ayoayco'
   },
   {
-    text: 'Social Alt (Web Tools)',
+    text: 'Web Tools',
     url: 'https://m.webtoo.ls/@ayo'
   },
 ]
@@ -46,13 +49,13 @@ const links = [
 
 <footer>
   <div class="left-section">
+    <p><strong>Elsewhere:</strong></p>
     {
-      links.map((linkObj) => <p><a href={linkObj.url}>{linkObj.text}</a></p>)
+      rightLinks.map((linkObj) => <p><a href={linkObj.url}>{linkObj.text}</a></p>)
     }
-
   </div>
   <div class="right-section">
-    <p>&#169; 2022-{year} <strong>Ayo Ayco</strong></p>
+    <p>&#169; 2022-{year} <a href="/">Ayo Ayco</a></p>
     <p>
       This website <a href="https://ayos.blog/stopped-tracking-on-my-sites"
         >does not track users</a>
@@ -60,20 +63,28 @@ const links = [
     <p>
       See the <a href="https://sr.ht/~ayoayco/personal-site">source code</a>
     </p>
+    {
+      leftLinks.map((linkObj) => <p><a href={linkObj.url}>{linkObj.text}</a></p>)
+    }
   </div>
 </footer>
 
 <style>
   footer {
     margin-top: 1em;
-    text-align: right;
+    grid-template-columns: auto auto;
     display: grid;
     gap: 1rem;
     padding: 0;
+
+    & .right-section {
+      text-align: right;
+    }
   }
 
   footer p {
     font-size: var(--font-size-sm);
     margin: 0;
   }
+
 </style>
