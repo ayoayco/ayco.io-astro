@@ -29,10 +29,15 @@ export const links: Link[] = [
     icon: "image",
     text: "photos"
   },
+  // {
+  //   url: "https://www.npmjs.com/~aayco",
+  //   icon: "npm",
+  //   set: "gg"
+  // }
   {
-    url: "https://www.npmjs.com/~aayco",
-    icon: "npm",
-    set: "gg"
+    url: "https://soundcloud.com/ayoayco",
+    icon: "soundcloud",
+    text: "music"
   }
 ];
 
