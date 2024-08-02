@@ -49,17 +49,17 @@ const rightLinks = [
 
 <footer>
   <div class="left-section">
-    <p><strong>Elsewhere:</strong></p>
+    <p><strong>Elsewhere</strong></p>
     {
       rightLinks.map((linkObj) => <p><a href={linkObj.url}>{linkObj.text}</a></p>)
     }
   </div>
   <div class="right-section">
-    <p>&#169; 2022-{year} <a href="/">Ayo Ayco</a></p>
     <p>
       This website <a href="https://ayos.blog/stopped-tracking-on-my-sites"
         >does not track users</a>
     </p>
+    <p>&#169; 2022-{year} <a href="/">Ayo Ayco</a></p>
     <p>
       See the <a href="https://sr.ht/~ayoayco/personal-site">source code</a>
     </p>
