@@ -13,9 +13,28 @@ import Card from "../components/Card.astro";
     <p>See more of my previous projects at <a href="https://ayos.blog/projects">my blog</a>.</p>
     <ul>
       <Card
-        href="/stuff"
-        title="Small Stuff 🧱"
-        body="Building blocks for projects"
+        newTab
+        href="https://www.npmjs.com/package/@ayco/astro-sw"
+        title="Astro SW"
+        body="Astro integration to use your own authored service worker"
+      />
+      <Card
+        newTab
+        href="https://www.npmjs.com/package/web-component-base"
+        title="Web Component Base"
+        body="This provides a minimal vanilla JS base class that aims to reduce the complexity of creating reactive custom elements."
+      />
+      <Card
+        newTab
+        href="https://www.npmjs.com/package/@ayco/astro-resume"
+        title="Astro Resume"
+        body="Utilities for serializing data from server for use in the client with types preserved across components."
+      />
+      <Card
+        newTab
+        href="https://www.npmjs.com/package/generate-timezone-json"
+        title="Time Zone JSON Generator"
+        body="Generate a JSON file containing time zones from the official IANA Database or your own zone.tab file"
       />
       <Card
         newTab
