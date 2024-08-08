@@ -7,7 +7,7 @@ export default defineConfig({
   site: 'https://ayo.ayco.io',
   integrations: [sitemap(
     {
-      customPages: ['https://ayo.ayco.io/threads']
+      customPages: ['https://ayo.ayco.io/threads/']
     }
   )]
 });
