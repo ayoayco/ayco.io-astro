@@ -7,13 +7,13 @@ const cacheName = `${__prefix ?? 'app'}-v${__version ?? '000'}`
 
 const addResourcesToCache = async (resources) => {
     const cache = await caches.open(cacheName);
-    console.log('[cozy-sw]: adding resources to cache...', resources)
-    await cache.addAll(resources);
+    console.log('[personal-sw]: adding resources to cache...', resources)
+    await cache.addAll(new Set([...resources]));
 };
 
 const putInCache = async (request, response) => {
     const cache = await caches.open(cacheName);
-    console.log('[cozy-sw]: adding one response to cache...', request.url)
+    console.log('[personal-sw]: adding one response to cache...', request.url)
     // if exists, replace
 
     const keys = await cache.keys();
@@ -35,21 +35,21 @@ const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl
         // get network response for revalidation of stale assets
         const responseFromNetwork = await fetch(request.clone());
         if (responseFromNetwork) {
-            console.info('[cozy-sw]: fetched updated assets', responseFromNetwork.url);
+            console.info('[personal-sw]: fetched updated assets', responseFromNetwork.url);
             putInCache(request, responseFromNetwork.clone());
         }
 
         if (responseFromCache) {
-            console.info('[cozy-sw]: using cached response', responseFromCache.url);
+            console.info('[personal-sw]: using cached response', responseFromCache.url);
             return responseFromCache;
         } else{
-            console.info('[cozy-sw]: using network response', responseFromNetwork.url);
+            console.info('[personal-sw]: using network response', responseFromNetwork.url);
             return responseFromNetwork;
         }
     } catch(error) {
-        console.info('[cozy-sw]: failed to fetch updated assets', request.url);
+        console.info('[personal-sw]: failed to fetch updated assets', request.url);
         if (responseFromCache) {
-            console.info('[cozy-sw]: using cached response', responseFromCache.url);
+            console.info('[personal-sw]: using cached response', responseFromCache.url);
             return responseFromCache;
         }
     }
@@ -63,7 +63,7 @@ const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl
     const preloadResponse = await preloadResponsePromise;
     if (preloadResponse) {
         putInCache(request, preloadResponse.clone());
-        console.info('[cozy-sw]: using preload response', preloadResponse.url);
+        console.info('[personal-sw]: using preload response', preloadResponse.url);
         return preloadResponse;
     }
 
@@ -74,7 +74,7 @@ const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl
         // we need to save clone to put one copy in cache
         // and serve second one
         putInCache(request, responseFromNetwork.clone());
-        console.info('[cozy-sw]: using network response', responseFromNetwork.url);
+        console.info('[personal-sw]: using network response', responseFromNetwork.url);
         return responseFromNetwork;
 
     } catch (error) {
@@ -82,7 +82,7 @@ const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl
         // Try the fallback
         const fallbackResponse = await cache.match(fallbackUrl);
         if (fallbackResponse) {
-            console.info('[cozy-sw]: using fallback cached response', fallbackResponse.url);
+            console.info('[personal-sw]: using fallback cached response', fallbackResponse.url);
             return fallbackResponse;
         }
 
@@ -104,12 +104,12 @@ const enableNavigationPreload = async () => {
 };
 
 self.addEventListener('activate', (event) => {
-    console.log('[cozy-sw]: activating...', event)
+    console.log('[personal-sw]: activating...', event)
     event.waitUntil(enableNavigationPreload());
 });
 
 self.addEventListener('install', (event) => {
-    console.log('[cozy-sw]: installing...', event)
+    console.log('[personal-sw]: installing...', event)
     event.waitUntil(
         addResourcesToCache([
             ...(__assets ?? [])
