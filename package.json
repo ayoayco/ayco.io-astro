@@ -12,11 +12,12 @@
     "deploy": "astro build && scp -r dist ayo@ayco.io:~/ayco.io-flask/",
     "copy:dist": "astro build && cp -R dist ../ayco.io-flask/"
   },
-  "dependencies": {
+  "devDependencies": {
     "@astro-reactive/form": "^0.10.0",
     "@astro-reactive/validator": "^0.5.0",
-    "@astrojs/sitemap": "^3.1.2",
-    "astro": "^4.0.3",
+    "@astrojs/sitemap": "^3.1.6",
+    "@ayco/astro-sw": "^0.3.0",
+    "astro": "^4.14.1",
     "astro-github-stats": "^0.7.0",
     "astro-iconify": "^1.2.0"
   }
