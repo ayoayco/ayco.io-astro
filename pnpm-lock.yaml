@@ -10,10 +10,10 @@ importers:
     devDependencies:
       '@astro-reactive/form':
         specifier: ^0.10.0
-        version: 0.10.0(@types/node@22.3.0)(astro@4.14.1(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4))(rollup@4.20.0)(typescript@5.5.4)
+        version: 0.10.0(@types/node@22.3.0)(astro@4.14.2(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4))(rollup@4.20.0)(typescript@5.5.4)
       '@astro-reactive/validator':
         specifier: ^0.5.0
-        version: 0.5.0(@types/node@22.3.0)(astro@4.14.1(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4))(rollup@4.20.0)(typescript@5.5.4)
+        version: 0.5.0(@types/node@22.3.0)(astro@4.14.2(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4))(rollup@4.20.0)(typescript@5.5.4)
       '@astrojs/sitemap':
         specifier: ^3.1.6
         version: 3.1.6
@@ -21,11 +21,11 @@ importers:
         specifier: ^0.3.0
         version: 0.3.0
       astro:
-        specifier: ^4.14.1
-        version: 4.14.1(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4)
+        specifier: ^4.14.2
+        version: 4.14.2(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4)
       astro-github-stats:
         specifier: ^0.7.0
-        version: 0.7.0(astro@4.14.1(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4))
+        version: 0.7.0(astro@4.14.2(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4))
       astro-iconify:
         specifier: ^1.2.0
         version: 1.2.0
@@ -663,8 +663,8 @@ packages:
   astro-iconify@1.2.0:
     resolution: {integrity: sha512-arLDiSop3DAHHS30raZysspkz5MO9moJJZ4rJk1Ty+4W1jZDa00Jme0LrnRJRDB6BB2EDTxC553fo20yz3MeYw==}
 
-  astro@4.14.1:
-    resolution: {integrity: sha512-tLhGE+vHl+n66KgzyV7ek6ro2dqKenHqdxPb/R6x9ci+fKG5lSSOeb/dP/XVhpKUMcuV98IGWTxL5VPzqPFUJQ==}
+  astro@4.14.2:
+    resolution: {integrity: sha512-x9VeYx8Ih6kYKBMVwwsfRzsZVq30+SUhiawnYQ6+46qQnEx3zH05KcH24HsJMe6dVpHD8HdH7CWR5C4o7Q/jeg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -1982,6 +1982,10 @@ packages:
   yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
 
+  yargs-parser@21.1.1:
+    resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
+    engines: {node: '>=12'}
+
   yauzl@2.10.0:
     resolution: {integrity: sha512-p4a9I6X6nu6IhoGmBqAcbJy1mlC4j27vEPZX9F4L4/vZT3Lyq1VkFHw/V/PUcB9Buo+DG3iHkT0x3Qya58zc3g==}
 
@@ -2026,7 +2030,7 @@ snapshots:
 
   '@astro-reactive/common@0.3.0(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4)':
     dependencies:
-      astro: 4.14.1(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4)
+      astro: 4.14.2(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -2040,11 +2044,11 @@ snapshots:
       - terser
       - typescript
 
-  '@astro-reactive/form@0.10.0(@types/node@22.3.0)(astro@4.14.1(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4))(rollup@4.20.0)(typescript@5.5.4)':
+  '@astro-reactive/form@0.10.0(@types/node@22.3.0)(astro@4.14.2(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4))(rollup@4.20.0)(typescript@5.5.4)':
     dependencies:
       '@astro-reactive/common': 0.3.0(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4)
-      '@astro-reactive/validator': 0.5.0(@types/node@22.3.0)(astro@4.14.1(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4))(rollup@4.20.0)(typescript@5.5.4)
-      astro: 4.14.1(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4)
+      '@astro-reactive/validator': 0.5.0(@types/node@22.3.0)(astro@4.14.2(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4))(rollup@4.20.0)(typescript@5.5.4)
+      astro: 4.14.2(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4)
       short-unique-id: 4.4.4
     transitivePeerDependencies:
       - '@types/node'
@@ -2059,10 +2063,10 @@ snapshots:
       - terser
       - typescript
 
-  '@astro-reactive/validator@0.5.0(@types/node@22.3.0)(astro@4.14.1(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4))(rollup@4.20.0)(typescript@5.5.4)':
+  '@astro-reactive/validator@0.5.0(@types/node@22.3.0)(astro@4.14.2(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4))(rollup@4.20.0)(typescript@5.5.4)':
     dependencies:
       '@astro-reactive/common': 0.3.0(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4)
-      astro: 4.14.1(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4)
+      astro: 4.14.2(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -2631,9 +2635,9 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro-github-stats@0.7.0(astro@4.14.1(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4)):
+  astro-github-stats@0.7.0(astro@4.14.2(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4)):
     dependencies:
-      astro: 4.14.1(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4)
+      astro: 4.14.2(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4)
 
   astro-iconify@1.2.0:
     dependencies:
@@ -2645,7 +2649,7 @@ snapshots:
       - debug
       - supports-color
 
-  astro@4.14.1(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4):
+  astro@4.14.2(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
@@ -2710,6 +2714,7 @@ snapshots:
       vitefu: 0.2.5(vite@5.4.1(@types/node@22.3.0))
       which-pm: 3.0.0
       xxhash-wasm: 1.0.2
+      yargs-parser: 21.1.1
       zod: 3.23.8
       zod-to-json-schema: 3.23.2(zod@3.23.8)
       zod-to-ts: 1.2.0(typescript@5.5.4)(zod@3.23.8)
@@ -4307,6 +4312,8 @@ snapshots:
   yallist@3.1.1: {}
 
   yallist@4.0.0: {}
+
+  yargs-parser@21.1.1: {}
 
   yauzl@2.10.0:
     dependencies:

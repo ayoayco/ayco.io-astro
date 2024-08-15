@@ -17,7 +17,7 @@
     "@astro-reactive/validator": "^0.5.0",
     "@astrojs/sitemap": "^3.1.6",
     "@ayco/astro-sw": "^0.3.0",
-    "astro": "^4.14.1",
+    "astro": "^4.14.2",
     "astro-github-stats": "^0.7.0",
     "astro-iconify": "^1.2.0"
   }
