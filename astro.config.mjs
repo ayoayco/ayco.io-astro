@@ -11,6 +11,7 @@ export default defineConfig({
     serviceWorker({
       path: './src/sw.js',
       assetCachePrefix: 'ayco-personal-site',
+      customRoutes: ['/threads']
     })
   ]
 });
