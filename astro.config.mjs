@@ -10,7 +10,10 @@ export default defineConfig({
     sitemap(),
     serviceWorker({
       path: './src/sw.js',
-      assetCachePrefix: 'ayco-personal-site'
+      assetCachePrefix: 'ayco-personal-site',
+      excludeRoutes: [
+        '/threads'
+      ]
     })
   ]
 });

@@ -18,8 +18,8 @@ importers:
         specifier: ^3.1.6
         version: 3.1.6
       '@ayco/astro-sw':
-        specifier: ^0.5.1
-        version: 0.5.1
+        specifier: ^0.6.1
+        version: 0.6.1
       astro:
         specifier: ^4.14.2
         version: 4.14.2(@types/node@22.3.0)(rollup@4.20.0)(typescript@5.5.4)
@@ -75,8 +75,8 @@ packages:
     resolution: {integrity: sha512-/ca/+D8MIKEC8/A9cSaPUqQNZm+Es/ZinRv0ZAzvu2ios7POQSsVD+VOj7/hypWNsNM3T7RpfgNq7H2TU1KEHA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
 
-  '@ayco/astro-sw@0.5.1':
-    resolution: {integrity: sha512-RFDJQK5IHYRPI+fo3Sd9gBh/gkJD1w8VYobc2ISwI0+khMf0qZ7PUbESigEtgKJ3YlB0FEQ9Hv9CdQAriiv0Kw==}
+  '@ayco/astro-sw@0.6.1':
+    resolution: {integrity: sha512-/D02L0bcw1E3H5EH/0vJxoXE6yP567gDeObwqJduOKMam1GUXU3hzLDykg17GOTNpWKQQ4VdlDYwn+nBllKqQQ==}
     engines: {node: '>=18.0.0'}
 
   '@babel/code-frame@7.24.7':
@@ -898,8 +898,8 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  electron-to-chromium@1.5.8:
-    resolution: {integrity: sha512-4Nx0gP2tPNBLTrFxBMHpkQbtn2hidPVr/+/FTtcCiBYTucqc70zRyVZiOLj17Ui3wTO7SQ1/N+hkHYzJjBzt6A==}
+  electron-to-chromium@1.5.9:
+    resolution: {integrity: sha512-HfkT8ndXR0SEkU8gBQQM3rz035bpE/hxkZ1YIt4KJPEFES68HfIU6LzKukH0H794Lm83WJtkSAMfEToxCs15VA==}
 
   emoji-regex@10.3.0:
     resolution: {integrity: sha512-QpLs9D9v9kArv4lfDEgg1X/gN5XLnf/A6l9cs8SPZLRZR3ZkY9+kwIQTxm+fsSej5UMYGE8fdoaZVIBlqG0XTw==}
@@ -2129,7 +2129,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@ayco/astro-sw@0.5.1': {}
+  '@ayco/astro-sw@0.6.1': {}
 
   '@babel/code-frame@7.24.7':
     dependencies:
@@ -2769,7 +2769,7 @@ snapshots:
   browserslist@4.23.3:
     dependencies:
       caniuse-lite: 1.0.30001651
-      electron-to-chromium: 1.5.8
+      electron-to-chromium: 1.5.9
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.3)
 
@@ -2959,7 +2959,7 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  electron-to-chromium@1.5.8: {}
+  electron-to-chromium@1.5.9: {}
 
   emoji-regex@10.3.0: {}
 
