@@ -8,7 +8,7 @@ export default defineConfig({
   integrations: [
     sitemap(),
     serviceWorker({
-      path: './src/sw.ts',
+      path: './src/sw.mjs',
       assetCachePrefix: 'ayco-personal-site',
       excludeRoutes: [
         '/threads'
