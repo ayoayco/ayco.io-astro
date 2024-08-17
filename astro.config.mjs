@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import serviceWorker from '@ayco/astro-sw';
-
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
@@ -9,11 +8,14 @@ export default defineConfig({
   integrations: [
     sitemap(),
     serviceWorker({
-      path: './src/sw.js',
+      path: './src/sw.ts',
       assetCachePrefix: 'ayco-personal-site',
       excludeRoutes: [
         '/threads'
-      ]
+      ],
+      esbuild: {
+        minify: true
+      }
     })
   ]
 });

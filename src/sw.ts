@@ -5,13 +5,13 @@
  */
 const cacheName = `${__prefix ?? 'app'}-v${__version ?? '000'}`
 
-const addResourcesToCache = async (resources) => {
+const addResourcesToCache = async (resources: string[]) => {
     const cache = await caches.open(cacheName);
     console.log('[personal-sw]: adding resources to cache...', resources)
     await cache.addAll(new Set([...resources]));
 };
 
-const putInCache = async (request, response) => {
+const putInCache = async (request: Request, response: Response) => {
     const cache = await caches.open(cacheName);
     console.log('[personal-sw]: adding one response to cache...', request.url)
     // if exists, replace
@@ -25,7 +25,7 @@ const putInCache = async (request, response) => {
 };
 
 
-const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl }) => {
+const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl }: {request: Request, preloadResponsePromise: Promise<any>, fallbackUrl: string}) => {
     
     const cache = await caches.open(cacheName);
 
@@ -111,9 +111,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('install', (event) => {
     console.log('[personal-sw]: installing...', event)
     event.waitUntil(
-        addResourcesToCache([
-            ...(__assets ?? [])
-        ])
+        addResourcesToCache(__assets ?? [])
     );
     self.skipWaiting(); // activate updated SW
 });

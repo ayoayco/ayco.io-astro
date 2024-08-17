@@ -18,8 +18,8 @@ importers:
         specifier: ^3.1.6
         version: 3.1.6
       '@ayco/astro-sw':
-        specifier: ^0.7.8
-        version: 0.7.8
+        specifier: ^0.7.9
+        version: 0.7.9
       astro:
         specifier: ^4.14.2
         version: 4.14.2(@types/node@22.4.0)(rollup@4.20.0)(typescript@5.5.4)
@@ -75,8 +75,8 @@ packages:
     resolution: {integrity: sha512-/ca/+D8MIKEC8/A9cSaPUqQNZm+Es/ZinRv0ZAzvu2ios7POQSsVD+VOj7/hypWNsNM3T7RpfgNq7H2TU1KEHA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
 
-  '@ayco/astro-sw@0.7.8':
-    resolution: {integrity: sha512-NA3m2YXNReZQla3tv98rJ89HfftmEC+4dsX/bG+NIIlFVcnGTxvwPdhTZ3vD5K/NqVyo7wr4n132k4dCtKUWvw==}
+  '@ayco/astro-sw@0.7.9':
+    resolution: {integrity: sha512-hVdRdZz+IJvmg/qpWHX52dK0Pnp8ErsMy1lYcs7g3rueLDS+r5JdFwdfs3GgU5DyDBfBg/VJZ7dWETYS+sUrYw==}
     engines: {node: '>=18.0.0'}
 
   '@babel/code-frame@7.24.7':
@@ -2270,7 +2270,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@ayco/astro-sw@0.7.8':
+  '@ayco/astro-sw@0.7.9':
     dependencies:
       esbuild: 0.23.1
       pathe: 1.1.2
