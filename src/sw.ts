@@ -103,12 +103,12 @@ const enableNavigationPreload = async () => {
     }
 };
 
-self.addEventListener('activate', (event) => {
+self.addEventListener<any>('activate', (event) => {
     console.log('[personal-sw]: activating...', event)
     event.waitUntil(enableNavigationPreload());
 });
 
-self.addEventListener('install', (event) => {
+self.addEventListener<any>('install', (event) => {
     console.log('[personal-sw]: installing...', event)
     event.waitUntil(
         addResourcesToCache(__assets ?? [])
@@ -116,7 +116,7 @@ self.addEventListener('install', (event) => {
     self.skipWaiting(); // activate updated SW
 });
 
-self.addEventListener('fetch', (event) => {
+self.addEventListener<any>('event', (event) => {
     // ... else, use network first
     event.respondWith(
         cacheAndRevalidate({
