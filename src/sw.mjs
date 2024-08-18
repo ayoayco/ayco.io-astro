@@ -5,15 +5,23 @@
  */
 const cacheName = `${__prefix ?? 'app'}-v${__version ?? '000'}`
 
+const cleanOldCaches = async () => {
+    const allowCacheNames = ['cozy-reader', cacheName];
+    const allCaches = await caches.keys();
+    allCaches.forEach(key => {
+        if(!allowCacheNames.includes(key)) {
+            caches.delete(key);
+        }
+    });
+}
+
 const addResourcesToCache = async (resources) => {
     const cache = await caches.open(cacheName);
-    console.log('[personal-sw]: adding resources to cache...', resources)
-    await cache.addAll(new Set([...resources]));
+    await cache.addAll(resources);
 };
 
 const putInCache = async (request, response) => {
     const cache = await caches.open(cacheName);
-    console.log('[personal-sw]: adding one response to cache...', request.url)
     // if exists, replace
 
     const keys = await cache.keys();
@@ -26,7 +34,7 @@ const putInCache = async (request, response) => {
 
 
 const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl }) => {
-    
+
     const cache = await caches.open(cacheName);
 
     // Try get the resource from the cache
@@ -34,22 +42,17 @@ const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl
     try {
         // get network response for revalidation of stale assets
         const responseFromNetwork = await fetch(request.clone());
-        if (responseFromNetwork) {
-            console.info('[personal-sw]: fetched updated assets', responseFromNetwork.url);
+        if(responseFromNetwork) {
             putInCache(request, responseFromNetwork.clone());
         }
 
-        if (responseFromCache) {
-            console.info('[personal-sw]: using cached response', responseFromCache.url);
+        if(responseFromCache) {
             return responseFromCache;
-        } else{
-            console.info('[personal-sw]: using network response', responseFromNetwork.url);
+        } else {
             return responseFromNetwork;
         }
-    } catch(error) {
-        console.info('[personal-sw]: failed to fetch updated assets', request.url);
-        if (responseFromCache) {
-            console.info('[personal-sw]: using cached response', responseFromCache.url);
+    } catch (error) {
+        if(responseFromCache) {
             return responseFromCache;
         }
     }
@@ -61,28 +64,25 @@ const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl
     // To avoid those errors, remove or comment out this block of preloadResponse
     // code along with enableNavigationPreload() and the "activate" listener.
     const preloadResponse = await preloadResponsePromise;
-    if (preloadResponse) {
+    if(preloadResponse) {
         putInCache(request, preloadResponse.clone());
-        console.info('[personal-sw]: using preload response', preloadResponse.url);
         return preloadResponse;
     }
 
     try {
         // Try to get the resource from the network for 5 seconds
-        const responseFromNetwork = await fetch(request.clone(), {signal: AbortSignal.timeout(5000)});
+        const responseFromNetwork = await fetch(request.clone());
         // response may be used only once
         // we need to save clone to put one copy in cache
         // and serve second one
         putInCache(request, responseFromNetwork.clone());
-        console.info('[personal-sw]: using network response', responseFromNetwork.url);
         return responseFromNetwork;
 
     } catch (error) {
 
         // Try the fallback
         const fallbackResponse = await cache.match(fallbackUrl);
-        if (fallbackResponse) {
-            console.info('[personal-sw]: using fallback cached response', fallbackResponse.url);
+        if(fallbackResponse) {
             return fallbackResponse;
         }
 
@@ -97,27 +97,25 @@ const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl
 };
 
 const enableNavigationPreload = async () => {
-    if (self.registration.navigationPreload) {
+    if(self.registration.navigationPreload) {
         // Enable navigation preloads!
         await self.registration.navigationPreload.enable();
     }
 };
 
-self.addEventListener<any>('activate', (event) => {
-    console.log('[personal-sw]: activating...', event)
+self.addEventListener('activate', (event) => {
+    cleanOldCaches();
     event.waitUntil(enableNavigationPreload());
 });
 
-self.addEventListener<any>('install', (event) => {
-    console.log('[personal-sw]: installing...', event)
+self.addEventListener('install', (event) => {
     event.waitUntil(
         addResourcesToCache(__assets ?? [])
     );
     self.skipWaiting(); // activate updated SW
 });
 
-self.addEventListener<any>('event', (event) => {
-    // ... else, use network first
+self.addEventListener('fetch', (event) => {
     event.respondWith(
         cacheAndRevalidate({
             request: event.request,
