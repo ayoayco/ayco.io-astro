@@ -9,7 +9,7 @@ const cleanOldCaches = async () => {
     const allowCacheNames = ['cozy-reader', cacheName];
     const allCaches = await caches.keys();
     allCaches.forEach(key => {
-        if(!allowCacheNames.includes(key)) {
+        if (!allowCacheNames.includes(key)) {
             caches.delete(key);
         }
     });
@@ -25,7 +25,7 @@ const putInCache = async (request, response) => {
     // if exists, replace
 
     const keys = await cache.keys();
-    if(keys.includes(request)) {
+    if (keys.includes(request)) {
         cache.delete(request);
     }
 
@@ -39,22 +39,17 @@ const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl
 
     // Try get the resource from the cache
     const responseFromCache = await cache.match(request);
-    try {
-        // get network response for revalidation of stale assets
-        const responseFromNetwork = await fetch(request.clone());
-        if(responseFromNetwork) {
-            putInCache(request, responseFromNetwork.clone());
-        }
+    if (responseFromCache) {
+        // get network response for revalidation of cached assets
+        fetch(request.clone()).then((responseFromNetwork) => {
+            if (responseFromNetwork) {
+                putInCache(request, responseFromNetwork.clone());
+            }
+        }).catch((error) => {
+            logError('failed to fetch updated resource', { force: forceLogging, context: 'cozy-sw', data: error })
+        });
 
-        if(responseFromCache) {
-            return responseFromCache;
-        } else {
-            return responseFromNetwork;
-        }
-    } catch (error) {
-        if(responseFromCache) {
-            return responseFromCache;
-        }
+        return responseFromCache;
     }
 
     // Try to use the preloaded response, if it's there
@@ -64,7 +59,7 @@ const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl
     // To avoid those errors, remove or comment out this block of preloadResponse
     // code along with enableNavigationPreload() and the "activate" listener.
     const preloadResponse = await preloadResponsePromise;
-    if(preloadResponse) {
+    if (preloadResponse) {
         putInCache(request, preloadResponse.clone());
         return preloadResponse;
     }
@@ -82,7 +77,7 @@ const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl
 
         // Try the fallback
         const fallbackResponse = await cache.match(fallbackUrl);
-        if(fallbackResponse) {
+        if (fallbackResponse) {
             return fallbackResponse;
         }
 
@@ -97,7 +92,7 @@ const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl
 };
 
 const enableNavigationPreload = async () => {
-    if(self.registration.navigationPreload) {
+    if (self.registration.navigationPreload) {
         // Enable navigation preloads!
         await self.registration.navigationPreload.enable();
     }
@@ -109,10 +104,12 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('install', (event) => {
+
+    self.skipWaiting(); // go straight to activate
+
     event.waitUntil(
         addResourcesToCache(__assets ?? [])
     );
-    self.skipWaiting(); // activate updated SW
 });
 
 self.addEventListener('fetch', (event) => {
