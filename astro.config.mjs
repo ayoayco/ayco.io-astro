@@ -10,9 +10,10 @@ export default defineConfig({
     serviceWorker({
       path: './src/sw.mjs',
       assetCachePrefix: 'ayco-personal-site',
-      excludeRoutes: [
-        '/threads'
-      ],
+      logAssets: true,
+      // excludeRoutes: [
+      //   '/threads'
+      // ],
       esbuild: {
         minify: true
       }
