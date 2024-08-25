@@ -11,9 +11,9 @@ export default defineConfig({
       path: './src/sw.mjs',
       assetCachePrefix: 'ayco-personal-site',
       logAssets: true,
-      // excludeRoutes: [
-      //   '/threads'
-      // ],
+      excludeRoutes: [
+        '/threads'
+      ],
       esbuild: {
         minify: true
       }
