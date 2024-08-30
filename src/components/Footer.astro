@@ -1,15 +1,7 @@
 ---
 const year = new Date().getFullYear();
-const leftLinks = [
-  {
-    text: 'Ayo\'s Blog',
-    url: 'https://ayos.blog'
-  },
-  {
-    text: 'Ayco Social',
-    url: 'https://social.ayco.io'
-  },
-  {
+const links = [
+ {
     text: 'GitHub',
     url: 'https://github.com/ayoayco'
   },
@@ -17,9 +9,6 @@ const leftLinks = [
     text: 'SourceHut',
     url: 'https://sr.ht/~ayoayco'
   },
-]
-
-const rightLinks = [
   {
     text: 'LinkedIn',
     url: 'https://www.linkedin.com/in/ayoayco'
@@ -44,47 +33,42 @@ const rightLinks = [
     text: 'Web Tools',
     url: 'https://m.webtoo.ls/@ayo'
   },
+  {
+    text: 'Ayco Social',
+    url: 'https://social.ayco.io'
+  },
 ]
 ---
 
 <footer>
-  <div class="left-section">
-    <p><strong>Elsewhere</strong></p>
-    {
-      rightLinks.map((linkObj) => <p><a href={linkObj.url}>{linkObj.text}</a></p>)
-    }
-  </div>
-  <div class="right-section">
     <p>
-      This website <a href="https://ayos.blog/stopped-tracking-on-my-sites"
-        >does not track users</a>
+      {
+        links.map((linkObj) => <span class="link-item"><a href={linkObj.url}>{linkObj.text}</a></span>)
+      }
     </p>
-    <p>&#169; 2022-{year} <a href="/">Ayo Ayco</a></p>
     <p>
-      See the <a href="https://sr.ht/~ayoayco/personal-site">source code</a>
+      &#169; 2022-{year} <a href="/">Ayo Ayco</a>. This website <a href="https://ayos.blog/stopped-tracking-on-my-sites">does not track users</a>. See the <a href="https://sr.ht/~ayoayco/personal-site">source code</a>.
     </p>
-    {
-      leftLinks.map((linkObj) => <p><a href={linkObj.url}>{linkObj.text}</a></p>)
-    }
-  </div>
+
 </footer>
 
 <style>
   footer {
-    margin-top: 1em;
-    grid-template-columns: auto auto;
+    margin-top: 2em;
+    /* grid-template-columns: auto auto;
     display: grid;
-    gap: 1rem;
+    gap: 1rem; */
     padding: 0;
 
-    & .right-section {
-      text-align: right;
+    .link-item:not(:last-child)::after {
+      content: ' • '
     }
-  }
 
-  footer p {
-    font-size: var(--font-size-sm);
-    margin: 0;
-  }
+    p {
+      margin: 0 0 1em;
+      font-size: var(--font-size-sm);
+      line-height: 2em;
+    }
 
+  }
 </style>
