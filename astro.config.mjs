@@ -10,6 +10,7 @@ export default defineConfig({
     serviceWorker({
       path: './src/sw.mjs',
       assetCachePrefix: 'ayco-personal-site',
+      assetCacheVersionID: 'hey-mama',
       logAssets: true,
       excludeRoutes: [
         '/threads'
