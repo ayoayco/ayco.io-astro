@@ -24,7 +24,7 @@ export const stuff: {
     icon: '🧸',
     text: 'Creator of',
     link: {
-      url: 'https://cozy.ayco.io',
+      url: 'https://cozy.pub',
       text: 'Cozy'
     }
   },
