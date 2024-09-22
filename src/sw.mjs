@@ -4,65 +4,31 @@
  * @see https://ayco.io/n/@ayco/astro-sw
  */
 const cacheName = `${__prefix ?? 'app'}-v${__version ?? '000'}`
-
-const cleanOldCaches = async () => {
-    const allowCacheNames = ['cozy-reader', cacheName];
-    const allCaches = await caches.keys();
-    allCaches.forEach(key => {
-        if (!allowCacheNames.includes(key)) {
-            caches.delete(key);
-        }
-    });
-}
+const forceLogging = true;
 
 const addResourcesToCache = async (resources) => {
     const cache = await caches.open(cacheName);
-    await cache.addAll(resources);
+    console.info('adding resources to cache...', { force: !!forceLogging, context: 'ayco-sw', data: resources })
+    try {
+        await cache.addAll(resources);
+    } catch(error) {
+        console.error('failed to add resources to cache; make sure requests exists and that there are no duplicates', error);
+    }
 };
 
 const putInCache = async (request, response) => {
     const cache = await caches.open(cacheName);
-    // if exists, replace
 
-    const keys = await cache.keys();
-    if (keys.includes(request)) {
-        cache.delete(request);
+    if (response.ok) {
+        console.info('adding one response to cache...', request.url)
+        cache.put(request, response);
     }
-
-    await cache.put(request, response);
 };
 
 
-const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl }) => {
+const networkFirst = async ({ request, fallbackUrl }) => {
 
     const cache = await caches.open(cacheName);
-
-    // Try get the resource from the cache
-    const responseFromCache = await cache.match(request);
-    if (responseFromCache) {
-        // get network response for revalidation of cached assets
-        fetch(request.clone()).then((responseFromNetwork) => {
-            if (responseFromNetwork) {
-                putInCache(request, responseFromNetwork.clone());
-            }
-        }).catch((error) => {
-            logError('failed to fetch updated resource', { force: forceLogging, context: 'cozy-sw', data: error })
-        });
-
-        return responseFromCache;
-    }
-
-    // Try to use the preloaded response, if it's there
-    // NOTE: Chrome throws errors regarding preloadResponse, see:
-    // https://bugs.chromium.org/p/chromium/issues/detail?id=1420515
-    // https://github.com/mdn/dom-examples/issues/145
-    // To avoid those errors, remove or comment out this block of preloadResponse
-    // code along with enableNavigationPreload() and the "activate" listener.
-    const preloadResponse = await preloadResponsePromise;
-    if (preloadResponse) {
-        putInCache(request, preloadResponse.clone());
-        return preloadResponse;
-    }
 
     try {
         // Try to get the resource from the network for 5 seconds
@@ -71,13 +37,22 @@ const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl
         // we need to save clone to put one copy in cache
         // and serve second one
         putInCache(request, responseFromNetwork.clone());
+        console.info('using network response', responseFromNetwork.url);
         return responseFromNetwork;
 
     } catch (error) {
 
+        // Try get the resource from the cache
+        const responseFromCache = await cache.match(request);
+        if (responseFromCache) {
+            console.info('using cached response...', responseFromCache.url);
+            return responseFromCache;
+        }
+
         // Try the fallback
         const fallbackResponse = await cache.match(fallbackUrl);
         if (fallbackResponse) {
+            console.info('using fallback cached response...', fallbackResponse.url)
             return fallbackResponse;
         }
 
@@ -91,20 +66,13 @@ const cacheAndRevalidate = async ({ request, preloadResponsePromise, fallbackUrl
     }
 };
 
-const enableNavigationPreload = async () => {
-    if (self.registration.navigationPreload) {
-        // Enable navigation preloads!
-        await self.registration.navigationPreload.enable();
-    }
-};
-
 self.addEventListener('activate', (event) => {
-    cleanOldCaches();
-    event.waitUntil(enableNavigationPreload());
+    console.info('activating service worker...')
 });
 
 self.addEventListener('install', (event) => {
 
+    console.info('installing service worker...')
     self.skipWaiting(); // go straight to activate
 
     event.waitUntil(
@@ -113,10 +81,11 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+    console.info('fetch happened', {data: event});
+    
     event.respondWith(
-        cacheAndRevalidate({
+        networkFirst({
             request: event.request,
-            preloadResponsePromise: event.preloadResponse,
             fallbackUrl: './',
         })
     );
