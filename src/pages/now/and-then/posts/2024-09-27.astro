@@ -1,14 +1,14 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Footer.astro";
-import Posts from "../components/Posts.astro";
+import Layout from "../../../../layouts/Layout.astro";
+import Footer from "../../../../components/Footer.astro";
 
-const posts = await Astro.glob("./now/and-then/posts/*.astro");
+const title = "Taking time to reassess goals and visions";
+const description = "This is a dump of what my current state, more or less";
 ---
 
-<Layout title="Now" description="What is Ayo Ayco currently up to?">
+<Layout title={title} description={description}>
   <main>
-    <h1><span class="text-gradient">Now</span></h1>
+    <h1><span class="text-gradient">{title}</span></h1>
     <p>
       <em>Published on the <time datetime="2024-09-05">5th of September, 2024</time> from my home in Amsterdam, where it is starting to get colder again :)</em>
     </p>
@@ -31,10 +31,7 @@ const posts = await Astro.glob("./now/and-then/posts/*.astro");
     <p>
       The reality of having a new role for work is hitting, and I wanna learn more how to succeed in engineering leadership. I’m taking my time this off-work week to reassess my leadership style, our strategies at work and how my vision for the web fits
     </p>
-    
-    <Posts posts={posts} title="Previously..." />
-    <hr />
-    <em><a href="https://nownownow.com/about">About now pages</a></em>
+
     <Footer />
   </main>
 </Layout>
