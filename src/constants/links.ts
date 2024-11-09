@@ -42,3 +42,46 @@ export const links: Link[] = [
 ];
 
 export default links;
+
+export const footerLinks = [
+ {
+    text: 'GitHub',
+    url: 'https://github.com/ayoayco'
+  },
+  {
+    text: 'SourceHut',
+    url: 'https://sr.ht/~ayoayco'
+  },
+  {
+    text: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/ayoayco'
+  },
+  {
+    text: 'Pixelfed',
+    url: 'https://metapixl.com/@ayo'
+  },
+  {
+    text: 'SoundCloud',
+    url: 'https://SoundCloud.com/ayoayco'
+  },
+  {
+    text: 'NPM',
+    url: 'https://www.npmjs.com/~aayco'
+  },
+  {
+    text: 'Instagram',
+    url: 'https://instagram.com/ayoayco'
+  },
+  {
+    text: 'Web Tools',
+    url: 'https://m.webtoo.ls/@ayo'
+  },
+  {
+    text: 'Ayco Social',
+    url: 'https://social.ayco.io'
+  },
+  {
+    text: 'Bluesky',
+    url: 'https://bsky.app/profile/ayco.io'
+  }
+]
