@@ -2,24 +2,33 @@
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import Posts from "../../components/Posts.astro";
+import now from '../../constants/now'
 
 const posts = await Astro.glob("./and-then/posts/*.astro");
 ---
 
 <Layout title="Now" description="What is Ayo Ayco currently up to?">
   <main>
-    <h1><span class="text-gradient">Now</span></h1>
+    <h1><span class="text-gradient">Now: {now.status}</span></h1>
     <p>
-      <em>Published on the <time datetime="2024-09-05">27th of September, 2024</time> from my home in Amsterdam, where it's beginning to rain more often again :)</em>
+      <em>Published on <time datetime="{now.publishDate}">{now.readableDate ?? now.publishDate}</time> {now.publishState}</em>
     </p>
-    <p>In an unxpected turn of events it has been decided that we would buy a gaming laptop at home, which means I can play some PC games finally.</p>
-    <p>I started playing <a href="https://en.wikipedia.org/wiki/God_of_War_(2018_video_game)">God of War (2018)</a>. Not quite satisfied with the graphics -- I play it on an RTX 4060 Laptop GPU. I know that's not the same as the discrete desktop RTX 4060, but I'm still surprised by the quality. I would say it's a bit "grainy". Although it might also be just the game being ported to PC??? I don't know, I've not tried other games yet.</p>
-    <p><em>* Sep. 28 UPDATE: it was a default game setting I did not notice: the render resolution was actually low (DLSS) -- I turned that off to render at native resolution and now I'm happy with the graphics! :)</em></p>
-    <p>In other news, I'm quite stressed, to be honest, still figuring out where I fit in a totally new job. Stress is not always bad though. It's okay.</p>
+
+		<p>Christmas holidays as started for me.</p>
+
+		<p>I think I finished all needed stuff for work. Also messaged people online for a final happy holiday greetings of the year. Will go offline til January and figure out my rhythm for next year.</p>
+
+	  <p>Reading Radical Candor by Kim Scott. Surprised a lot of the concepts I already know and observe. Feels like a lot of these kind of books are a rehash of concepts in "The 7 Habits of Highly Effective People" and "How to Make Friends and Influence People" -- I recommend those first before this one! I like that “humility” was also given a spotlight; there's not enough attention to the effectivity/productivity of acknowledging you can be wrong and welcoming feedback (both praise & criticism). Hard to capture in a paragraph though -- ask me to elaborate if you want and when given the chance!</p>
+
+		<p>Spent some time in Aachen, Germany with the fam. Walked around the Christmas Market there. Food trip galore, sat at cafes, read books, bought stuff. :)</p>
+
+		<p>But the highlight is going to Monschau on a day trip. Kahel buit a small snowman.</p>
+
     <Posts posts={posts} title="Previously..." />
     <hr />
     <em><a href="https://nownownow.com/about">About now pages</a></em>
     <Footer />
+
   </main>
 </Layout>
 

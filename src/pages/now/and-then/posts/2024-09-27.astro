@@ -1,0 +1,65 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Footer from "../../../../components/Footer.astro";
+
+const title = "Finally have a gaming PC (Lapop)";
+const description = "In an unexpected turn of events, it has been decided that we will get a gaming Laptop";
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <h1><span class="text-gradient">{title}</span></h1
+    <p>
+      <em>Published on the <time datetime="2024-09-05">27th of September, 2024</time> from my home in Amsterdam, where it's beginning to rain more often again :)</em>
+    </p>
+
+    <p>In an unxpected turn of events it has been decided that we would buy a gaming laptop at home, which means I can play some PC games finally.</p>
+    <p>I started playing <a href="https://en.wikipedia.org/wiki/God_of_War_(2018_video_game)">God of War (2018)</a>. Not quite satisfied with the graphics -- I play it on an RTX 4060 Laptop GPU. I know that's not the same as the discrete desktop RTX 4060, but I'm still surprised by the quality. I would say it's a bit "grainy". Although it might also be just the game being ported to PC??? I don't know, I've not tried other games yet.</p>
+    <p><em>* Sep. 28 UPDATE: it was a default game setting I did not notice: the render resolution was actually low (DLSS) -- I turned that off to render at native resolution and now I'm happy with the graphics! :)</em></p>
+    <p>In other news, I'm quite stressed, to be honest, still figuring out where I fit in a totally new job. Stress is not always bad though. It's okay.</p>
+
+
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--ayo-gradient);
+    animation: pulse 4s ease-in-out infinite;
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .highlighted-content {
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .highlighted-content code {
+    font-size: var(--font-size-base);
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
