@@ -20,7 +20,8 @@
     "@astro-reactive/form": "^0.10.0",
     "@astro-reactive/validator": "^0.5.0",
     "@astrojs/sitemap": "^3.2.1",
-    "@ayco/astro-sw": "^0.8.8",
+    "@ayco/astro-sw": "^0.8.12",
+    "@eslint/js": "^9.17.0",
     "@typescript-eslint/parser": "^8.18.2",
     "astro": "^5.0.5",
     "astro-github-stats": "^0.7.1",
@@ -28,6 +29,7 @@
     "eslint": "^9.17.0",
     "eslint-plugin-astro": "^1.3.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
+    "globals": "^15.14.0",
     "husky": "^9.1.7",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1"
