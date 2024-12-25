@@ -1,24 +1,24 @@
 ---
-import type { AstroInstance } from "astro";
+import type { AstroInstance } from 'astro'
 
 export interface Props {
-  posts: AstroInstance[];
-  title?: string;
+  posts: AstroInstance[]
+  title?: string
 }
-const { title, posts } = Astro.props;
-const postUrls: string[] = posts.map((post) => post.url || "");
+const { title, posts } = Astro.props
+const postUrls: string[] = posts.map((post) => post.url || '')
 ---
 
-{title ? <h2>{title}</h2> : ""}
+{title ? <h2>{title}</h2> : ''}
 <ul>
   {
     postUrls
       .reverse()
-      .filter((url) => url !== "")
+      .filter((url) => url !== '')
       .map((url) => (
         <li>
-          <a href={url} title={url?.replace("/now/and-then/posts/", "")}>
-            {url?.replace("/now/and-then/posts/", "")}
+          <a href={url} title={url?.replace('/now/and-then/posts/', '')}>
+            {url?.replace('/now/and-then/posts/', '')}
           </a>
         </li>
       ))

@@ -1,20 +1,21 @@
 ---
 export interface Props {
-  title: string | undefined;
-  description: string | undefined;
+  title: string | undefined
+  description: string | undefined
 }
 const defaultDescription =
-  "Professional software engineer specializing in web development with a decade of experience building web applications for both private businesses and government-funded high-impact projects utilizing web technologies, IoT, data viz/insights, remote sensing, and GIS";
+  'Professional software engineer specializing in web development with a decade of experience building web applications for both private businesses and government-funded high-impact projects utilizing web technologies, IoT, data viz/insights, remote sensing, and GIS'
 
-const defaultTitle = "Ayo Ayco | Engineering Leader, Software Engineer, Web Developer";
+const defaultTitle =
+  'Ayo Ayco | Engineering Leader, Software Engineer, Web Developer'
 
-let { title = defaultTitle, description = defaultDescription } = Astro.props;
+let { title, description = defaultDescription } = Astro.props
 
-const baseURL = "https://ayo.ayco.io";
+const baseURL = 'https://ayo.ayco.io'
 ---
 
 <head>
-  <title>{title}</title>
+  <title>{title ? `${title} | ${defaultTitle}` : defaultTitle}</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
@@ -41,28 +42,14 @@ const baseURL = "https://ayo.ayco.io";
 
   <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
 
-  {
-    title !== defaultTitle && (
-      <script>
-        const title = document.title; 
-        const defaultTitle = "Ayo Ayco | Engineering Leader, Software Engineer, Web Developer"
-        if(title) {
-          (document.title = `${title} | ${defaultTitle}`)
-        }
-      </script>
-    )
-  }
   <script>
     /**
      * unregister existing service workers
      */
-    navigator.serviceWorker.getRegistrations()
-      .then(
-        (registrations) => {
-          for(let registration of registrations) {
-            registration.unregister();
-          }
-        }
-      ); 
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      for (let registration of registrations) {
+        registration.unregister()
+      }
+    })
   </script>
 </head>

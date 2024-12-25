@@ -1,32 +1,31 @@
 ---
-import Icon from "astro-iconify";
-import type { Link } from "../constants/links";
+import Icon from 'astro-iconify'
+import type { Link } from '../constants/links'
 
 export interface Props {
-  links: Link[];
+  links: Link[]
 }
 
-let { links } = Astro.props;
+let { links } = Astro.props
 
-if (Astro.url.pathname !== "/") {
+if (Astro.url.pathname !== '/') {
   links = [
     {
-      url: "/",
-      icon: "home",
+      url: '/',
+      icon: 'home',
     },
-  ].concat(links);
+  ].concat(links)
 }
-
 ---
 
 <nav>
   <div id="wrapper">
     {
       links
-        .filter((link) => link.url !== "")
+        .filter((link) => link.url !== '')
         .map((link) => (
           <a href={link.url}>
-            <Icon pack={link.set ?? "mdi"} name={link.icon} />{" "}
+            <Icon pack={link.set ?? 'mdi'} name={link.icon} />{' '}
             {link.text ?? link.icon}
           </a>
         ))
@@ -74,5 +73,4 @@ if (Astro.url.pathname !== "/") {
   a {
     font-weight: bold;
   }
-
 </style>

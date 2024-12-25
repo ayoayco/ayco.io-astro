@@ -1,10 +1,10 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
-import Footer from "../../../components/Footer.astro";
-import Posts from "../../../components/Posts.astro";
+import Layout from '../../../layouts/Layout.astro'
+import Footer from '../../../components/Footer.astro'
+import Posts from '../../../components/Posts.astro'
 
-const posts = await Astro.glob("./posts/*.astro");
-const title = "Previously...";
+const posts = await Astro.glob('./posts/*.astro')
+const title = 'Previously...'
 ---
 
 <Layout title={title} description="What Ayo Ayco have been up to?">
@@ -17,7 +17,6 @@ const title = "Previously...";
 </Layout>
 
 <style>
-
   main {
     margin: auto;
     padding: 1em;

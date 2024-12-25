@@ -1,6 +1,6 @@
-import { defineConfig } from 'astro/config';
-import serviceWorker from '@ayco/astro-sw';
-import sitemap from "@astrojs/sitemap";
+import { defineConfig } from 'astro/config'
+import serviceWorker from '@ayco/astro-sw'
+import sitemap from '@astrojs/sitemap'
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,17 +12,15 @@ export default defineConfig({
       assetCachePrefix: 'ayco-personal-site',
       assetCacheVersionID: '2',
       logAssets: true,
-      excludeRoutes: [
-        '/threads'
-      ],
+      excludeRoutes: ['/threads'],
       esbuild: {
-        minify: true
+        minify: true,
       },
       registrationHooks: {
         afterRegistration: () => {
           console.log('>>> registered sw')
-        }
-      }
-    })
-  ]
-});
+        },
+      },
+    }),
+  ],
+})

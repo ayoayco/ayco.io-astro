@@ -1,67 +1,67 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Footer from "../../components/Footer.astro";
+import Layout from '../../layouts/Layout.astro'
+import Footer from '../../components/Footer.astro'
 
-import Form, { type ControlConfig, FormGroup } from "@astro-reactive/form";
-import { Validators } from "@astro-reactive/validator";
+import Form, { type ControlConfig, FormGroup } from '@astro-reactive/form'
+import { Validators } from '@astro-reactive/validator'
 
 const simpleForm = new FormGroup([
   {
-    name: "simple-text",
-    label: "Simple Text Control",
+    name: 'simple-text',
+    label: 'Simple Text Control',
   },
   {
-    name: "email",
-    label: "Email",
-    value: "invalid-email",
+    name: 'email',
+    label: 'Email',
+    value: 'invalid-email',
     validators: [Validators.email],
   },
-]);
+])
 
 const name: ControlConfig[] = [
   {
-    name: "first-name",
-    value: "Ayo",
-    label: "First Name",
+    name: 'first-name',
+    value: 'Ayo',
+    label: 'First Name',
     validators: [Validators.required],
   },
   {
-    name: "last-name",
-    label: "Last Name",
+    name: 'last-name',
+    label: 'Last Name',
     validators: [Validators.required],
   },
-];
+]
 
 const characteristics: ControlConfig[] = [
   {
-    name: "is-good-looking",
-    type: "radio",
-    label: "Is Good Looking?",
-    value: "checked",
+    name: 'is-good-looking',
+    type: 'radio',
+    label: 'Is Good Looking?',
+    value: 'checked',
     options: [
-      { value: "checked", label: "checked" },
-      { value: "not checked", label: "not checked" },
+      { value: 'checked', label: 'checked' },
+      { value: 'not checked', label: 'not checked' },
     ],
   },
   {
-    name: "required",
-    label: "Required Field",
-    placeholder: "but empty 😔",
+    name: 'required',
+    label: 'Required Field',
+    placeholder: 'but empty 😔',
     validators: [Validators.required],
   },
   {
-    name: "is-awesome",
-    type: "checkbox",
-    label: "Is Awesome?",
-    value: "checked",
+    name: 'is-awesome',
+    type: 'checkbox',
+    label: 'Is Awesome?',
+    value: 'checked',
   },
-];
+]
 
-const nameForm: FormGroup = new FormGroup(name, "Name");
+const nameForm: FormGroup = new FormGroup(name, 'Name')
 const characteristicsForm: FormGroup = new FormGroup(
   characteristics,
-  "Characteristics"
-);
+  'Characteristics'
+)
 ---
 
 <Layout

@@ -1,8 +1,7 @@
-
 export const stuff: {
-  icon: string;
-  text: string;
-  link?: {url: string, text: string};
+  icon: string
+  text: string
+  link?: { url: string; text: string }
 }[] = [
   // {
   //   icon: '🧐',
@@ -17,39 +16,39 @@ export const stuff: {
     text: 'Experimenting with',
     link: {
       url: 'https://mcfly.js.org',
-      text: 'McFly'
-    }
+      text: 'McFly',
+    },
   },
   {
     icon: '🧸',
     text: 'Creator of',
     link: {
       url: 'https://cozy.pub',
-      text: 'Cozy'
-    }
+      text: 'Cozy',
+    },
   },
   {
     icon: '🧱',
     text: 'Creator of',
     link: {
       url: 'https://webcomponent.io',
-      text: 'WebComponent.io'
-    }
+      text: 'WebComponent.io',
+    },
   },
-//   {
-//     icon: '🧱',
-//     text: '...and some',
-//     link: {
-//       url: '/stuff',
-//       text: 'small stuff'
-//     }
-//   },
+  //   {
+  //     icon: '🧱',
+  //     text: '...and some',
+  //     link: {
+  //       url: '/stuff',
+  //       text: 'small stuff'
+  //     }
+  //   },
   {
     icon: '🦌',
     text: 'Contributor to',
     link: {
       url: 'https://github.com/ayoayco/ayoayco/blob/main/elk.md#elk-contributions',
-      text: 'Elk.zone'
-    }
-  }
+      text: 'Elk.zone',
+    },
+  },
 ]

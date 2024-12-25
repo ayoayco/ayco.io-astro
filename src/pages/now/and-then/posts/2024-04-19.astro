@@ -1,23 +1,42 @@
 ---
-import Layout from "../../../../layouts/Layout.astro";
-import Footer from "../../../../components/Footer.astro";
+import Layout from '../../../../layouts/Layout.astro'
+import Footer from '../../../../components/Footer.astro'
 
-const title = "Relearning Python & working on /threads";
-const description = "Building again with Python";
+const title = 'Relearning Python & working on /threads'
+const description = 'Building again with Python'
 ---
 
 <Layout title={title} description={description}>
   <main>
     <h1><span class="text-gradient">{title}</span></h1>
     <p>
-      <em>Published on the <time datetime="2024-04-19">19th of April, 2024</time></em>
+      <em
+        >Published on the <time datetime="2024-04-19">19th of April, 2024</time
+        ></em
+      >
     </p>
 
-    <p>After a while of reading and deep consideration, I have decided to pick up Python as my chosen general-purpose programming language. I worked with Python 2 for a short while in the past, but only briefly for some projects and not really learning much in the larger ecosystem.</p>
+    <p>
+      After a while of reading and deep consideration, I have decided to pick up
+      Python as my chosen general-purpose programming language. I worked with
+      Python 2 for a short while in the past, but only briefly for some projects
+      and not really learning much in the larger ecosystem.
+    </p>
 
-    <p>This very website is now running on a <a href="https://flask.palletsprojects.com/">Flask</a> server. And I have started working on a self-hosted public <a href="https://git.sr.ht/~ayoayco/threads">/threads</a> project also on Python.</p>
+    <p>
+      This very website is now running on a <a
+        href="https://flask.palletsprojects.com/">Flask</a
+      > server. And I have started working on a self-hosted public <a
+        href="https://git.sr.ht/~ayoayco/threads">/threads</a
+      > project also on Python.
+    </p>
 
-    <p>Will probably write some blogs about the journey, but I have already organized the collection of repositories for my <a href="https://sr.ht/~ayoayco/personal-site">personal site</a></p>
+    <p>
+      Will probably write some blogs about the journey, but I have already
+      organized the collection of repositories for my <a
+        href="https://sr.ht/~ayoayco/personal-site">personal site</a
+      >
+    </p>
     <Footer />
   </main>
 </Layout>

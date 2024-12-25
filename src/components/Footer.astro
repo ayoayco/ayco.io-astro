@@ -1,18 +1,25 @@
 ---
-import {footerLinks as links} from '../constants/links';
-const year = new Date().getFullYear();
+import { footerLinks as links } from '../constants/links'
+const year = new Date().getFullYear()
 ---
 
 <footer>
-    <p>
-      {
-        links.map((linkObj) => <span class="link-item"><a href={linkObj.url}>{linkObj.text}</a></span>)
-      }
-    </p>
-    <p>
-      &#169; 2022-{year} <a href="/">Ayo Ayco</a>. This website <a href="https://ayos.blog/stopped-tracking-on-my-sites">does not track users</a>. See the <a href="https://sr.ht/~ayoayco/personal-site">source code</a>.
-    </p>
-
+  <p>
+    {
+      links.map((linkObj) => (
+        <span class="link-item">
+          <a href={linkObj.url}>{linkObj.text}</a>
+        </span>
+      ))
+    }
+  </p>
+  <p>
+    &#169; 2022-{year}
+    <a href="/">Ayo Ayco</a>. This website <a
+      href="https://ayos.blog/stopped-tracking-on-my-sites"
+      >does not track users</a
+    >. See the <a href="https://sr.ht/~ayoayco/personal-site">source code</a>.
+  </p>
 </footer>
 
 <style>
@@ -24,7 +31,7 @@ const year = new Date().getFullYear();
     padding: 0;
 
     .link-item:not(:last-child)::after {
-      content: ' • '
+      content: ' • ';
     }
 
     p {
@@ -32,6 +39,5 @@ const year = new Date().getFullYear();
       font-size: var(--font-size-sm);
       line-height: 2em;
     }
-
   }
 </style>
