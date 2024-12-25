@@ -1,10 +1,10 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Footer from "../../components/Footer.astro";
-import Posts from "../../components/Posts.astro";
-import now from '../../constants/now'
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Posts from "../components/Posts.astro";
+import now from '../constants/now'
 
-const posts = await Astro.glob("./and-then/posts/*.astro");
+const posts = await Astro.glob("./now/and-then/posts/*.astro");
 ---
 
 <Layout title="Now" description="What is Ayo Ayco currently up to?">
