@@ -44,7 +44,7 @@ const networkFirst = async ({ request, fallbackUrl }) => {
     putInCache(request, responseFromNetwork.clone())
     console.info('using network response', responseFromNetwork.url)
     return responseFromNetwork
-    // eslint-disable-next-line no-unused-vars
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     // Try get the resource from the cache
     const responseFromCache = await cache.match(request)
@@ -70,7 +70,7 @@ const networkFirst = async ({ request, fallbackUrl }) => {
   }
 }
 
-// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 self.addEventListener('activate', (event) => {
   console.info('activating service worker...')
 })
