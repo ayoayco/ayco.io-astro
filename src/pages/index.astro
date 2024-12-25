@@ -2,8 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
-import { stuff } from '../constants/stuff';
-import now from '../constants/now';
+import { stuff } from "../constants/stuff";
+import now from "../constants/now";
 
 // const isDev = import.meta.env.DEV;
 // const getOriginUrl = (path: string) => isDev ? `http://localhost:5000/${path}` : path;
@@ -14,8 +14,8 @@ import now from '../constants/now';
     <div class="highlighted-section__content">
       <img
         class="highlighted-section__content__profile-picture"
-        alt="Ayo Ayco's picture"
-        src='/ayo-sm.png'
+        alt="Ayo Ayco's avatar"
+        src="/ayo-sm.png"
         width="140"
         height="140"
       />
@@ -36,7 +36,7 @@ import now from '../constants/now';
         </ul>
         <a href="/now" class="now-wrapper">
           <span class="now-label">Now</span>
-          <span class="status">{ now.status }</span>
+          <span class="status">{now.status}</span>
         </a>
       </div>
     </div>
@@ -165,11 +165,11 @@ import now from '../constants/now';
     }
 
     .now-label {
-      display:none
+      display: none;
     }
 
     .status::before {
-      content: 'Now: '
+      content: "Now: ";
     }
 
     .status {
