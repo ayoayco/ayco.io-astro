@@ -15,7 +15,7 @@
     "build:preview": "astro build && astro preview",
     "deploy": "astro build && scp -r dist ayo@ayco.io:~/ayco.io-flask/",
     "copy:dist": "astro build && cp -R dist ../ayco.io-flask/",
-    "prepare": "husky"
+    "prepare": "husky && husky install"
   },
   "devDependencies": {
     "@astro-reactive/form": "^0.10.0",
@@ -38,5 +38,9 @@
     "prettier-plugin-astro": "^0.14.1",
     "typescript-eslint": "^8.18.2"
   },
-  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
+  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c",
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.--write": "prettier --write"
+  }
 }
