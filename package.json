@@ -10,6 +10,7 @@
     "preview": "astro preview",
     "lint": "eslint . --config eslint.config.mjs",
     "format": "prettier . --write",
+    "check": "npm run format && npm run lint",
     "astro": "astro",
     "build:preview": "astro build && astro preview",
     "deploy": "astro build && scp -r dist ayo@ayco.io:~/ayco.io-flask/",
