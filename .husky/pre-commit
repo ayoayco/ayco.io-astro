@@ -1,2 +1,1 @@
-git add .
 npx --no-install lint-staged
