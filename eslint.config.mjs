@@ -16,6 +16,8 @@ const gitignorePath = path.resolve(__dirname, '.gitignore')
 
 
 
+
+
 export default [
   {
     languageOptions: {
