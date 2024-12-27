@@ -21,6 +21,7 @@
     "@astro-reactive/validator": "^0.5.0",
     "@astrojs/sitemap": "^3.2.1",
     "@ayco/astro-sw": "^0.8.12",
+    "@eslint/compat": "^1.2.4",
     "@eslint/js": "^9.17.0",
     "@typescript-eslint/parser": "^8.18.2",
     "astro": "^5.0.5",
