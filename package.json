@@ -8,7 +8,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "eslint . --config eslint.config.mjs",
+    "lint": "eslint . --config eslint.config.mjs --cache",
     "format": "prettier . --write",
     "check": "npm run format && npm run lint",
     "astro": "astro",
