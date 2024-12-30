@@ -19,7 +19,6 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.node,
-        ...astroSwGlobals,
       },
     },
   },
@@ -38,6 +37,14 @@ export default [
       parser: astroParser,
       parserOptions: {
         parser: tseslint.parser,
+      },
+    },
+  },
+  {
+    files: ['**/sw.mjs'],
+    languageOptions: {
+      globals: {
+        ...astroSwGlobals,
       },
     },
   },
