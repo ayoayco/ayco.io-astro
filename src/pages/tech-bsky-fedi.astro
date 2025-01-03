@@ -33,8 +33,6 @@ const promises = urls.map((url) => fetch(url))
 const responses = await Promise.all(promises)
 const data = await Promise.all(responses.map((response) => response.json()))
 
-console.log(accountObjects)
-
 const title = 'Tech Bsky ↔ Fedi'
 const description =
   'Celebrating bsky folks who bridged their accounts to the fediverse!'
@@ -110,7 +108,8 @@ const description =
 
     <p>
       If you're on Mastodon, this functionality is found in:<br /><small
-        >Preferences -&gt; Import and export -&gt; Import</small>
+        >Preferences -&gt; Import and export -&gt; Import</small
+      >
     </p>
 
     <h2>Full <code>.csv</code> content</h2>
