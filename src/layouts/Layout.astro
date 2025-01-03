@@ -21,6 +21,9 @@ const { title, description } = Astro.props
     <Nav links={links} />
     <slot />
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       html,
       body,
       * {
