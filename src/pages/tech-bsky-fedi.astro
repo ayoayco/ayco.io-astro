@@ -1,0 +1,138 @@
+---
+import { Code } from 'astro:components'
+import Footer from '../components/Footer.astro'
+import Layout from '../layouts/Layout.astro'
+import importedCode from '../../public/following_accounts.csv?raw'
+
+const csvToArray = (content: string) => {
+  return content
+    .split('\n')
+    .slice(1)
+    .map((str) => str.split(',')[0])
+}
+
+const accounts = csvToArray(importedCode)
+
+const accountObjects = accounts
+  .map((account) => {
+    const bskyHandle = account?.replace('@bsky.brid.gy', '')
+    const url = `https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile/?actor=${bskyHandle}`
+
+    return account
+      ? {
+          bskyHandle,
+          fediHandle: account,
+          url,
+        }
+      : null
+  })
+  .filter((acct) => !!acct)
+
+const urls = accountObjects.map((account) => account.url)
+const promises = urls.map((url) => fetch(url))
+const responses = await Promise.all(promises)
+const data = await Promise.all(responses.map((response) => response.json()))
+
+console.log(accountObjects)
+
+const title = 'Tech Bsky ↔ Fedi'
+const description =
+  'Celebrating bsky folks who bridged their accounts to the fediverse!'
+---
+
+<Layout title={title}>
+  <main>
+    <h1>{title}</h1>
+
+    <p><em>{description}</em></p>
+
+    <p>
+      A lot of tech accounts are now active in Bsky. Some of them opted to be
+      bridged to the Fediverse via <a href="https://fed.brid.gy">fed.brid.gy</a>
+      -- so we can also follow them from any ActivityPub powered social platforms.
+    </p>
+
+    <p>
+      On this page, I upload my handpicked tech Bsky accounts that are currently
+      bridged to the Fedi. Feel free <a
+        href="mailto:ayo@ayco.io?subject=Re:%20Tech%20bsky%20<->%20fedi"
+        >send a mail</a
+      > to request adding accounts I missed.
+    </p>
+
+    <p>
+      If you are on bsky and want to be bridged too, please follow <a
+        href="https://bsky.app/profile/ap.brid.gy"
+        target="_blank">@ap.brid.gy</a
+      >.
+    </p>
+
+    <p>
+      If you are on fedi and want to follow the accounts here, scroll to the <a
+        href="#how">bottom of the page</a
+      > for a handy `.csv` file you can upload to your chosen fedi platform.
+    </p>
+
+    <h2>Accounts ({accountObjects.length})</h2>
+
+    <table>
+      <tr>
+        <th>Avatar</th>
+        <th>Bsky</th>
+        <th>Fedi</th>
+      </tr>
+      {
+        accountObjects.map((account, index) => (
+          <tr>
+            <td>
+              <img
+                src={data[index].avatar}
+                alt={`${account.bskyHandle}'s avatar`}
+              />
+            </td>
+            <td>
+              <span>{account.bskyHandle}</span>
+            </td>
+            <td>
+              <span>{account.fediHandle}</span>
+            </td>
+          </tr>
+        ))
+      }
+    </table>
+
+    <h2 id="how">How how how?</h2>
+
+    <p>
+      Download the <a href="following_accounts.csv">.csv file</a> or copy the content
+      below and save in a file. Then, upload to your fedi account provider.
+    </p>
+
+    <p>
+      If you're on Mastodon, this functionality is found in:<br /><small
+        >Preferences -&gt; Import and export -&gt; Import</small>
+    </p>
+
+    <h2>Full <code>.csv</code> content</h2>
+
+    <Code code={importedCode} />
+
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  td img {
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+  }
+  td span {
+    font-size: small;
+  }
+  table th,
+  table td {
+    padding: 0.5em;
+    border: 1px solid gray;
+  }
+</style>
