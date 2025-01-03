@@ -73,31 +73,33 @@ const description =
 
     <h2>Accounts ({accountObjects.length})</h2>
 
-    <table>
-      <tr>
-        <th>Avatar</th>
-        <th>Bsky</th>
-        <th>Fedi</th>
-      </tr>
-      {
-        accountObjects.map((account, index) => (
-          <tr>
-            <td>
-              <img
-                src={data[index].avatar}
-                alt={`${account.bskyHandle}'s avatar`}
-              />
-            </td>
-            <td>
-              <span>{account.bskyHandle}</span>
-            </td>
-            <td>
-              <span>{account.fediHandle}</span>
-            </td>
-          </tr>
-        ))
-      }
-    </table>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th>Avatar</th>
+          <th>Bsky</th>
+          <th>Fedi</th>
+        </tr>
+        {
+          accountObjects.map((account, index) => (
+            <tr>
+              <td>
+                <img
+                  src={data[index].avatar}
+                  alt={`${account.bskyHandle}'s avatar`}
+                />
+              </td>
+              <td>
+                <span>{account.bskyHandle}</span>
+              </td>
+              <td>
+                <span>{account.fediHandle}</span>
+              </td>
+            </tr>
+          ))
+        }
+      </table>
+    </div>
 
     <h2 id="how">How how how?</h2>
 
@@ -128,6 +130,10 @@ const description =
   }
   td span {
     font-size: small;
+  }
+
+  .table-container {
+    overflow: scroll;
   }
   table th,
   table td {
