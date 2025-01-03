@@ -72,6 +72,14 @@ const description =
       > for a handy `.csv` file you can upload to your chosen fedi platform.
     </p>
 
+    <p>
+      Note that for the bsky accounts to see your replies and likes from fedi,
+      you have to bridge your account as well by following <a
+        href="https://elk.zone/@bsky.brid.gy@bsky.brid.gy"
+        >@bsky.brid.gy@bsky.brid.gy</a
+      >
+    </p>
+
     <h2>Accounts ({accountObjects.length})</h2>
 
     <div class="table-container">
@@ -95,10 +103,24 @@ const description =
                 />
               </td>
               <td>
-                <span>{account.bskyHandle}</span>
+                <span>
+                  <a
+                    href={`https://bsky.app/profile${account.bskyHandle}`}
+                    target="_blank"
+                  >
+                    {account.bskyHandle}
+                  </a>
+                </span>
               </td>
               <td>
-                <span>{account.fediHandle}</span>
+                <span>
+                  <a
+                    href={`https://elk.zone/@${account.fediHandle}`}
+                    target="_blank"
+                  >
+                    {account.fediHandle}
+                  </a>
+                </span>
               </td>
             </tr>
           ))
