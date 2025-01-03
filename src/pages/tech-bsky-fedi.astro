@@ -1,5 +1,6 @@
 ---
 import { Code } from 'astro:components'
+import { Image } from 'astro:assets'
 import Footer from '../components/Footer.astro'
 import Layout from '../layouts/Layout.astro'
 import importedCode from '../../public/following_accounts.csv?raw'
@@ -84,9 +85,13 @@ const description =
           accountObjects.map((account, index) => (
             <tr>
               <td>
-                <img
+                <Image
                   src={data[index].avatar}
                   alt={`${account.bskyHandle}'s avatar`}
+                  width="50"
+                  height="50"
+                  decoding="async"
+                  loading="lazy"
                 />
               </td>
               <td>

@@ -5,6 +5,9 @@ import sitemap from '@astrojs/sitemap'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://ayo.ayco.io',
+  image: {
+    domains: ['cdn.bsky.app'],
+  },
   integrations: [
     sitemap(),
     serviceWorker({
