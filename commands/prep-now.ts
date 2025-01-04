@@ -1,5 +1,5 @@
 import { fileURLToPath } from 'node:url'
-import { readFileSync, writeFileSync } from 'node:fs'
+import { copyFileSync, readFileSync, writeFileSync } from 'node:fs'
 import { consola } from 'consola'
 import { colorize } from 'consola/utils'
 import { dirname, resolve } from 'pathe'
@@ -8,8 +8,7 @@ import now from '../src/constants/now.json'
 
 export default async function newNow(): Promise<void> {
   consola.box('Preparing for a new Now page!')
-  const datetime = now.publishDate
-  const postFileName = `${datetime}.astro`
+  const postFileName = `${now.publishDate}.astro`
   consola.start(`Copying current now page to ${colorize('blue', postFileName)}`)
 
   try {
@@ -40,9 +39,15 @@ export default async function newNow(): Promise<void> {
     /**
      * clear now.md
      */
-    // consola.start('Clearing now.md file...')
-    // writeFileSync(nowMdPath, '')
-    // consola.success('now.md cleared')
+    consola.start('Clearing now.md file...')
+    const destinationMd = resolve(
+      __dirname,
+      '../src/constants/bkup',
+      `${now.publishDate}.md`
+    )
+    copyFileSync(nowMdPath, destinationMd)
+    writeFileSync(nowMdPath, '')
+    consola.success('now.md cleared')
 
     /**
      * clear now.ts
@@ -54,6 +59,14 @@ export default async function newNow(): Promise<void> {
     ) // Object.assign({}, now)
     newNowObj.publishDate = new Date().toISOString().split('T')[0] ?? ''
     const nowJsonPath = resolve(__dirname, '../src/constants/now.json')
+    // backup file
+    const destinationJson = resolve(
+      __dirname,
+      '../src/constants/bkup',
+      `${now.publishDate}.json`
+    )
+    copyFileSync(nowJsonPath, destinationJson)
+
     writeFileSync(nowJsonPath, JSON.stringify(newNowObj, null, '\t'))
 
     consola.success('You may now update your Now content and props.\n')
