@@ -2,71 +2,34 @@
 import Layout from '../layouts/Layout.astro'
 import Footer from '../components/Footer.astro'
 import Posts from '../components/Posts.astro'
-import now from '../constants/now'
+import now from '../constants/now.json'
+import { dirname, resolve } from 'pathe'
+import { readFileSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
+import { mdToHTML } from '../../commands/md-to-html'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+const nowMdPath = resolve(__dirname, '../constants/now.md')
+const nowContent = readFileSync(nowMdPath, 'utf-8')
+const nowHtml = await mdToHTML(nowContent)
 
 const posts = await Astro.glob('./now/and-then/posts/*.astro')
 ---
 
 <Layout title="Now" description="What is Ayo Ayco currently up to?">
   <main>
-    <h1><span class="text-gradient">Now: {now.status}</span></h1>
+    <h1><span class="text-gradient">Now: {now.title}</span></h1>
     <p>
       <em
         >Published on <time datetime="{now.publishDate}"
-          >{now.readableDate ?? now.publishDate}</time
+          >{now.publishedOn ?? now.publishDate}</time
         >
         {now.publishState}</em
       >
     </p>
 
-    <p>Christmas holidays as started for me.</p>
-
-    <p>
-      I think I finished all needed stuff for work. Also messaged people online
-      for a final happy holiday greetings of the year. Will go offline til
-      January and figure out my rhythm for next year.
-    </p>
-
-    <p>
-      Reading Radical Candor by Kim Scott. Feels like a lot of these kind of
-      books are a rehash of concepts in "The 7 Habits of Highly Effective
-      People" and "How to Win Friends and Influence People" -- I recommend those
-      first before this one! I like that “humility” was also given a spotlight;
-      there's not enough attention to the effectivity/productivity of
-      acknowledging you can be wrong and welcoming feedback (both praise &
-      criticism). Hard to capture in a paragraph though -- ask me to elaborate
-      if you want and when given the chance!
-    </p>
-
-    <p>
-      Also reinforced the idea that 'writing a story' in my head about people,
-      with prejudice, is unproductive. Assumptions are never good; always verify
-      before forming judgments and/or giving feedbacks.
-    </p>
-
-    <p>
-      Spent some time in Aachen, Germany with the fam. Walked around the
-      Christmas Market there. Food trip galore, sat at cafes, read books, bought
-      stuff. :)
-    </p>
-
-    <p>
-      But the highlight is going to Monschau on a day trip. Kahel buit a small
-      snowman.
-    </p>
-
-    <p>
-      Also, realized down-time travel time is infinitely more productive when
-      listening to Audio books. It is especially effective for me for books I
-      have already finished and just need a review. So I am glad I have a copy
-      of the 7-habits book ready -- I finished that one years ago, listening to
-      the audio is mostly just a review.
-    </p>
-
-    <p>
-      Stopping now before this becomes a long blog about books; seems I need to
-      write that separately...
-    </p>
+    <Fragment set:html={nowHtml} />
 
     <Posts posts={posts} title="Previously..." />
     <hr />

@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
 import Footer from '../components/Footer.astro'
 import { stuff } from '../constants/stuff'
-import now from '../constants/now'
+import now from '../constants/now.json'
 
 // const isDev = import.meta.env.DEV;
 // const getOriginUrl = (path: string) => isDev ? `http://localhost:5000/${path}` : path;
@@ -36,7 +36,7 @@ import now from '../constants/now'
         </ul>
         <a href="/now" class="now-wrapper">
           <span class="now-label">Now</span>
-          <span class="status">{now.status}</span>
+          <span class="status">{now.title}</span>
         </a>
       </div>
     </div>
