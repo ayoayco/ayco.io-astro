@@ -23,8 +23,9 @@ $ pnpm i
 
 ## Commands
 
-| Command          | Action                                    |
-| ---------------- | ----------------------------------------- |
-| `npm start`      | start dev server                          |
-| `npm run build`  | generate static files to `dist` directory |
-| `npm run deploy` | run build and upload to my server         |
+| Command             | Action                                    |
+| ------------------- | ----------------------------------------- |
+| `pnpm start`        | start dev server                          |
+| `pnpm run build`    | generate static files to `dist` directory |
+| `pnpm run deploy`   | run build and upload to my server         |
+| `pnpm run prep:now` | back up and clear current now constants   |
