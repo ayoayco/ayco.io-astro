@@ -1,15 +1,21 @@
 ---
 export interface Props {
-  title: string | undefined
-  description: string | undefined
+  title?: string
+  description?: string
+  ogImage?: string
 }
 const defaultDescription =
   'Professional software engineer specializing in web development with a decade of experience building web applications for both private businesses and government-funded high-impact projects utilizing web technologies, IoT, data viz/insights, remote sensing, and GIS'
 
 const defaultTitle =
   'Ayo Ayco | Engineering Leader, Software Engineer, Web Developer'
+const defaultOgImage = 'ayo.png'
 
-let { title, description = defaultDescription } = Astro.props
+let {
+  title,
+  description = defaultDescription,
+  ogImage = defaultOgImage,
+} = Astro.props
 
 const baseURL = 'https://ayo.ayco.io'
 ---
@@ -30,7 +36,7 @@ const baseURL = 'https://ayo.ayco.io'
   <meta property="og:url" content={baseURL + Astro.url.pathname} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content="/ayo.png" />
+  <meta property="og:image" content={`/${ogImage}`} />
 
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="me" href="https://ayos.blog" />
