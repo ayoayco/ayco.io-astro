@@ -85,7 +85,7 @@ const description =
     <div class="table-container">
       <table>
         <tr>
-          <th>Avatar</th>
+          <th>&nbsp;</th>
           <th>Fedi</th>
           <th>Bsky</th>
         </tr>
@@ -154,6 +154,7 @@ const description =
 <style>
   td img {
     border-radius: 5px;
+    min-width: 50px;
     width: 50px;
     height: 50px;
   }
@@ -162,10 +163,16 @@ const description =
     overflow-x: auto;
   }
 
-  table th,
-  table td {
+  th,
+  td {
     padding: 1rem;
     border-radius: 5px;
     background: rgba(0, 0, 0, 0.1);
+  }
+
+  th:first-child,
+  td:first-child {
+    display: block;
+    max-width: calc(50px + 2rem);
   }
 </style>
