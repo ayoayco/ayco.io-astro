@@ -8,6 +8,6 @@ I have [received news](https://social.ayco.io/@ayo/113759677401894023) that my p
 
 Fingers-crossed they send me the schedule for the slot soon. So glad that I will be participating in topics I am most passionate about: The freedom of people in the Web and the efforts to protect it using Free and Open Source Software.
 
-I have also put up [a page](/tech-bsky-fedi) in celebration of Bsky accounts who opted to bridge their presense in the Fediverse. Hoping to get more Bsky accounts to do that...
+I have also published [a new page](/tech-bsky-fedi) 🎉 in celebration of Bsky accounts who opted to bridge their presense in the Fediverse. Hoping to get more Bsky accounts to do that...
 
 Overall, after 3 winters here in The Netherlands, I feel like I have adjusted well already to find my rhythm. Looking forward to a great 2025!
