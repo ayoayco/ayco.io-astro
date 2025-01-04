@@ -13,6 +13,7 @@ const __dirname = dirname(__filename)
 const nowMdPath = resolve(__dirname, '../constants/now.md')
 const nowContent = readFileSync(nowMdPath, 'utf-8')
 const nowHtml = await mdToHTML(nowContent)
+const publishedOn = now.publishedOn === '' ? now.publishDate : now.publishedOn
 
 const posts = await Astro.glob('./now/and-then/posts/*.astro')
 ---
@@ -22,9 +23,7 @@ const posts = await Astro.glob('./now/and-then/posts/*.astro')
     <h1><span class="text-gradient">Now: {now.title}</span></h1>
     <p>
       <em
-        >Published on <time datetime="{now.publishDate}"
-          >{now.publishedOn ?? now.publishDate}</time
-        >
+        >Published on <time datetime="{now.publishDate}">{publishedOn}</time>
         {now.publishState}</em
       >
     </p>
