@@ -136,13 +136,14 @@ const description =
       to your fedi account provider.
     </p>
 
+    <p>If you're on Mastodon, this functionality is found in:</p>
     <p>
-      If you're on Mastodon, this functionality is found in:<br /><small
-        >Preferences -&gt; Import and export -&gt; Import</small
-      >
+      <strong>Preferences</strong> &rarr; <strong>Import and export</strong> &rarr;
+      <strong>Import</strong>
     </p>
 
     <h2>Full <code>.csv</code> content</h2>
+    <br />
 
     <Code code={importedCode} />
 
@@ -156,16 +157,15 @@ const description =
     width: 50px;
     height: 50px;
   }
-  td span {
-    font-size: small;
-  }
 
   .table-container {
     overflow-x: auto;
   }
+
   table th,
   table td {
-    padding: 0.5em;
-    border: 1px solid gray;
+    padding: 1rem;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.1);
   }
 </style>
