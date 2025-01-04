@@ -6,6 +6,8 @@ This is the project for generating the static files for my personal site [ayo.ay
 
 ## Development
 
+You need [node](https://nodejs.org) and [pnpm](https://pnpm.io).
+
 ```bash
 # clone project
 $ git clone git@git.sr.ht:~ayoayco/ayco.io-astro
@@ -14,7 +16,8 @@ $ git clone git@git.sr.ht:~ayoayco/ayco.io-astro
 $ cd ./ayco.io-astro
 
 # install deps
-$ npm i
+$ corepack enable
+$ pnpm i
 
 ```
 
