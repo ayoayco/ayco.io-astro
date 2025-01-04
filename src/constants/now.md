@@ -10,4 +10,4 @@ Fingers-crossed they send me the schedule for the slot soon. So glad that I will
 
 I have also published [a new page](/tech-bsky-fedi) 🎉 in celebration of Bsky accounts who opted to bridge their presense in the Fediverse. Hoping to get more Bsky accounts to do that...
 
-Overall, after 3 winters here in The Netherlands, I feel like I have adjusted well already to find my rhythm. Looking forward to a great 2025!
+Overall, after three winters here in The Netherlands, I feel like I have adjusted well already to find my rhythm. Looking forward to a great 2025!
