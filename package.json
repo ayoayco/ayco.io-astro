@@ -15,7 +15,7 @@
     "build:preview": "astro build && astro preview",
     "deploy": "astro build && scp -r dist ayo@ayco.io:~/ayco.io-flask/",
     "copy:dist": "astro build && cp -R dist ../ayco.io-flask/",
-    "prepare": "husky && husky install",
+    "prepare": "husky",
     "prep:now": "npx jiti ./commands/prep-now.js"
   },
   "devDependencies": {
