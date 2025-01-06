@@ -7,7 +7,6 @@ import now from '../constants/now.json'
 const nowGlob = await import.meta.glob('../constants/now.md', { eager: true })
 const nowPosts = Object.values(nowGlob)
 const nowHtml = (await nowPosts[0].compiledContent()) ?? ''
-console.log('>>>', nowHtml)
 const publishedOn = now.publishedOn === '' ? now.publishDate : now.publishedOn
 
 const posts = await Astro.glob('./now/and-then/posts/*.astro')
