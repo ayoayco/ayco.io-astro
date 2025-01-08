@@ -14,7 +14,7 @@ const csvToArray = (content: string) => {
 
 const accounts = csvToArray(importedCode)
 
-const accountObjects = accounts
+let accountObjects = accounts
   .map((account) => {
     const bskyHandle = account?.replace('@bsky.brid.gy', '')
     const url = `https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile/?actor=${bskyHandle}`
@@ -32,7 +32,13 @@ const accountObjects = accounts
 const urls = accountObjects.map((account) => account.url)
 const promises = urls.map((url) => fetch(url))
 const responses = await Promise.all(promises)
-const data = await Promise.all(responses.map((response) => response.json()))
+let data = await Promise.all(responses.map((response) => response.json()))
+
+// filter accounts with error (e.g., AccountDisabled)
+accountObjects = accountObjects.filter((acct, index) => !data[index].error)
+data = data.filter((datum) => !datum.error)
+
+console.log(accountObjects)
 
 const title = 'Tech Bsky ↔ Fedi'
 const description =
@@ -96,7 +102,7 @@ const description =
             <tr>
               <td>
                 <Image
-                  src={data[index].avatar}
+                  src={data[index].avatar ?? ''}
                   alt={`${account.bskyHandle}'s avatar`}
                   width="50"
                   height="50"
