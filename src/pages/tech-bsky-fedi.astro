@@ -35,10 +35,13 @@ const responses = await Promise.all(promises)
 let data = await Promise.all(responses.map((response) => response.json()))
 
 // filter accounts with error (e.g., AccountDisabled)
-accountObjects = accountObjects.filter((acct, index) => !data[index].error)
+accountObjects = accountObjects.filter((acct, index) => {
+  const hasNoError = !data[index].error
+  if (!hasNoError)
+    console.log(`>>> ${acct.bskyHandle} has error: ${data[index].error}`)
+  return hasNoError
+})
 data = data.filter((datum) => !datum.error)
-
-console.log(accountObjects)
 
 const title = 'Tech Bsky ↔ Fedi'
 const description =
