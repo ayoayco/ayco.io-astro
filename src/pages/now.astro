@@ -15,7 +15,7 @@ const publishedOn = now.publishedOn === '' ? now.publishDate : now.publishedOn
     <p>
       <em
         >Updated on <time datetime="{now.publishDate}">{publishedOn}</time>
-        {now.publishState}</em
+        {now.publishState ? `, ${now.publishState}` : ''}</em
       >
     </p>
     <Fragment set:html={nowHtml} />
