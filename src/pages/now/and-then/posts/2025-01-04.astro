@@ -1,0 +1,75 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import Footer from '../../../../components/Footer.astro'
+
+const title = `Finding my rhythm`
+const description = `Feels like I'm finding a good rhythm for myself here now...`
+const publishedOn = `a cold Sunday night while the fam is already asleep`
+const publishDate = `2025-01-04`
+const publishState = `in my home in Amsterdam`
+const content = `<p>Happy with how I organized my spaces at home with separation for <em>creating</em> and <em>consuming</em> stuff, after <a href="https://social.ayco.io/@ayo/113753532411548490">realizing</a> that <a href="https://www.youtube.com/watch?v=4fndeDfaWCg"><em>I like it that way</em></a>.</p>
+<p>Meaning, in my workspace where I usually create stuff (e.g., software, music, write-ups) it feels weird to be consuming media (e.g., books, games, files).</p>
+<p>Enjoying this so far. I now have a reading corner, a gaming corner, a music corner, and my usual work area (which is the biggest).</p>
+<p>I have <a href="https://social.ayco.io/@ayo/113759677401894023">received news</a> that my proposal to talk about <a href="https://elk.zone">Elk</a> in <a href="https://fosdem.org/2025/">FOSDEM2025</a> was accepted.</p>
+<p>Fingers-crossed they send me the schedule for the slot soon. So glad that I will be participating in topics I am most passionate about: The freedom of people in the Web and the efforts to protect it using Free and Open Source Software.</p>
+<p>I have also published <a href="/tech-bsky-fedi">a new page</a> 🎉 in celebration of Bsky accounts who opted to bridge their presense in the Fediverse. Hoping to get more Bsky accounts to do that...</p>
+<p>Overall, after three winters here in The Netherlands, I feel like I have adjusted well already to find my rhythm. Looking forward to a great 2025!</p>`
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <h1><span class="text-gradient">{title}</span></h1>
+    <p>
+      <em>
+        Published on
+        <time datetime={publishDate}>{publishedOn}</time>
+        {publishState}
+      </em>
+    </p>
+
+    <Fragment set:html={content} />
+
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--ayo-gradient);
+    animation: pulse 4s ease-in-out infinite;
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .highlighted-content {
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .highlighted-content code {
+    font-size: var(--font-size-base);
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>

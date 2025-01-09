@@ -1,13 +1,20 @@
-Happy with how I organized my spaces at home with separation for *creating* and *consuming* stuff, after [realizing](https://social.ayco.io/@ayo/113753532411548490) that [*I like it that way*](https://www.youtube.com/watch?v=4fndeDfaWCg).
+## Annual Sickness
 
-Meaning, in my workspace where I usually create stuff (e.g., software, music, write-ups) it feels weird to be consuming media (e.g., books, games, files).
+I have been on bed rest for some days now due to fevers and coughs. This is tough on my real day job, since my work now is mostly meetings -- my mind blanks out a lot and coughing does not help. Hoping to get better soon and come back refreshed.
 
-Enjoying this so far. I now have a reading corner, a gaming corner, a music corner, and my usual work area (which is the biggest).
+## McFly progress
 
-I have [received news](https://social.ayco.io/@ayo/113759677401894023) that my proposal to talk about [Elk](https://elk.zone) in [FOSDEM2025](https://fosdem.org/2025/) was accepted.
+Had a good progress on [McFly](https://mcfly.js.org) -- the codebase is so clean now:
+1. only need one config file now `mcfly.config.mjs`
+2.  `api` routes are now inside `src/` (so no need for a `routes/api`)
+3.  No need for the catch-all route in `routes/[...].js`
 
-Fingers-crossed they send me the schedule for the slot soon. So glad that I will be participating in topics I am most passionate about: The freedom of people in the Web and the efforts to protect it using Free and Open Source Software.
+Try it today by runing: `npm create mcfly@latest`
 
-I have also published [a new page](/tech-bsky-fedi) 🎉 in celebration of Bsky accounts who opted to bridge their presense in the Fediverse. Hoping to get more Bsky accounts to do that...
+## Ghosted by Social Web organizers for FOSDEM2025
 
-Overall, after three winters here in The Netherlands, I feel like I have adjusted well already to find my rhythm. Looking forward to a great 2025!
+I have received an [acceptance letter](https://social.ayco.io/@ayo/113759677401894023) for my Elk talk proposal, but [was not given a slot](https://social.ayco.io/@ayo/113784915020626878) in the end... I wonder how common of a practice is this among conference organizers. But yeah, I am not going to FOSDEM2025.
+
+## Chat poll
+
+I opened a [poll](https://social.ayco.io/@ayo/113775644091515266) asking which chat platforms are popular. Discord is quite popular; a lot of open source projects are managing their communities there.
