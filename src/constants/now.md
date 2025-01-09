@@ -4,12 +4,7 @@ I have been on bed rest for some days now due to fevers and coughs. This is toug
 
 ## McFly progress
 
-Had a good progress on [McFly](https://mcfly.js.org) -- the codebase is so clean now:
-1. only need one config file now `mcfly.config.mjs`
-2.  `api` routes are now inside `src/` (so no need for a `routes/api`)
-3.  No need for the catch-all route in `routes/[...].js`
-
-Try it today by runing: `npm create mcfly@latest`
+Had a good progress on [McFly](https://mcfly.js.org) -- the codebase is so clean now. It is starting to get closer and closer to how I envision a metaframework for the modern web platform.
 
 ## Ghosted by Social Web organizers for FOSDEM2025
 
