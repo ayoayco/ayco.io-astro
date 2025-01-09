@@ -1,15 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Footer from '../components/Footer.astro'
-import Posts from '../components/Posts.astro'
 import now from '../constants/now.json'
 
 const nowGlob = await import.meta.glob('../constants/now.md', { eager: true })
 const nowPosts = Object.values(nowGlob)
 const nowHtml = (await nowPosts[0].compiledContent()) ?? ''
 const publishedOn = now.publishedOn === '' ? now.publishDate : now.publishedOn
-
-const posts = await Astro.glob('./now/and-then/posts/*.astro')
 ---
 
 <Layout title="Now" description="What is Ayo Ayco currently up to?">
@@ -21,10 +18,7 @@ const posts = await Astro.glob('./now/and-then/posts/*.astro')
         {now.publishState}</em
       >
     </p>
-
     <Fragment set:html={nowHtml} />
-
-    <Posts posts={posts} title="Previously..." />
     <hr />
     <em><a href="https://nownownow.com/about">About now pages</a></em>
     <Footer />
