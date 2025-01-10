@@ -44,12 +44,12 @@ export default links
 
 export const footerLinks = [
   {
-    text: 'GitHub',
-    url: 'https://github.com/ayoayco',
-  },
-  {
     text: 'SourceHut',
     url: 'https://sr.ht/~ayoayco',
+  },
+  {
+    text: 'GitHub',
+    url: 'https://github.com/ayoayco',
   },
   {
     text: 'LinkedIn',
