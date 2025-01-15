@@ -1,0 +1,76 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import Footer from '../../../../components/Footer.astro'
+
+const title = `Sickness, progress, and being ghosted`
+const description = `Sickness, progress, and being ghosted`
+const publishedOn = `the 9th of January, 2025`
+const publishDate = `2025-01-09`
+const publishState = `from my home in Amsterdam`
+const content = `<h2>Annual Sickness</h2>
+<p>I have been on bed rest for some days now due to fevers and coughs. This is tough on my real day job, since my work now is mostly meetings -- my mind blanks out a lot and coughing does not help. Hoping to get better soon and come back refreshed.</p>
+<h2>McFly progress</h2>
+<p>Had a good progress on <a href="https://mcfly.js.org">McFly</a> -- the codebase is so clean now. It is starting to get closer and closer to how I envision a metaframework for the modern web platform.</p>
+<h2>Ghosted by Social Web organizers for FOSDEM2025</h2>
+<p>I have received an <a href="https://social.ayco.io/@ayo/113759677401894023">acceptance letter</a> for my Elk talk proposal, but <a href="https://social.ayco.io/@ayo/113784915020626878">was not given a slot</a> in the end... I wonder how common of a practice is this among conference organizers. But yeah, I am not going to FOSDEM2025.</p>
+<h2>Chat poll</h2>
+<p>I opened a <a href="https://social.ayco.io/@ayo/113775644091515266">poll</a> asking which chat platforms are popular. Discord is quite popular; a lot of open source projects are managing their communities there.</p>`
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <h1><span class="text-gradient">{title}</span></h1>
+    <p>
+      <em>
+        Published on
+        <time datetime={publishDate}>{publishedOn}</time>
+        {publishState}
+      </em>
+    </p>
+
+    <Fragment set:html={content} />
+
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--ayo-gradient);
+    animation: pulse 4s ease-in-out infinite;
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .highlighted-content {
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .highlighted-content code {
+    font-size: var(--font-size-base);
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
