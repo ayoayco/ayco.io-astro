@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro telemetry disable && astro build",
     "preview": "astro preview",
     "lint": "eslint . --config eslint.config.mjs --cache",
     "format": "prettier . --write",
