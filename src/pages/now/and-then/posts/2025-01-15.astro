@@ -1,0 +1,72 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import Footer from '../../../../components/Footer.astro'
+
+const title = `Going to FOSDEM2025`
+const description = `Going to FOSDEM2025`
+const publishedOn = `the 15th of January, 2025`
+const publishDate = `2025-01-15`
+const publishState = ``
+const content = `<h2>FOSDEM 2025</h2>
+<p>Just today, I got a notification via mail that I've been added to a <a href="https://matrix.org/">Matrix</a> chat room for social web "backstage" -- I thought it was strange because I was not in the schedule the last several times I checked. So I visited the <a href="https://fosdem.org/2025/schedule/track/social-web/">page for the day's schedule</a> and apparently I'm included.</p>
+<p>Not sure what happened, it could be a glitch in the conference planning platform or the communication, but yeah, I'm going to <a href="https://fosdem.org/2025">FOSDEM 2025</a> for a short talk about <a href="https://github.com/elk-zone/elk">Elk</a>.</p>
+<p>If you are going, please <a href="https://ayco.io/about">drop me a line via any of my contact channels</a> and let's meet. :)</p>`
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <h1><span class="text-gradient">{title}</span></h1>
+    <p>
+      <em>
+        Published on
+        <time datetime={publishDate}>{publishedOn}</time>
+        {publishState}
+      </em>
+    </p>
+
+    <Fragment set:html={content} />
+
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--ayo-gradient);
+    animation: pulse 4s ease-in-out infinite;
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .highlighted-content {
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .highlighted-content code {
+    font-size: var(--font-size-base);
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
