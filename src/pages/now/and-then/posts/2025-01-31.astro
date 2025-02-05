@@ -1,0 +1,73 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import Footer from '../../../../components/Footer.astro'
+
+const title = `At FOSDEM Social Web`
+const description = `This Saturday (Feb 1) I will give a talk about Elk at FOSDEM 2025 Social Web dev room!`
+const publishedOn = `the 31st of January, 2025`
+const publishDate = `2025-01-31`
+const publishState = `while preparing to go to Brussels :)`
+const content = `<h2>At FOSDEM Social Web</h2>
+<p>This Saturday (Feb 1) I will give a talk about Elk at FOSDEM 2025 Social Web dev room!</p>
+<p>There’s plenty to talk about in the Social Web space, and the line up looks really interesting! Particularly looking forward to hearing about Federation @ Forgejo 😄</p>
+<p>Glad to be part of this. See you if you’re there!</p>
+<p>👉 See the schedule</p>`
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <h1><span class="text-gradient">{title}</span></h1>
+    <p>
+      <em>
+        Published on
+        <time datetime={publishDate}>{publishedOn}</time>
+        {publishState}
+      </em>
+    </p>
+
+    <Fragment set:html={content} />
+
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--ayo-gradient);
+    animation: pulse 4s ease-in-out infinite;
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .highlighted-content {
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .highlighted-content code {
+    font-size: var(--font-size-base);
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
