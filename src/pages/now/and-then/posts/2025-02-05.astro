@@ -1,0 +1,75 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import Footer from '../../../../components/Footer.astro'
+
+const title = `Binge-watching, playing, and recovering`
+const description = ``
+const publishedOn = ``
+const publishDate = `2025-02-05`
+const publishState = ``
+const content = `<h2>Binge-watched <a href="https://www.netflix.com/tudum/articles/arcane-season-2-release-date-photos">Arcane season 2</a></h2>
+<p>I did not want to, but I started and can't stop watching! The first season was an absolute masterpiece, this second season is... I don't know how to say it best... it has been a loooong while since I was this absorbed in a story. It's epic, well-written, gripping, unpredictably good. Music is perfect. Ah, five stars is not enough I think. :)</p>
+<h2>Playing <a href="https://en.wikipedia.org/wiki/Final_Fantasy_VII_Remake">Final Fantasy VII Remake for PC</a></h2>
+<p>I am in the 8th chapter (I think) and what I like about this one is that it is so arcade-y it is easy to pick up and understand without thinking about it too much. Right amount of hack-and-slash combat and tactics (choosing skills &#x26; items to use for party members, switching between them, etc.)</p>
+<h2>This is progress</h2>
+<p>After COVID and emigrating to The Netherlands (a different story by itself), I don't think I ever really had the headspace to enjoy these things. It's weird. I have been trying, but even watching a movie is not really enjoyable.</p>
+<p>I think me being able to enjoy watching series and a game like this is progress. 2021 has caused a huge adjustment for me (bordering trauma). And I feel that this "progress" is further indication that I am recovering.</p>`
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <h1><span class="text-gradient">{title}</span></h1>
+    <p>
+      <em>
+        Published on
+        <time datetime={publishDate}>{publishedOn}</time>
+        {publishState}
+      </em>
+    </p>
+
+    <Fragment set:html={content} />
+
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--ayo-gradient);
+    animation: pulse 4s ease-in-out infinite;
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .highlighted-content {
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .highlighted-content code {
+    font-size: var(--font-size-base);
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
