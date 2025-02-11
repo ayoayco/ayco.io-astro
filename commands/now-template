@@ -4,10 +4,12 @@ import Footer from '../../../../components/Footer.astro'
 
 const title = `__title__`
 const description = `__description__`
-const publishedOn = `__publishedOn__`
+let publishedOn = `__publishedOn__`
 const publishDate = `__publishDate__`
 const publishState = `__publishState__`
 const content = `__content__`
+
+publishedOn = publishedOn === '' ? publishDate : publishedOn
 ---
 
 <Layout title={title} description={description}>

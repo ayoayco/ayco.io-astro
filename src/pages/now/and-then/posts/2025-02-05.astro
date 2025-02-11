@@ -4,7 +4,7 @@ import Footer from '../../../../components/Footer.astro'
 
 const title = `Binge-watching, playing, and recovering`
 const description = ``
-const publishedOn = ``
+let publishedOn = ``
 const publishDate = `2025-02-05`
 const publishState = ``
 const content = `<h2>Binge-watched <a href="https://www.netflix.com/tudum/articles/arcane-season-2-release-date-photos">Arcane season 2</a></h2>
@@ -14,6 +14,8 @@ const content = `<h2>Binge-watched <a href="https://www.netflix.com/tudum/articl
 <h2>This is progress</h2>
 <p>After COVID and emigrating to The Netherlands (a different story by itself), I don't think I ever really had the headspace to enjoy these things. It's weird. I have been trying, but even watching a movie is not really enjoyable.</p>
 <p>I think me being able to enjoy watching series and a game like this is progress. 2021 has caused a huge adjustment for me (bordering trauma). And I feel that this "progress" is further indication that I am recovering.</p>`
+
+publishedOn = publishedOn === '' ? publishDate : publishedOn
 ---
 
 <Layout title={title} description={description}>
