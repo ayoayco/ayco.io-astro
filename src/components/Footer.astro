@@ -4,15 +4,35 @@ const year = new Date().getFullYear()
 ---
 
 <footer>
-  <p>
+  <ul>
+    <li>
+      <a href="/about">About me</a>
+    </li>
+    <li>
+      <a href="/now">What I'm up to</a>
+    </li>
+    <li>
+      <a href="/threads">Thoughts</a>
+    </li>
+    <li>
+      <a href="/showcase">Some Projects</a>
+    </li>
+    <li>
+      <a href="https://ayos.blog/talks">Talks</a>
+    </li>
+    <li>
+      <a href="https://ayos.blog/projects">More Projects</a>
+    </li>
+  </ul>
+  <ul>
     {
       links.map((linkObj) => (
-        <span class="link-item">
+        <li>
           <a href={linkObj.url}>{linkObj.text}</a>
-        </span>
+        </li>
       ))
     }
-  </p>
+  </ul>
   <p>
     &#169; 2022-{year}
     <a href="/">Ayo Ayco</a>. This website <a
@@ -30,11 +50,21 @@ const year = new Date().getFullYear()
     gap: 1rem; */
     padding: 0;
 
-    .link-item:not(:last-child)::after {
-      content: ' • ';
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        display: inline;
+
+        &:not(:last-child)::after {
+          content: ' • ';
+        }
+      }
     }
 
-    p {
+    p,
+    ul {
       margin: 0 0 1em;
       font-size: var(--font-size-sm);
       line-height: 2em;
