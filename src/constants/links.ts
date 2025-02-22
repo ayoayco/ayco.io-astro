@@ -72,15 +72,7 @@ export const footerLinks = [
     url: 'https://instagram.com/ayoayco',
   },
   {
-    text: 'FOSStodon',
-    url: 'https://fosstodon.org/@ayo',
-  },
-  {
-    text: 'Web Tools',
-    url: 'https://m.webtoo.ls/@ayo',
-  },
-  {
-    text: 'Ayco Social',
+    text: 'Mastodon',
     url: 'https://social.ayco.io/@ayo',
   },
   {
