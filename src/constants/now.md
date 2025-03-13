@@ -1,6 +1,5 @@
-I have moved main activities (e.g, repository, planned work, announcements/discussions) on my projects to [SourceHut](https://sourcehut.org) — a *code forge* much like GitHub, GitLab or Codeberg, but with significant differences.
+Started some migrations of JS projects to TypeScript. There are a few moves from TypeScript & node that influenced me to do this:
 
-The projects are still automatically mirrored to GitHub using automatic `git push --mirror` via [SourceHut Builds](https://builds.sr.ht).
-
-👉 [My projects on SourceHut](https://sr.ht/~ayoayco/)
-
+1. [Node's type stripping](https://nodejs.org/api/typescript.html#type-stripping) - allows execution of TypeScript files that only contains erasable TypeScript syntax.
+2. [TypeScript's erasable syntax only](https://www.totaltypescript.com/erasable-syntax-only) - a flag to tell `tsc` to throw error on syntax that are not erasable (e.g., enums, namespaces, and class parameter properties)
+3. [TypeScript native compiler](https://devblogs.microsoft.com/typescript/typescript-native-port/) - promises 10x faster typescript compilation
