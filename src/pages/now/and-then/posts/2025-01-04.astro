@@ -20,11 +20,11 @@ const content = `<p>Happy with how I organized my spaces at home with separation
   <main>
     <h1><span class="text-gradient">{title}</span></h1>
     <p>
-      <em>
+      <small>
         Published on
         <time datetime={publishDate}>{publishedOn}</time>
         {publishState}
-      </em>
+      </small>
     </p>
 
     <Fragment set:html={content} />

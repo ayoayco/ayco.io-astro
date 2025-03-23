@@ -13,58 +13,59 @@ const publishedOn = now.publishedOn === '' ? now.publishDate : now.publishedOn
   <main>
     <h1>What's up <span class="text-gradient">Now</span></h1>
     <p>
-      <em
-        >Updated on <time datetime={now.publishDate}>{publishedOn}</time>{
+      <small>
+        Updated on <time datetime={now.publishDate}>{publishedOn}</time>{
           now.publishState ? `, ${now.publishState}` : ''
-        }</em
-      >
+        }
+        <small> </small>
+        <Fragment set:html={nowHtml} />
+        <hr />
+        <em><a href="https://nownownow.com/about">About now pages</a></em>
+        &middot;
+        <em><a href="now/and-then/">Previously...</a></em>
+        <Footer />
+      </small>
     </p>
-    <Fragment set:html={nowHtml} />
-    <hr />
-    <em><a href="https://nownownow.com/about">About now pages</a></em>
-    &middot;
-    <em><a href="now/and-then/">Previously...</a></em>
-    <Footer />
-  </main>
-</Layout>
 
-<style>
-  main {
-    margin: auto;
-    padding: 1em;
-    max-width: var(--content-width);
-  }
+    <style>
+      main {
+        margin: auto;
+        padding: 1em;
+        max-width: var(--content-width);
+      }
 
-  .text-gradient {
-    font-weight: 900;
-    background-image: var(--ayo-gradient);
-    animation: pulse 4s ease-in-out infinite;
-    background-size: 500% 500%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 100% 200%;
-    background-position-y: 100%;
-    border-radius: 0.4rem;
-  }
+      .text-gradient {
+        font-weight: 900;
+        background-image: var(--ayo-gradient);
+        animation: pulse 4s ease-in-out infinite;
+        background-size: 500% 500%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 100% 200%;
+        background-position-y: 100%;
+        border-radius: 0.4rem;
+      }
 
-  .highlighted-content {
-    margin: 1rem 0;
-    background: #4f39fa;
-    padding: 1rem;
-    border-radius: 0.4rem;
-    color: var(--color-bg);
-  }
+      .highlighted-content {
+        margin: 1rem 0;
+        background: #4f39fa;
+        padding: 1rem;
+        border-radius: 0.4rem;
+        color: var(--color-bg);
+      }
 
-  .highlighted-content code {
-    font-size: var(--font-size-base);
-    border: 0.1em solid var(--color-border);
-    border-radius: 4px;
-    padding: 0.15em 0.25em;
-  }
+      .highlighted-content code {
+        font-size: var(--font-size-base);
+        border: 0.1em solid var(--color-border);
+        border-radius: 4px;
+        padding: 0.15em 0.25em;
+      }
 
-  .link-card-grid {
-    display: grid;
-    gap: 1rem;
-    padding: 0;
-  }
-</style>
+      .link-card-grid {
+        display: grid;
+        gap: 1rem;
+        padding: 0;
+      }
+    </style>
+  </main></Layout
+>
