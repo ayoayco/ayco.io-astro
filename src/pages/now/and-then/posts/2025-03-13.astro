@@ -1,0 +1,76 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import Footer from '../../../../components/Footer.astro'
+
+const title = `Started migrating some JS projects to TS`
+const description = `TypeScript is making some good moves recently`
+let publishedOn = ``
+const publishDate = `2025-03-13`
+const publishState = ``
+const content = `<p>Started some migrations of JS projects to TypeScript. There are a few moves from TypeScript &#x26; node that influenced me to do this:</p>
+<ol>
+<li><a href="https://nodejs.org/api/typescript.html#type-stripping">Node's type stripping</a> - allows execution of TypeScript files that only contains erasable TypeScript syntax.</li>
+<li><a href="https://www.totaltypescript.com/erasable-syntax-only">TypeScript's erasable syntax only</a> - a flag to tell <code>tsc</code> to throw error on syntax that are not erasable (e.g., enums, namespaces, and class parameter properties)</li>
+<li><a href="https://devblogs.microsoft.com/typescript/typescript-native-port/">TypeScript native compiler</a> - promises 10x faster typescript compilation</li>
+</ol>`
+
+publishedOn = publishedOn === '' ? publishDate : publishedOn
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <h1><span class="text-gradient">{title}</span></h1>
+    <p>
+      <em>
+        Published on
+        <time datetime={publishDate}>{publishedOn}</time>
+        {publishState}
+      </em>
+    </p>
+
+    <Fragment set:html={content} />
+
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: var(--content-width);
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--ayo-gradient);
+    animation: pulse 4s ease-in-out infinite;
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .highlighted-content {
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .highlighted-content code {
+    font-size: var(--font-size-base);
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
