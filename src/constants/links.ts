@@ -68,8 +68,4 @@ export const footerLinks = [
     text: 'Mastodon',
     url: 'https://main.elk.zone/social.ayco.io/@ayo',
   },
-  {
-    text: 'Bluesky',
-    url: 'https://bsky.app/profile/did:plc:hhpuzxrbpurathqyj2fuvnrs',
-  },
 ]
