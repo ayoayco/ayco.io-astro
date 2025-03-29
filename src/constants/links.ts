@@ -10,13 +10,6 @@ export const links: Link[] = [
     url: 'https://ayos.blog',
     icon: 'blog',
   },
-  /*
-  {
-    url: "https://ayco.io/@ayo",
-    icon: "mastodon",
-    text: "social"
-  },
-  */
   {
     url: '/threads',
     text: 'threads',
@@ -73,7 +66,7 @@ export const footerLinks = [
   },
   {
     text: 'Mastodon',
-    url: 'https://social.ayco.io/@ayo',
+    url: 'https://main.elk.zone/social.ayco.io/@ayo',
   },
   {
     text: 'Bluesky',
