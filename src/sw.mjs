@@ -6,6 +6,17 @@
 const cacheName = `${__prefix ?? 'app'}-v${__version ?? '000'}`
 const forceLogging = true
 
+const cleanOldCaches = async () => {
+  const allowCacheNames = ['cozy-reader', cacheName]
+  const allCaches = await caches.keys()
+  allCaches.forEach((key) => {
+    if (!allowCacheNames.includes(key)) {
+      console.info('Deleting old cache', key)
+      caches.delete(key)
+    }
+  })
+}
+
 const addResourcesToCache = async (resources) => {
   const cache = await caches.open(cacheName)
   console.info('adding resources to cache...', {
@@ -73,6 +84,7 @@ const networkFirst = async ({ request, fallbackUrl }) => {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 self.addEventListener('activate', (event) => {
   console.info('activating service worker...')
+  cleanOldCaches()
 })
 
 self.addEventListener('install', (event) => {
