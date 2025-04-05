@@ -16,7 +16,6 @@ $ git clone git@git.sr.ht:~ayoayco/ayco.io-astro
 $ cd ./ayco.io-astro
 
 # install deps
-$ corepack enable
 $ pnpm i
 
 ```
