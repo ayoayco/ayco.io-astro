@@ -7,7 +7,7 @@ const cacheName = `${__prefix ?? 'app'}-v${__version ?? '000'}`
 const forceLogging = true
 
 const cleanOldCaches = async () => {
-  const allowCacheNames = ['cozy-reader', cacheName]
+  const allowCacheNames = [cacheName]
   const allCaches = await caches.keys()
   allCaches.forEach((key) => {
     if (!allowCacheNames.includes(key)) {
