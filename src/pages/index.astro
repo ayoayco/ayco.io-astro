@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
 import Footer from '../components/Footer.astro'
-import { stuff } from '../constants/stuff'
 import now from '../constants/now.json'
 
 // const isDev = import.meta.env.DEV;
@@ -23,17 +22,6 @@ import now from '../constants/now.json'
         <h1 title="Ayo Ayco | Software Engineer + Web Developer">
           <span class="heavy-text">Ayo</span>Ayco
         </h1>
-        <ul>
-          {
-            stuff.map(({ icon, text, link }) => (
-              <li style="display:flex;gap:0.25em">
-                <span class="icon">{icon}</span>
-                <span class="text">{text}</span>
-                {link && <a href={link.url}>{link.text}</a>}
-              </li>
-            ))
-          }
-        </ul>
         <a href="/now" class="now-wrapper">
           <span class="now-label">Now</span>
           <span class="status">{now.title}</span>
