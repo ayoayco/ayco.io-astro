@@ -42,6 +42,26 @@ export const footerLinks: Link[] = [
     icon: 'sourcehut',
   },
   {
+    text: 'Mastodon',
+    url: 'https://main.elk.zone/social.ayco.io/@ayo',
+    icon: 'mastodon',
+  },
+  {
+    text: 'Pixelfed',
+    url: 'https://metapixl.com/@ayo',
+    icon: 'pixelfed',
+  },
+  {
+    text: 'Signal',
+    url: 'https://signal.me/#eu/mU2KHaMuoumvLaq7P5ZPUU4HMd0SaU9hYHeEPbDIeJzysNL01FVLfbk-kVEncfIz',
+    icon: 'signal',
+  },
+  {
+    text: 'SoundCloud',
+    url: 'https://SoundCloud.com/ayoayco',
+    icon: 'soundcloud',
+  },
+  {
     text: 'GitHub',
     url: 'https://github.com/ayoayco',
     icon: 'github',
@@ -50,16 +70,6 @@ export const footerLinks: Link[] = [
     text: 'LinkedIn',
     url: 'https://www.linkedin.com/in/ayoayco',
     icon: 'linkedin',
-  },
-  {
-    text: 'Pixelfed',
-    url: 'https://metapixl.com/@ayo',
-    icon: 'pixelfed',
-  },
-  {
-    text: 'SoundCloud',
-    url: 'https://SoundCloud.com/ayoayco',
-    icon: 'soundcloud',
   },
   {
     text: 'NPM',
@@ -72,8 +82,13 @@ export const footerLinks: Link[] = [
     icon: 'instagram',
   },
   {
-    text: 'Mastodon',
-    url: 'https://main.elk.zone/social.ayco.io/@ayo',
-    icon: 'mastodon',
+    text: 'Bluesky',
+    url: 'https://bsky.app/profile/ayco.io',
+    icon: 'bluesky',
+  },
+  {
+    text: 'Discord',
+    url: 'https://discord.gg/kkvW7GYNAp',
+    icon: 'discord',
   },
 ]
