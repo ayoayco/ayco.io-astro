@@ -18,17 +18,11 @@ const year = new Date().getFullYear()
     <li>
       <a href="/showcase">Some Projects</a>
     </li>
-    <li>
-      <a href="https://ayos.blog/talks">Talks</a>
-    </li>
-    <li>
-      <a href="https://ayos.blog/projects">More Projects</a>
-    </li>
   </ul>
   <ul>
     {
       links.map((linkObj) => (
-        <li>
+        <li title={linkObj.text}>
           <a href={linkObj.url}>
             <Icon pack={linkObj.set ?? 'mdi'} name={linkObj.icon} />
           </a>
@@ -46,6 +40,12 @@ const year = new Date().getFullYear()
 </footer>
 
 <style>
+  a {
+    color: var(--text-color-dark);
+    &:hover {
+      color: var(--color-brand-blue-5);
+    }
+  }
   footer {
     margin-top: 2em;
     padding: 0;

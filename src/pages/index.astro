@@ -41,8 +41,8 @@ import now from '../constants/now.json'
       <ul class="cards-section__grid">
         <Card
           href="showcase"
-          title="Hobby Projects"
-          body="See demos of my hobby projects"
+          title="Showcase"
+          body="See links to my hobby projects"
         />
         <Card
           newTab={true}
@@ -151,6 +151,7 @@ import now from '../constants/now.json'
 
   .cards-section__grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
     gap: 1rem;
     padding: 0;
   }

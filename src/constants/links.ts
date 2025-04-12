@@ -40,6 +40,7 @@ export const footerLinks: Link[] = [
     text: 'SourceHut',
     url: 'https://sr.ht/~ayoayco',
     icon: 'sourcehut',
+    set: 'simple-icons',
   },
   {
     text: 'GitHub',
@@ -54,7 +55,8 @@ export const footerLinks: Link[] = [
   {
     text: 'Pixelfed',
     url: 'https://metapixl.com/@ayo',
-    icon: 'pixelfed',
+    icon: 'pixelfed-fill',
+    set: 'ri',
   },
   {
     text: 'SoundCloud',
