@@ -45,6 +45,13 @@ const year = new Date().getFullYear()
     &:hover {
       color: var(--color-brand-blue-5);
     }
+
+    @media (prefers-color-scheme: dark) {
+      color: var(--text-color-light);
+      &:hover {
+        color: var(--color-brand-complement);
+      }
+    }
   }
   footer {
     margin-top: 2em;
