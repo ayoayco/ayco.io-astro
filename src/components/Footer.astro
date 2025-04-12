@@ -31,31 +31,36 @@ const year = new Date().getFullYear()
     }
   </ul>
   <p>
-    &#169; 2022-{year}
-    <a href="/">Ayo Ayco</a>. This website <a
-      href="https://ayos.blog/stopped-tracking-on-my-sites"
+    Copyright &#169; 2022-{year}
+    <a href="/">Ayo Ayco</a>, but I don't actually know what copyright means, I
+    just copied how others do their footer. It probably doesn't matter? This
+    website <a href="https://ayos.blog/stopped-tracking-on-my-sites"
       >does not track users</a
     >. See the <a href="https://sr.ht/~ayoayco/personal-site">source code</a>.
   </p>
 </footer>
 
 <style>
-  a {
-    color: var(--text-color-dark);
-    &:hover {
-      color: var(--color-brand-blue-5);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      color: var(--text-color-light);
-      &:hover {
-        color: var(--color-brand-complement);
-      }
-    }
-  }
   footer {
     margin-top: 2em;
     padding: 0;
+    p {
+      font-size: var(--font-size-sm);
+    }
+
+    a {
+      color: var(--text-color-dark);
+      &:hover {
+        color: var(--color-brand-blue-5);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        color: var(--text-color-light);
+        &:hover {
+          color: var(--color-brand-complement);
+        }
+      }
+    }
 
     ul {
       list-style: none;
