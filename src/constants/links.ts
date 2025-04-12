@@ -35,37 +35,45 @@ export const links: Link[] = [
 
 export default links
 
-export const footerLinks = [
+export const footerLinks: Link[] = [
   {
     text: 'SourceHut',
     url: 'https://sr.ht/~ayoayco',
+    icon: 'sourcehut',
   },
   {
     text: 'GitHub',
     url: 'https://github.com/ayoayco',
+    icon: 'github',
   },
   {
     text: 'LinkedIn',
     url: 'https://www.linkedin.com/in/ayoayco',
+    icon: 'linkedin',
   },
   {
     text: 'Pixelfed',
     url: 'https://metapixl.com/@ayo',
+    icon: 'pixelfed',
   },
   {
     text: 'SoundCloud',
     url: 'https://SoundCloud.com/ayoayco',
+    icon: 'soundcloud',
   },
   {
     text: 'NPM',
     url: 'https://www.npmjs.com/~aayco',
+    icon: 'npm',
   },
   {
     text: 'Instagram',
     url: 'https://instagram.com/ayoayco',
+    icon: 'instagram',
   },
   {
     text: 'Mastodon',
     url: 'https://main.elk.zone/social.ayco.io/@ayo',
+    icon: 'mastodon',
   },
 ]

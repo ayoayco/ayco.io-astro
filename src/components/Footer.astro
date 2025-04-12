@@ -1,10 +1,11 @@
 ---
+import Icon from 'astro-iconify'
 import { footerLinks as links } from '../constants/links'
 const year = new Date().getFullYear()
 ---
 
 <footer>
-  <ul>
+  <ul id="internal-links">
     <li>
       <a href="/about">About me</a>
     </li>
@@ -28,7 +29,9 @@ const year = new Date().getFullYear()
     {
       links.map((linkObj) => (
         <li>
-          <a href={linkObj.url}>{linkObj.text}</a>
+          <a href={linkObj.url}>
+            <Icon pack={linkObj.set ?? 'mdi'} name={linkObj.icon} />
+          </a>
         </li>
       ))
     }
@@ -45,9 +48,6 @@ const year = new Date().getFullYear()
 <style>
   footer {
     margin-top: 2em;
-    /* grid-template-columns: auto auto;
-    display: grid;
-    gap: 1rem; */
     padding: 0;
 
     ul {
@@ -55,11 +55,18 @@ const year = new Date().getFullYear()
       padding: 0;
 
       li {
-        display: inline;
+        display: inline-block;
 
-        &:not(:last-child)::after {
-          content: ' • ';
+        a svg {
+          width: 1.5rem;
+          margin-right: 1em;
         }
+      }
+    }
+
+    #internal-links li {
+      &:not(:last-child)::after {
+        content: ' • ';
       }
     }
 
