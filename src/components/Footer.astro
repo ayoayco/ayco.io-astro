@@ -24,7 +24,7 @@ const year = new Date().getFullYear()
       links.map((linkObj) => (
         <li title={linkObj.text}>
           <a href={linkObj.url}>
-            <Icon pack={linkObj.set ?? 'mdi'} name={linkObj.icon} />
+            <Icon pack={linkObj.set ?? 'simple-icons'} name={linkObj.icon} />
           </a>
         </li>
       ))
