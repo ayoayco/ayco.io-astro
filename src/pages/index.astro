@@ -20,7 +20,7 @@ import now from '../constants/now.json'
       />
       <div class="highlighted-section__content__text">
         <h1 title="Ayo Ayco | Software Engineer + Web Developer">
-          <span class="heavy-text">Ayo</span>Ayco
+          Hi, I'm <span class="heavy-text">Ayo</span>!
         </h1>
         <a href="/now" class="now-wrapper">
           <span class="now-label">Now</span>
@@ -30,6 +30,13 @@ import now from '../constants/now.json'
     </div>
   </section>
   <main>
+    <section class="introduction-section">
+      <p>
+        I care about the <em>Web</em>, and I love to <em>create</em> stuff to <em
+          >inspire</em
+        > and <em>serve</em> others.
+      </p>
+    </section>
     <section class="cards-section">
       <ul class="cards-section__grid">
         <Card
@@ -123,6 +130,17 @@ import now from '../constants/now.json'
 
   .highlighted-section__content ul li {
     padding: 5px 0;
+  }
+
+  .introduction-section {
+    p {
+      font-size: var(--font-size-lg);
+    }
+
+    em {
+      font-weight: bold;
+      color: var(--color-brand-complement);
+    }
   }
 
   .cards-section {
