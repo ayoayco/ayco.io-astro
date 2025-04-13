@@ -15,10 +15,11 @@
   --color-brand-blue-5: #3964e6;
 
   --color-brand-complement: orange;
-  --color-brand-complement-dark: #a36a00;
+  /* --color-brand-complement-dark: #a36a00; */
+  --color-brand-complement-dark: #f27348;
 
   --ayo-gradient: linear-gradient(45deg, #3054bf, #416fff);
-  --text-color-dark: #232323;
+  --text-color-dark: #404040;
   --text-color-dark-faded: #555;
   --text-color-light: #f8f9fa;
   --text-color-light-faded: #999;
