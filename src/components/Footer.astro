@@ -20,7 +20,7 @@ const year = new Date().getFullYear()
     {
       links.map((linkObj) => (
         <li title={linkObj.text}>
-          <a href={linkObj.url}>
+          <a href={linkObj.url} aria-label={linkObj.text}>
             <Icon pack={linkObj.set ?? 'simple-icons'} name={linkObj.icon} />
           </a>
         </li>
