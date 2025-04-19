@@ -4,15 +4,21 @@ import Card from '../components/Card.astro'
 import Footer from '../components/Footer.astro'
 import now from '../constants/now.json'
 
+// const referer = Astro.request.headers.get('Referer')
+// const url = new URL(referer ?? '')
+
 // const isDev = import.meta.env.DEV;
 // const getOriginUrl = (path: string) => isDev ? `http://localhost:5000/${path}` : path;
 ---
 
 <Layout>
   <section class="highlighted-section">
-    <div class="highlighted-section__content">
+    <div class="h-card highlighted-section__content">
+      <div style="display:none">
+        <span class="p-name">Ayo Ayco</span>
+      </div>
       <img
-        class="highlighted-section__content__profile-picture"
+        class="u-photo highlighted-section__content__profile-picture"
         alt="Ayo Ayco's avatar"
         src="/ayo-sm.png"
         width="140"
