@@ -1,6 +1,7 @@
 ---
 import Icon from 'astro-iconify'
 import { footerLinks as links } from '../constants/links'
+import WebRings from './WebRings.astro'
 const year = new Date().getFullYear()
 ---
 
@@ -27,6 +28,9 @@ const year = new Date().getFullYear()
       ))
     }
   </ul>
+
+  <WebRings />
+
   <p>
     Copyright &#169; 2022-{year}
     <a href="/">Ayo Ayco</a>. This website <a
