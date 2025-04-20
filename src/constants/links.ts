@@ -3,6 +3,7 @@ export type Link = {
   icon: string
   set?: string
   text?: string
+  excludeHCard?: boolean
 }
 
 export const links: Link[] = [
@@ -15,11 +16,13 @@ export const links: Link[] = [
     text: 'threads',
     icon: 'needle-thread',
     set: 'tabler',
+    excludeHCard: true,
   },
   {
     url: 'https://metapixl.com/i/portfolio/ayo',
     icon: 'image',
     text: 'photos',
+    excludeHCard: true,
   },
   // {
   //   url: "https://www.npmjs.com/~aayco",
@@ -30,6 +33,7 @@ export const links: Link[] = [
     url: 'https://soundcloud.com/ayoayco',
     icon: 'soundcloud',
     text: 'music',
+    excludeHCard: true,
   },
 ]
 
@@ -59,24 +63,28 @@ export const footerLinks: Link[] = [
   /**
    * TODO: add all socials to about page
    */
-  // {
-  //   text: 'LinkedIn',
-  //   url: 'https://www.linkedin.com/in/ayoayco',
-  //   icon: 'linkedin',
-  // },
-  // {
-  //   text: 'NPM',
-  //   url: 'https://www.npmjs.com/~aayco',
-  //   icon: 'npm',
-  // },
-  // {
-  //   text: 'Instagram',
-  //   url: 'https://instagram.com/ayoayco',
-  //   icon: 'instagram',
-  // },
+  {
+    text: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/ayoayco',
+    icon: 'linkedin',
+    excludeHCard: true,
+  },
+  {
+    text: 'NPM',
+    url: 'https://www.npmjs.com/~aayco',
+    icon: 'npm',
+    excludeHCard: true,
+  },
+  {
+    text: 'Instagram',
+    url: 'https://instagram.com/ayoayco',
+    icon: 'instagram',
+    excludeHCard: true,
+  },
   {
     text: 'Bluesky',
     url: 'https://bsky.app/profile/ayco.io',
     icon: 'bluesky',
+    excludeHCard: true,
   },
 ]

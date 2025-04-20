@@ -22,7 +22,11 @@ const year = new Date().getFullYear()
       links.map((linkObj) => (
         <li title={linkObj.text}>
           <a
-            class="u-url"
+            class:list={[
+              {
+                'u-url': !linkObj.excludeHCard,
+              },
+            ]}
             rel="me"
             href={linkObj.url}
             aria-label={linkObj.text}

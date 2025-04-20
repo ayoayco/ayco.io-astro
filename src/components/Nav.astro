@@ -24,7 +24,15 @@ if (Astro.url.pathname !== '/') {
       links
         .filter((link) => link.url !== '')
         .map((link) => (
-          <a href={link.url} aria-label={link.text}>
+          <a
+            class:list={[
+              {
+                'u-url': !link.excludeHCard,
+              },
+            ]}
+            href={link.url}
+            aria-label={link.text}
+          >
             <Icon pack={link.set ?? 'mdi'} name={link.icon} />{' '}
             {link.text ?? link.icon}
           </a>
