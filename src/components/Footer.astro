@@ -5,7 +5,7 @@ import WebRings from './WebRings.astro'
 const year = new Date().getFullYear()
 ---
 
-<footer>
+<footer class="h-card">
   <ul id="internal-links">
     <li>
       <a href="/about">About me</a>
@@ -21,15 +21,18 @@ const year = new Date().getFullYear()
     {
       links.map((linkObj) => (
         <li title={linkObj.text}>
-          <a href={linkObj.url} aria-label={linkObj.text}>
+          <a
+            class="u-url"
+            rel="me"
+            href={linkObj.url}
+            aria-label={linkObj.text}
+          >
             <Icon pack={linkObj.set ?? 'simple-icons'} name={linkObj.icon} />
           </a>
         </li>
       ))
     }
   </ul>
-
-  <WebRings />
 
   <p>
     Copyright &#169; 2022-{year}
@@ -38,6 +41,8 @@ const year = new Date().getFullYear()
       >does not track users</a
     >. See the <a href="https://sr.ht/~ayoayco/personal-site">source code</a>.
   </p>
+
+  <WebRings />
 </footer>
 
 <style>
