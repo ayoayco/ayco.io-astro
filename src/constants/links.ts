@@ -71,11 +71,11 @@ export const footerLinks: Link[] = [
     url: 'https://www.npmjs.com/~aayco',
     icon: 'npm',
   },
-  {
-    text: 'Instagram',
-    url: 'https://instagram.com/ayoayco',
-    icon: 'instagram',
-  },
+  // {
+  //   text: 'Instagram',
+  //   url: 'https://instagram.com/ayoayco',
+  //   icon: 'instagram',
+  // },
   {
     text: 'Bluesky',
     url: 'https://bsky.app/profile/ayco.io',
