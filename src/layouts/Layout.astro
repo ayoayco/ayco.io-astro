@@ -18,7 +18,7 @@ const { title, description, ogImage } = Astro.props
 <html lang="en">
   <Head title={title} description={description} ogImage={ogImage} />
 
-  <body>
+  <body class="h-card">
     <Nav links={links} />
     <slot />
     <style>
