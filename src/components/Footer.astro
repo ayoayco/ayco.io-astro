@@ -27,7 +27,7 @@ const year = new Date().getFullYear()
                 'u-url': !linkObj.excludeHCard,
               },
             ]}
-            rel="me"
+            rel={!linkObj.excludeHCard ? 'me' : null}
             href={linkObj.url}
             aria-label={linkObj.text}
           >
