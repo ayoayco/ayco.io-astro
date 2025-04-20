@@ -52,25 +52,23 @@ export const footerLinks: Link[] = [
     icon: 'pixelfed',
   },
   {
-    text: 'SoundCloud',
-    url: 'https://SoundCloud.com/ayoayco',
-    icon: 'soundcloud',
-  },
-  {
     text: 'GitHub',
     url: 'https://github.com/ayoayco',
     icon: 'github',
   },
-  {
-    text: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/ayoayco',
-    icon: 'linkedin',
-  },
-  {
-    text: 'NPM',
-    url: 'https://www.npmjs.com/~aayco',
-    icon: 'npm',
-  },
+  /**
+   * TODO: add all socials to about page
+   */
+  // {
+  //   text: 'LinkedIn',
+  //   url: 'https://www.linkedin.com/in/ayoayco',
+  //   icon: 'linkedin',
+  // },
+  // {
+  //   text: 'NPM',
+  //   url: 'https://www.npmjs.com/~aayco',
+  //   icon: 'npm',
+  // },
   // {
   //   text: 'Instagram',
   //   url: 'https://instagram.com/ayoayco',
