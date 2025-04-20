@@ -52,11 +52,6 @@ export const footerLinks: Link[] = [
     icon: 'pixelfed',
   },
   {
-    text: 'Signal',
-    url: 'https://signal.me/#eu/mU2KHaMuoumvLaq7P5ZPUU4HMd0SaU9hYHeEPbDIeJzysNL01FVLfbk-kVEncfIz',
-    icon: 'signal',
-  },
-  {
     text: 'SoundCloud',
     url: 'https://SoundCloud.com/ayoayco',
     icon: 'soundcloud',
@@ -85,10 +80,5 @@ export const footerLinks: Link[] = [
     text: 'Bluesky',
     url: 'https://bsky.app/profile/ayco.io',
     icon: 'bluesky',
-  },
-  {
-    text: 'Discord',
-    url: 'https://discord.gg/kkvW7GYNAp',
-    icon: 'discord',
   },
 ]
