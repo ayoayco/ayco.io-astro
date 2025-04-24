@@ -81,10 +81,4 @@ export const footerLinks: Link[] = [
     icon: 'instagram',
     excludeHCard: true,
   },
-  {
-    text: 'Bluesky',
-    url: 'https://bsky.app/profile/ayco.io',
-    icon: 'bluesky',
-    excludeHCard: true,
-  },
 ]
