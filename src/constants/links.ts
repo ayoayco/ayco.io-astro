@@ -41,6 +41,11 @@ export default links
 
 export const footerLinks: Link[] = [
   {
+    text: 'Forgejo',
+    url: 'https://git.ayo.run/ayo',
+    icon: 'forgejo',
+  },
+  {
     text: 'SourceHut',
     url: 'https://sr.ht/~ayoayco',
     icon: 'sourcehut',
@@ -60,11 +65,7 @@ export const footerLinks: Link[] = [
     url: 'https://github.com/ayoayco',
     icon: 'github',
   },
-  {
-    text: 'Forgejo',
-    url: 'https://git.ayo.run/ayo',
-    icon: 'forgejo',
-  },
+
   /**
    * TODO: add all socials to about page
    */
