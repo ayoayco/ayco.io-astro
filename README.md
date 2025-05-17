@@ -29,6 +29,8 @@ $ pnpm i
 | `pnpm run deploy`   | run build and upload to my server              |
 | `pnpm run prep:now` | back up and clear current `now page` constants |
 
+> For the deploy script, you need to add an environmental variable named HOST
+
 -----
 
 > Just keep building.
