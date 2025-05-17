@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "astro": "astro",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro telemetry disable && astro build",
@@ -11,10 +12,10 @@
     "lint": "eslint . --config eslint.config.mjs --cache",
     "format": "prettier . --write",
     "check": "npm run format && npm run lint",
-    "astro": "astro",
-    "build:preview": "astro build && astro preview",
-    "deploy": "astro build && scp -r dist ayo@ayco.io:~/ayco.io-flask/",
-    "copy:dist": "astro build && cp -R dist ../ayco.io-flask/",
+    "deploy": "scp -r dist ayo@ayco.io:~/ayco.io-flask",
+    "build:preview": "npm run build && astro preview",
+    "build:deploy": "npm run build && npm run deploy",
+    "copy:dist": "npm run build && cp -R dist ../ayco.io-flask/",
     "prepare": "husky",
     "prep:now": "npx jiti ./commands/prep-now.js"
   },
