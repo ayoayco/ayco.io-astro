@@ -41,11 +41,6 @@ export default links
 
 export const footerLinks: Link[] = [
   {
-    text: 'Forgejo',
-    url: 'https://git.ayo.run/ayo',
-    icon: 'forgejo',
-  },
-  {
     text: 'SourceHut',
     url: 'https://sr.ht/~ayoayco',
     icon: 'sourcehut',
