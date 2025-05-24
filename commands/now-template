@@ -18,7 +18,9 @@ publishedOn = publishedOn === '' ? publishDate : publishedOn
     <p>
       <small>
         Published on
-        <time datetime={publishDate}>{publishedOn}</time>
+        <time datetime={publishDate}>
+          {publishedOn}
+        </time>
         {publishState}
       </small>
     </p>

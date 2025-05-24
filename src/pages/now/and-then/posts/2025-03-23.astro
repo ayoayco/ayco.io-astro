@@ -1,0 +1,72 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import Footer from '../../../../components/Footer.astro'
+
+const title = `Building a tiny web ecosystem`
+const description = `I am focused at bringing my own web ecosystem to life`
+let publishedOn = `the 23rd of March, 2025 in my home in Amsterdam`
+const publishDate = `2025-03-23`
+const publishState = `where it is starting to get sunny again (sometimes)`
+const content = `<p>I have been building my own tiny web development ecosystem.</p>
+<p>My web "terrarium" -- at least, that's how I think of it.</p>
+<p>I <em>now</em> have:</p>
+<ol>
+<li><a href="https://mcfly.js.org">McFly</a> - a metaframework for web components. I describe it that way because the web development industry is still largely in a "component" paradigm. I am hoping to support a different paradigm though, which I <em>still</em> cannot put into words at the moment. So let's keep to thinking "web components" for now.</li>
+<li><a href="https://webcomponent.io">WCB</a> - a low-level reactivity system for... yeah, web components. There's a trade off between productivity &#x26; lightweight-ness here and it is somewhere between <a href="https://github.com/microsoft/fast">Microsoft's FASTElement</a> &#x26; <a href="https://github.com/lit/lit/">Google's LitElement</a>. Though the other "knob" to balance the trade off, is building it generic so that devs can also use custom stuff, like now you can <a href="https://codepen.io/ayoayco-the-styleful/pen/ZEwNJBR?editors=1010">use lit-html with it</a>.</li>
+</ol>
+<p>Many things missing still, as is with all "terrariums", but building a model that represents the larger world allows me to understand web development in ways I never imagined I can.</p>`
+
+publishedOn = publishedOn === '' ? publishDate : publishedOn
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <h1><span class="text-gradient">{title}</span></h1>
+    <p>
+      <small>
+        Published on
+        <time datetime={publishDate}>{publishedOn}</time>
+        {publishState}
+      </small>
+    </p>
+
+    <Fragment set:html={content} />
+
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--ayo-gradient);
+    animation: pulse 4s ease-in-out infinite;
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .highlighted-content {
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .highlighted-content code {
+    font-size: var(--font-size-base);
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>

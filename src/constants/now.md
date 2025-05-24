@@ -1,10 +1,13 @@
-I have been building my own tiny web development ecosystem.
+As a weekend project, I have set up my old "gaming" laptop as an Ubuntu server to run services under my fancy new domain [ayo.run](https://ayo.run) (could be blocked by enterprise firewalls).
 
-My web "terrarium" -- at least, that's how I think of it.
+[![ayo.run screenshot](/ayo-run.png)](https://ayo.run)
 
-I _now_ have:
+The computer is sitting inside the water meter cabinet at home, and I route it through [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) which gives me the protection while exposing it to the Internet without a public IP address. It's like magic.
 
-1. [McFly](https://mcfly.js.org) - a metaframework for web components. I describe it that way because the web development industry is still largely in a "component" paradigm. I am hoping to support a different paradigm though, which I _still_ cannot put into words at the moment. So let's keep to thinking "web components" for now.
-2. [WCB](https://webcomponent.io) - a low-level reactivity system for... yeah, web components. There's a trade off between productivity & lightweight-ness here and it is somewhere between [Microsoft's FASTElement](https://github.com/microsoft/fast) & [Google's LitElement](https://github.com/lit/lit/). Though the other "knob" to balance the trade off, is building it generic so that devs can also use custom stuff, like now you can [use lit-html with it](https://codepen.io/ayoayco-the-styleful/pen/ZEwNJBR?editors=1010).
+Very happy with this because it is way more powerful than the VPS (Virtual Private Server) I am renting for [ayco.io](https://ayco.io) stuff, but I am practically paying zero aside from the usual the electricity, internet bills.
 
-Many things missing still, as is with all "terrariums", but building a model that represents the larger world allows me to understand web development in ways I never imagined I can.
+I am posting updates about the project on this [thread](https://ayo.ayco.io/threads/114490408596372783).
+
+By hosting more polished web applications created by active open source communities, I learn different approaches on how people build stuff and am now able to consider them for my own projects. 🎉
+
+I have plans to make [cozy.pub](https://cozy.pub) easily self-hostable when I get to building more features for it.
