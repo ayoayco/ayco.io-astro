@@ -13,7 +13,7 @@ export default defineConfig({
     serviceWorker({
       path: './src/sw.mjs',
       assetCachePrefix: 'ayco-personal-site',
-      assetCacheVersionID: '3',
+      assetCacheVersionID: '4',
       logAssets: true,
       esbuild: {
         minify: true,
