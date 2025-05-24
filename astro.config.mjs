@@ -15,7 +15,6 @@ export default defineConfig({
       assetCachePrefix: 'ayco-personal-site',
       assetCacheVersionID: '3',
       logAssets: true,
-      excludeRoutes: ['/threads'],
       esbuild: {
         minify: true,
       },
