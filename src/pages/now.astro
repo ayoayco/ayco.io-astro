@@ -17,14 +17,13 @@ const publishedOn = now.publishedOn === '' ? now.publishDate : now.publishedOn
         Updated on <time datetime={now.publishDate}>{publishedOn}</time>{
           now.publishState ? `, ${now.publishState}` : ''
         }
-        <small> </small>
-        <Fragment set:html={nowHtml} />
-        <hr />
-        <em><a href="https://nownownow.com/about">About now pages</a></em>
-        &middot;
-        <em><a href="now/and-then/">Previously...</a></em>
-        <Footer />
       </small>
+      <Fragment set:html={nowHtml} />
+      <hr />
+      <em><a href="https://nownownow.com/about">About now pages</a></em>
+      &middot;
+      <em><a href="now/and-then/">Previously...</a></em>
+      <Footer />
     </p>
 
     <style>
