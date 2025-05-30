@@ -1,5 +1,5 @@
 ---
-import Icon from 'astro-iconify'
+import { Icon } from 'astro-icon/components'
 import type { Link } from '../constants/links'
 
 export interface Props {
@@ -33,7 +33,11 @@ if (Astro.url.pathname !== '/') {
             href={link.url}
             aria-label={link.text}
           >
-            <Icon pack={link.set ?? 'mdi'} name={link.icon} />{' '}
+            <Icon
+              width="1.5em"
+              height="1.5em"
+              name={`${link.set ?? 'mdi'}:${link.icon}`}
+            />{' '}
             {link.text ?? link.icon}
           </a>
         ))
@@ -56,10 +60,6 @@ if (Astro.url.pathname !== '/') {
   }
   nav a:hover {
     color: var(--color-brand-complement);
-  }
-
-  nav a svg {
-    width: 1.5rem;
   }
 
   #wrapper {

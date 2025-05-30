@@ -1,5 +1,5 @@
 ---
-import Icon from 'astro-iconify'
+import { Icon } from 'astro-icon/components'
 import { footerLinks as links } from '../constants/links'
 import WebRings from './WebRings.astro'
 const year = new Date().getFullYear()
@@ -31,7 +31,11 @@ const year = new Date().getFullYear()
             href={linkObj.url}
             aria-label={linkObj.text}
           >
-            <Icon pack={linkObj.set ?? 'simple-icons'} name={linkObj.icon} />
+            <Icon
+              width="1.5em"
+              height="1.5em"
+              name={`${linkObj.set ?? 'simple-icons'}:${linkObj.icon}`}
+            />
           </a>
         </li>
       ))
@@ -83,7 +87,6 @@ const year = new Date().getFullYear()
         display: inline-block;
 
         a svg {
-          width: 1.5rem;
           margin-right: 1em;
         }
       }

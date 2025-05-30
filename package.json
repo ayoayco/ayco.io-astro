@@ -26,6 +26,9 @@
     "@ayco/astro-sw": "^0.8.14",
     "@eslint/compat": "^1.2.8",
     "@eslint/js": "^9.24.0",
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/simple-icons": "^1.2.36",
+    "@iconify-json/tabler": "^1.2.18",
     "@typescript-eslint/parser": "^8.29.1",
     "astro": "^5.6.1",
     "astro-eslint-parser": "^1.2.2",
@@ -57,6 +60,7 @@
     ]
   },
   "dependencies": {
+    "astro-icon": "^1.1.5",
     "pathe": "^2.0.3"
   }
 }

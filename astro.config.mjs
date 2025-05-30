@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config'
 import serviceWorker from '@ayco/astro-sw'
 import sitemap from '@astrojs/sitemap'
 
+import icon from 'astro-icon'
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://ayo.ayco.io',
@@ -22,6 +24,13 @@ export default defineConfig({
         afterRegistration: () => {
           console.log('>>> registered sw')
         },
+      },
+    }),
+    icon({
+      include: {
+        mdi: ['*'],
+        tabler: ['*'],
+        'simple-icons': ['*'],
       },
     }),
   ],
