@@ -1,3 +1,4 @@
+// @ts-check
 import { defineConfig } from 'astro/config'
 import serviceWorker from '@ayco/astro-sw'
 import sitemap from '@astrojs/sitemap'
