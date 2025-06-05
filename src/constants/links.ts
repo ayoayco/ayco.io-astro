@@ -60,7 +60,9 @@ export const footerLinks: Link[] = [
     url: 'https://github.com/ayoayco',
     icon: 'github',
   },
+]
 
+export const socialLinks: Link[] = [
   /**
    * TODO: add all socials to about page
    */
