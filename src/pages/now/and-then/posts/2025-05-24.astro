@@ -1,0 +1,73 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import Footer from '../../../../components/Footer.astro'
+
+const title = `Running self-hosted services at www.ayo.run`
+const description = `Put up a home to self-hosted open source alternatives to popular services`
+let publishedOn = `the 24th of May, 2025 in my home in Amsterdam`
+const publishDate = `2025-05-24`
+const publishState = `while it is drizzling and gloomy outside`
+const content = `<p>As a weekend project, I have set up my old "gaming" laptop as an Ubuntu server to run services under my fancy new domain <a href="https://ayo.run">ayo.run</a> (could be blocked by enterprise firewalls).</p>
+<p><a href="https://ayo.run"><img src="/ayo-run.png" alt="ayo.run screenshot"></a></p>
+<p>The computer is sitting inside the water meter cabinet at home, and I route it through <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/">Cloudflare Tunnel</a> which gives me the protection while exposing it to the Internet without a public IP address. It's like magic.</p>
+<p>Very happy with this because it is way more powerful than the VPS (Virtual Private Server) I am renting for <a href="https://ayco.io">ayco.io</a> stuff, but I am practically paying zero aside from the usual the electricity, internet bills.</p>
+<p>I am posting updates about the project on this <a href="https://ayo.ayco.io/threads/114490408596372783">thread</a>.</p>
+<p>By hosting more polished web applications created by active open source communities, I learn different approaches on how people build stuff and am now able to consider them for my own projects. 🎉</p>
+<p>I have plans to make <a href="https://cozy.pub">cozy.pub</a> easily self-hostable when I get to building more features for it.</p>`
+
+publishedOn = publishedOn === '' ? publishDate : publishedOn
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <h1><span class="text-gradient">{title}</span></h1>
+    <p>
+      <small>
+        Published on
+        <time datetime={publishDate}>
+          {publishedOn}
+        </time>
+        {publishState}
+      </small>
+    </p>
+
+    <Fragment set:html={content} />
+
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--ayo-gradient);
+    animation: pulse 4s ease-in-out infinite;
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .highlighted-content {
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .highlighted-content code {
+    font-size: var(--font-size-base);
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>

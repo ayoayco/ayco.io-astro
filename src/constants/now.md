@@ -1,13 +1,19 @@
-As a weekend project, I have set up my old "gaming" laptop as an Ubuntu server to run services under my fancy new domain [ayo.run](https://ayo.run) (could be blocked by enterprise firewalls).
+I have not been on top of things lately.
 
-[![ayo.run screenshot](/ayo-run.png)](https://ayo.run)
+I think this has been going on for weeks, if not months, already? I am not in a good spot personally, and I don't have much headspace.
 
-The computer is sitting inside the water meter cabinet at home, and I route it through [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) which gives me the protection while exposing it to the Internet without a public IP address. It's like magic.
+I’m dropping a lot of balls, which means unusual things outside of my routines are the first to fall. Some “side stuff” (like open source, community participation, etc) are taking a backseat,
 
-Very happy with this because it is way more powerful than the VPS (Virtual Private Server) I am renting for [ayco.io](https://ayco.io) stuff, but I am practically paying zero aside from the usual the electricity, internet bills.
+Family takes priority right now. And I’m happy in that area because we are okay despite how this not being a good season for us.
 
-I am posting updates about the project on this [thread](https://ayo.ayco.io/threads/114490408596372783).
+But overall I am hopeful in that I think I will come out stronger when this is done. Happy to be surrounded by supportive folks. 
 
-By hosting more polished web applications created by active open source communities, I learn different approaches on how people build stuff and am now able to consider them for my own projects. 🎉
+There you go. Not all updates are butterflies & rainbows. 
 
-I have plans to make [cozy.pub](https://cozy.pub) easily self-hostable when I get to building more features for it.
+## In other news
+
+To make things less awkard, I'll end with some positive stuff. Here are a few tech news that happened recently which weirdly gives me the sense they could have a domino-effect towards a good direction
+
+1. [Pewdiepie goes Linux and shows great enthusiasm for the freedom it gives](https://youtu.be/pVI_smLgTY0?si=SKdEhtenTSLI_3DI)
+2. [theprimeagen reacts and scolds "most" developers for not knowing grep](https://youtu.be/IY-RoiVLExs?si=Uo2aZtq7We6oqdOo)
+3. [Final Fantasy Tactics gets a remake](https://www.gamingonlinux.com/2025/06/final-fantasy-tactics-the-ivalice-chronicles-announced-for-september-30/)
