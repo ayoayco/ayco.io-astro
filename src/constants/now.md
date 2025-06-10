@@ -1,13 +1,12 @@
-As a weekend project, I have set up my old "gaming" laptop as an Ubuntu server to run services under my fancy new domain [ayo.run](https://ayo.run) (could be blocked by enterprise firewalls).
+## Reading
 
-[![ayo.run screenshot](/ayo-run.png)](https://ayo.run)
+Books I'm currently reading as I continue to have a messed up health & rhythm
 
-The computer is sitting inside the water meter cabinet at home, and I route it through [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) which gives me the protection while exposing it to the Internet without a public IP address. It's like magic.
+- [Getting Real](https://books.37signals.com/8/getting-real)
+- [How to Read a Book](https://en.wikipedia.org/wiki/How_to_Read_a_Book)
+- [Code Complete 2](http://www.amazon.com/dp/0735619670/)
+- [The Mythical Man-Month](http://www.amazon.com/dp/0201835959/)
 
-Very happy with this because it is way more powerful than the VPS (Virtual Private Server) I am renting for [ayco.io](https://ayco.io) stuff, but I am practically paying zero aside from the usual the electricity, internet bills.
+## Something to look forward to
 
-I am posting updates about the project on this [thread](https://ayo.ayco.io/threads/114490408596372783).
-
-By hosting more polished web applications created by active open source communities, I learn different approaches on how people build stuff and am now able to consider them for my own projects. 🎉
-
-I have plans to make [cozy.pub](https://cozy.pub) easily self-hostable when I get to building more features for it.
+Reading has been a great companion lately. [37signals](https://37signals.com/) inspired me while reading their book "Getting Real", just in time as I'm up for updating my vision for 2030, after achieving most of my 2025 targets. [I want to start a cooperative that will empower people to take ownership of their digital lives.](https://social.ayco.io/@ayo/114655020696985932).
