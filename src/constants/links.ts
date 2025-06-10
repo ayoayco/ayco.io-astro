@@ -47,7 +47,7 @@ export const footerLinks: Link[] = [
   },
   {
     text: 'Mastodon',
-    url: 'https://fosstodon.org/@ayo',
+    url: 'https://social.ayco.io/public/local',
     icon: 'mastodon',
   },
   {
@@ -60,7 +60,9 @@ export const footerLinks: Link[] = [
     url: 'https://github.com/ayoayco',
     icon: 'github',
   },
+]
 
+export const socialLinks: Link[] = [
   /**
    * TODO: add all socials to about page
    */

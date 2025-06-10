@@ -1,12 +1,12 @@
 ---
-import Layout from '../../../layouts/Layout.astro'
-import Footer from '../../../components/Footer.astro'
-import Posts from '../../../components/Posts.astro'
+import Layout from '../../layouts/Layout.astro'
+import Footer from '../../components/Footer.astro'
+import Posts from '../../components/Posts.astro'
 import type { AstroInstance } from 'astro'
 
 // const posts = await Astro.glob('./posts/*.astro')
 const posts: AstroInstance[] = Object.values<AstroInstance>(
-  import.meta.glob('./posts/*.astro', { eager: true })
+  import.meta.glob('./and-then/posts/*.astro', { eager: true })
 )
 const title = 'Previously...'
 ---
