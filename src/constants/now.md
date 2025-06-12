@@ -9,4 +9,4 @@ Books I'm currently reading as I continue to have a messed up health & rhythm
 
 ## Something to look forward to
 
-Reading has been a great companion lately. [37signals](https://37signals.com/) inspired me while reading their book "Getting Real", just in time as I'm up for updating my vision for 2030, after achieving most of my 2025 targets. [I want to start a cooperative that will empower people to take ownership of their digital lives.](https://social.ayco.io/@ayo/114655020696985932).
+Reading has been a great companion lately. [37signals](https://37signals.com/) inspired me while reading their book "Getting Real", just in time as I'm up for updating my vision for 2030, after achieving most of my personal 2025 targets. [I want to start a cooperative that will empower people to take ownership of their digital lives.](https://social.ayco.io/@ayo/114655020696985932).
