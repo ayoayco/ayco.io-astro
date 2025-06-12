@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
 import Footer from '../components/Footer.astro'
+import now from '../constants/now.json'
 ---
 
 <Layout>
@@ -28,9 +29,10 @@ import Footer from '../components/Footer.astro'
         <h1 title="Ayo Ayco | Software Engineer + Web Developer">
           Hi, I'm <span class="heavy-text">Ayo</span>!
         </h1>
-        <a href="https://forms.ayo.run/form/tnz7FybY" class="now-wrapper">
-          <span class="now-label">Ping!</span>
-          <span class="status">Got a question? Have a nice message?</span>
+        <!-- <a href="https://forms.ayo.run/form/tnz7FybY" class="now-wrapper"> -->
+        <a href="/now" class="now-wrapper">
+          <span class="now-label">now</span>
+          <span class="status">{now.title}</span>
         </a>
       </div>
     </div>
