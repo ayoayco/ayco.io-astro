@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "astro": "astro",
-    "dev": "astro dev",
-    "start": "astro dev",
+    "dev": "astro telemetry disable && astro dev",
+    "start": "astro telemetry disable && astro dev",
     "build": "astro telemetry disable && astro build",
     "preview": "astro preview",
     "lint": "eslint . --config eslint.config.mjs --cache",
