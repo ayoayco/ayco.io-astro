@@ -27,8 +27,8 @@ publishedOn = publishedOn === '' ? publishDate : publishedOn
 
     <Fragment set:html={content} />
 
-    <Footer />
   </main>
+  <Footer />
 </Layout>
 
 <style>
