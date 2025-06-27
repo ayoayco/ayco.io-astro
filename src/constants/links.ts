@@ -42,12 +42,12 @@ export default links
 export const footerLinks: Link[] = [
   {
     text: 'SourceHut',
-    url: 'https://sr.ht/~ayoayco',
+    url: 'https://ayco.io/sh/',
     icon: 'sourcehut',
   },
   {
     text: 'Mastodon',
-    url: 'https://main.elk.zone/social.ayco.io/public/local',
+    url: 'https://social.ayco.io/public/local',
     icon: 'mastodon',
   },
   {
@@ -57,7 +57,7 @@ export const footerLinks: Link[] = [
   },
   {
     text: 'GitHub',
-    url: 'https://github.com/ayoayco',
+    url: 'https://ayco.io/gh',
     icon: 'github',
   },
 ]
