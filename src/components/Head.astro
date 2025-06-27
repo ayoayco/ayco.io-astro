@@ -16,7 +16,7 @@ let {
   ogImage = defaultOgImage,
 } = Astro.props
 
-const baseURL = 'https://ayo.ayco.io'
+const baseURL = Astro.site?.toString().slice(0, -1) // ?? 'https://ayo.ayco.io'
 ---
 
 <head>
@@ -37,7 +37,8 @@ const baseURL = 'https://ayo.ayco.io'
   <meta property="og:description" content={description} />
   <meta property="og:image" content={`/${ogImage}`} />
 
-  <link rel="canonical" href="https://ayo.ayco.io/" />
+  <!-- Links -->
+  <link rel="canonical" href={baseURL + Astro.url.pathname} />
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="me" href="https://ayos.blog" />
   <link rel="me" href="https://social.ayco.io/@ayo" />
