@@ -26,7 +26,7 @@ $ pnpm i
 | ------------------- | ---------------------------------------------- |
 | `pnpm run dev`      | start dev server                               |
 | `pnpm run build`    | generate static files to `dist` directory      |
-| `pnpm run deploy`   | run build and upload to my server              |
+| `pnpm run deploy`   | upload to my server              |
 | `pnpm run prep:now` | back up and clear current `now page` constants |
 
 > For the deploy script, you need to add an environmental variable named HOST
