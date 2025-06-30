@@ -1,6 +1,14 @@
-.astro-code {
-  padding: 1em;
+small {
+  font-size: var(--font-size-sm);
+}
+
+.inline-code {
+  padding: 0.01rem 0.4rem;
   border-radius: 1em;
+  font-size: var(--font-size-sm);
+  background-color: var(--color-border);
+  display: inline-block;
+  vertical-align: middle;
 }
 
 img {
@@ -10,4 +18,23 @@ img {
   max-width: 100%;
   object-fit: contain;
   height: auto;
+}
+
+details {
+  display: block;
+  padding: 1em;
+  border: 2px solid var(--color-border);
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: 3px solid var(--color-brand-complement-dark);
+
+  @media (prefers-color-scheme: dark) {
+    border-left-color: var(--color-brand-complement);
+  }
+
+  summary {
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+  }
 }

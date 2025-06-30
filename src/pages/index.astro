@@ -43,6 +43,7 @@ import now from '../constants/now.json'
         I care about the <em>Web</em>, and I love to <em>create</em> stuff to <em
           >inspire</em
         > and <em>serve</em> others.
+        <a href="/about">More?</a>
       </p>
     </section>
     <section class="cards-section">
@@ -144,10 +145,23 @@ import now from '../constants/now.json'
     p {
       margin: 0;
       font-size: var(--font-size-lg);
+
+      & a {
+        font-size: var(--font-size-base);
+        color: var(--text-color-faded);
+
+        @media (prefers-color-scheme: dark) {
+          color: var(--text-color-light-faded);
+        }
+      }
     }
 
     em {
       font-weight: bold;
+    }
+
+    em,
+    a:hover {
       color: var(--color-brand-complement-dark);
 
       @media (prefers-color-scheme: dark) {
