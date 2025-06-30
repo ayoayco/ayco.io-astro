@@ -3,6 +3,8 @@ import { defineConfig } from 'astro/config'
 import serviceWorker from '@ayco/astro-sw'
 import sitemap from '@astrojs/sitemap'
 
+import * as data from './package.json'
+
 import icon from 'astro-icon'
 
 // https://astro.build/config
@@ -16,7 +18,7 @@ export default defineConfig({
     serviceWorker({
       path: './src/sw.mjs',
       assetCachePrefix: 'ayco-personal-site',
-      assetCacheVersionID: 'sigma',
+      assetCacheVersionID: data.version,
       logAssets: true,
       esbuild: {
         minify: true,
