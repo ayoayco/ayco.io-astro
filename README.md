@@ -29,9 +29,13 @@ $ pnpm i
 | `pnpm run deploy`   | upload to my server              |
 | `pnpm run prep:now` | back up and clear current `now page` constants |
 
-> For the deploy script, you need to add an environmental variable named HOST
+## Deployment
+
+For the script `npm run deploy`, you need to add an environmental variable named HOST containing the IP address of the host server. This will scp the build files into the server. 
+
+If you want to run build before deploying, do `npm run build:deploy` 
 
 -----
 
-> Just keep building.
-> ~Ayo
+*Just keep building.*<br />
+*~Ayo*
