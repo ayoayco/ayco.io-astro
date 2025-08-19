@@ -41,13 +41,23 @@ export default links
 
 export const footerLinks: Link[] = [
   {
+    text: "Ayo's Forge",
+    url: 'https://git.ayo.run/ayo/',
+    icon: 'git',
+  },
+  {
     text: 'SourceHut',
     url: 'https://ayco.io/sh/',
     icon: 'sourcehut',
   },
   {
+    text: 'GitHub',
+    url: 'https://ayco.io/gh',
+    icon: 'github',
+  },
+  {
     text: 'Mastodon',
-    url: 'https://yolk.ayo.run/https://social.ayco.io/public/local',
+    url: 'https://social.ayco.io/public/local',
     icon: 'mastodon',
   },
   {
@@ -56,9 +66,14 @@ export const footerLinks: Link[] = [
     icon: 'pixelfed',
   },
   {
-    text: 'GitHub',
-    url: 'https://ayco.io/gh',
-    icon: 'github',
+    text: 'Bluesky',
+    url: 'http://bsky.app/profile/ayco.io',
+    icon: 'bluesky',
+  },
+  {
+    text: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/ayoayco/',
+    icon: 'linkedin',
   },
 ]
 
