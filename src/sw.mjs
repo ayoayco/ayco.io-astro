@@ -31,6 +31,13 @@ const cleanOldCaches = async () => {
   })
 }
 
+/**
+ * Adds resources to the service worker cache.
+ * @async
+ * @function addResourcesToCache
+ * @param {string[]} resources - An array of resource URLs to be cached.
+ * @returns {Promise<void>} A promise that resolves when all resources have been added to the cache.
+ */
 const addResourcesToCache = async (resources) => {
   const cache = await caches.open(cacheName)
   console.info('adding resources to cache...', {
@@ -48,6 +55,14 @@ const addResourcesToCache = async (resources) => {
   }
 }
 
+/**
+ * Puts a response in the cache.
+ * @async
+ * @function putInCache
+ * @param {Request} request - The request to be cached.
+ * @param {Response} response - The response to be cached.
+ * @returns {Promise<void>} A promise that resolves when the response has been added to the cache.
+ */
 const putInCache = async (request, response) => {
   const cache = await caches.open(cacheName)
 
