@@ -78,9 +78,6 @@ const networkFirst = async ({ request, fallbackUrl }) => {
   try {
     // Try to get the resource from the network for 5 seconds
     const responseFromNetwork = await fetch(request.clone())
-    // response may be used only once
-    // we need to save clone to put one copy in cache
-    // and serve second one
     putInCache(request, responseFromNetwork.clone())
     console.info('using network response', responseFromNetwork.url)
     return responseFromNetwork
@@ -93,11 +90,13 @@ const networkFirst = async ({ request, fallbackUrl }) => {
       return responseFromCache
     }
 
-    // Try the fallback
-    const fallbackResponse = await cache.match(fallbackUrl)
-    if (fallbackResponse) {
-      console.info('using fallback cached response...', fallbackResponse.url)
-      return fallbackResponse
+    // If fallback is provided, try to use it, otherwise return error
+    if (fallbackUrl) {
+      const fallbackResponse = await cache.match(fallbackUrl)
+      if (fallbackResponse) {
+        console.info('using fallback cached response...', fallbackResponse.url)
+        return fallbackResponse
+      }
     }
 
     // when even the fallback response is not available,
