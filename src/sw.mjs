@@ -32,11 +32,12 @@ const cleanOldCaches = async () => {
 }
 
 /**
- * Adds resources to the service worker cache.
+ * Adds specified resources to the service worker cache.
+ * This function is used to cache static assets for offline access.
  * @async
  * @function addResourcesToCache
- * @param {string[]} resources - An array of resource URLs to be cached.
- * @returns {Promise<void>} A promise that resolves when all resources have been added to the cache.
+ * @param {Array<string>} resources - An array of URLs representing the resources to be cached.
+ * @returns {Promise<void>} A promise that resolves when all resources have been successfully added to the cache.
  */
 const addResourcesToCache = async (resources) => {
   const cache = await caches.open(cacheName)
