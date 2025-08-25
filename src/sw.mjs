@@ -21,7 +21,6 @@ const cleanOldCaches = async () => {
       console.info('Deleting old cache', key)
       caches
         .delete(key)
-
         .then(() => {
           console.info('Successfully deleted cache:', key)
         })
