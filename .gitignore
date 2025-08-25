@@ -2,6 +2,7 @@
 dist/
 .output/
 .astro/
+.continue/
 
 # dependencies
 node_modules/

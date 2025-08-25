@@ -6,13 +6,28 @@
 const cacheName = `${__prefix ?? 'app'}-v${__version ?? '000'}`
 const forceLogging = true
 
+/**
+ * Cleans up old service worker caches by deleting any cache that doesn't match the current cache name.
+ * This ensures only the current version of the application's cache is retained.
+ * @async
+ * @function cleanOldCaches
+ * @returns {Promise<void>} A promise that resolves when old caches have been deleted
+ */
 const cleanOldCaches = async () => {
   const allowCacheNames = [cacheName]
   const allCaches = await caches.keys()
   allCaches.forEach((key) => {
     if (!allowCacheNames.includes(key)) {
       console.info('Deleting old cache', key)
-      caches.delete(key)
+      caches
+        .delete(key)
+
+        .then(() => {
+          console.info('Successfully deleted cache:', key)
+        })
+        .catch((error) => {
+          console.warn('Failed to delete old cache:', key, error)
+        })
     }
   })
 }
