@@ -47,7 +47,7 @@ export const footerLinks: Link[] = [
   },
   {
     text: 'SourceHut',
-    url: 'https://ayco.io/sh/',
+    url: 'https://sr.ht/~ayoayco',
     icon: 'sourcehut',
   },
   {
