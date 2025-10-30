@@ -67,7 +67,7 @@ export const footerLinks: Link[] = [
   },
   {
     text: 'Bluesky',
-    url: 'http://bsky.app/profile/ayco.io',
+    url: 'http://bsky.app/profile/ayo.ayco.io',
     icon: 'bluesky',
   },
   {
