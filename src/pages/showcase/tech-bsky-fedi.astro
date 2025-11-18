@@ -1,0 +1,218 @@
+---
+import { Code } from 'astro:components'
+import { Image } from 'astro:assets'
+import Footer from '../../components/Footer.astro'
+import Layout from '../../layouts/Layout.astro'
+import importedCode from '../../../public/following_accounts.csv?raw'
+
+const csvToArray = (content: string) => {
+  return content
+    .split('\n')
+    .slice(1)
+    .map((str) => str.split(',')[0])
+}
+
+const accounts = csvToArray(importedCode)
+
+let accountObjects = accounts
+  .map((account) => {
+    const bskyHandle = account?.replace('@bsky.brid.gy', '')
+    const url = `https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile/?actor=${bskyHandle}`
+
+    return account
+      ? {
+          bskyHandle,
+          fediHandle: account,
+          url,
+        }
+      : null
+  })
+  .filter((acct) => !!acct)
+
+const urls = accountObjects.map((account) => account.url)
+const promises = urls.map((url) => fetch(url))
+const responses = await Promise.all(promises)
+let data = await Promise.all(responses.map((response) => response.json()))
+
+// filter accounts with error (e.g., AccountDisabled)
+accountObjects = accountObjects.filter((acct, index) => {
+  const hasNoError = !data[index].error
+  if (!hasNoError)
+    console.log(`>>> ${acct.bskyHandle} has error: ${data[index].error}`)
+  return hasNoError
+})
+data = data.filter((datum) => !datum.error)
+
+const title = 'Tech Bsky ↔ Fedi'
+const description =
+  'Celebrating bsky folks who bridged their accounts to the fediverse!'
+---
+
+<Layout title={title} description={description} ogImage="bskyfedi.png">
+  <main>
+    <h1 class="text-gradient">{title}</h1>
+
+    <p><em>{description}</em></p>
+
+    <p>
+      A lot of tech accounts are now active in Bsky. Some of them opted to be
+      bridged to the Fediverse via <a href="https://fed.brid.gy">fed.brid.gy</a>
+      -- so we can also follow them from any ActivityPub powered social platforms.
+    </p>
+
+    <p>
+      On this page, I upload my handpicked tech Bsky accounts that are currently
+      bridged to the Fedi. Feel free to <a
+        href="mailto:ayo@ayco.io?subject=Re:%20Tech%20bsky%20<->%20fedi"
+        >send me a mail</a
+      > to request adding accounts I missed.
+    </p>
+
+    <p>
+      If you are on bsky and want to be bridged too, please follow <a
+        href="https://bsky.app/profile/ap.brid.gy"
+        target="_blank">@ap.brid.gy</a
+      >.
+    </p>
+
+    <p>
+      If you are on fedi and want to follow the accounts here, scroll to the <a
+        href="#how">bottom of the page</a
+      > for a handy `.csv` file you can upload to your chosen fedi platform.
+    </p>
+
+    <p>
+      Note that for the bsky accounts to see your replies and likes from fedi,
+      you have to bridge your account as well by following <a
+        href="https://elk.zone/@bsky.brid.gy@bsky.brid.gy"
+        >@bsky.brid.gy@bsky.brid.gy</a
+      >
+    </p>
+
+    <h2>Accounts ({accountObjects.length})</h2>
+
+    <p><em>Ordered in terms of my time of discovery.</em></p>
+
+    <div class="table-container">
+      <table>
+        <tr>
+          <th>&nbsp;</th>
+          <th>Fedi</th>
+          <th>Bsky</th>
+        </tr>
+        {
+          accountObjects.map((account, index) => (
+            <tr>
+              <td>
+                <Image
+                  src={data[index].avatar ?? ''}
+                  alt={`${account.bskyHandle}'s avatar`}
+                  width="50"
+                  height="50"
+                  decoding="async"
+                  loading="lazy"
+                />
+              </td>
+              <td>
+                <span>
+                  <a
+                    href={`https://elk.zone/@${account.fediHandle}`}
+                    target="_blank"
+                  >
+                    {account.fediHandle}
+                  </a>
+                </span>
+              </td>
+              <td>
+                <span>
+                  <a
+                    href={`https://bsky.app/profile/${account.bskyHandle}`}
+                    target="_blank"
+                  >
+                    {account.bskyHandle}
+                  </a>
+                </span>
+              </td>
+            </tr>
+          ))
+        }
+      </table>
+    </div>
+
+    <h2 id="how">How how how?</h2>
+
+    <p>
+      Download the <a href="following_accounts.csv">.csv file</a>
+      <strong>or</strong> copy the content below and save in a file. Then, upload
+      to your fedi account provider.
+    </p>
+
+    <p>If you're on Mastodon, this functionality is found in:</p>
+    <p>
+      <strong>Preferences</strong> &rarr; <strong>Import and export</strong> &rarr;
+      <strong>Import</strong>
+    </p>
+
+    <h2>Full <code class="inline-code">.csv</code> content</h2>
+    <br />
+
+    <Code code={importedCode} />
+
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  td img {
+    border-radius: 5px;
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    padding: 1rem;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.01);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  th:first-child,
+  td:first-child {
+    display: block;
+    max-width: calc(50px + 2rem);
+  }
+
+  td a {
+    color: var(--text-color-dark);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-brand-blue-3);
+      text-decoration: underline;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    td,
+    th {
+      background: rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+
+      & a {
+        color: var(--text-color-light);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--color-brand-complement);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+</style>
