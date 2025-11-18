@@ -10,7 +10,7 @@ You need [node](https://nodejs.org) and [pnpm](https://pnpm.io).
 
 ```bash
 # clone project
-$ git clone git@git.sr.ht:~ayoayco/ayco.io-astro
+$ git clone https://git.ayo.run/ayo/ayco.io-astro
 
 # go into project dir
 $ cd ./ayco.io-astro
@@ -26,16 +26,16 @@ $ pnpm i
 | ------------------- | ---------------------------------------------- |
 | `pnpm run dev`      | start dev server                               |
 | `pnpm run build`    | generate static files to `dist` directory      |
-| `pnpm run deploy`   | upload to my server              |
+| `pnpm run deploy`   | upload to my server                            |
 | `pnpm run prep:now` | back up and clear current `now page` constants |
 
 ## Deployment
 
-For the script `npm run deploy`, you need to add an environmental variable named HOST containing the IP address of the host server. This will scp the build files into the server. 
+For the script `npm run deploy`, you need to add an environmental variable named HOST containing the IP address of the host server. This will scp the build files into the server.
 
-If you want to run build before deploying, do `npm run build:deploy` 
+If you want to run build before deploying, do `npm run build:deploy`
 
------
+---
 
-*Just keep building.*<br />
-*~Ayo*
+_Just keep building._<br />
+_~Ayo_
