@@ -40,6 +40,8 @@ You can do this by adding a `.env` file with the following content (replace the 
 HOST=123.456.789.00
 ```
 
+There is a service worker (`src/sw.mjs`) that caches assets on client browsers. For cache invalidation, the version property in package.json is used. Increment the version via `npm version patch` (or `minor`, `major`) if there is a significant change in the website's assets.
+
 If you want to run build before deploying, do `npm run build:deploy`
 
 ---
