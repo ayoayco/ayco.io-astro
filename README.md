@@ -33,6 +33,13 @@ $ pnpm i
 
 For the script `npm run deploy`, you need to add an environmental variable named HOST containing the IP address of the host server. This will scp the build files into the server.
 
+You can do this by adding a `.env` file with the following content (replace the IP):
+
+```bash
+# .env
+HOST=123.456.789.00
+```
+
 If you want to run build before deploying, do `npm run build:deploy`
 
 ---
