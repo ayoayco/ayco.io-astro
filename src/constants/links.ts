@@ -66,6 +66,11 @@ export const footerLinks: Link[] = [
     icon: 'bluesky',
   },
   {
+    text: 'Instagram',
+    url: 'https://www.instagram.com/ayoayco/',
+    icon: 'instagram',
+  },
+  {
     text: 'LinkedIn',
     url: 'https://www.linkedin.com/in/ayoayco/',
     icon: 'linkedin',
