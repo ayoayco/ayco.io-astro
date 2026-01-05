@@ -52,7 +52,7 @@ export const footerLinks: Link[] = [
   },
   {
     text: 'Mastodon',
-    url: 'https://elk.zone/social.ayco.io/@ayo',
+    url: 'https://main.elk.zone/social.ayco.io/@ayo',
     icon: 'mastodon',
   },
   {
