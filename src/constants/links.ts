@@ -46,6 +46,11 @@ export const footerLinks: Link[] = [
     icon: 'git',
   },
   {
+    text: 'GitHub',
+    url: 'https://ayco.io/gh',
+    icon: 'github',
+  },
+  {
     text: 'SourceHut',
     url: 'https://sr.ht/~ayoayco',
     icon: 'sourcehut',
@@ -74,11 +79,6 @@ export const footerLinks: Link[] = [
     text: 'LinkedIn',
     url: 'https://www.linkedin.com/in/ayoayco/',
     icon: 'linkedin',
-  },
-  {
-    text: 'GitHub',
-    url: 'https://ayco.io/gh',
-    icon: 'github',
   },
 ]
 
