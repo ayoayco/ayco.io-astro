@@ -46,7 +46,7 @@ If you want to run build before deploying, do `npm run build:deploy`
 
 ## Auto-mirror to various code forges
 
-The power of git lies within its decentralized nature. I push this project to three different code forges, because I'm paranoid like that. No, I just like to show off. I do this with a post-commit hook that automatically calls "git push <repo> --mirror", and you can see that in the `.husky/post-commit` file.
+The power of git lies within its decentralized nature. I push this project to three different code forges, because I'm paranoid like that. No, I just like to show off. I do this with a post-commit hook that automatically calls `git push <repo> --mirror`, and you can see that in the `.husky/post-commit` file.
 
 ---
 
