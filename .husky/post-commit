@@ -1,3 +1,3 @@
 echo "post-commit..."
-git push gh -q
-git push sh -q
+git push gh --mirror -q
+git push sh --mirror -q
