@@ -1,7 +1,7 @@
 {
   "name": "@ayco/personal-website",
   "type": "module",
-  "version": "1.3.40",
+  "version": "1.3.41",
   "private": true,
   "scripts": {
     "astro": "astro",
