@@ -1,8 +1,5 @@
 Sitemap: https://ayo.ayco.io/sitemap-index.xml
 
-User-agent: *
-Disallow:
-
 User-agent: AddSearchBot
 User-agent: AI2Bot
 User-agent: AI2Bot-DeepResearchEval
