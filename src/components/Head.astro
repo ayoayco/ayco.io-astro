@@ -3,17 +3,20 @@ export interface Props {
   title?: string | undefined
   description?: string | undefined
   ogImage?: string | undefined
+  ogFileType?: string | undefined
 }
 const defaultDescription =
   'Professional software engineer specializing in web development with a decade of experience building web applications for both private businesses and government-funded high-impact projects utilizing web technologies, IoT, data viz/insights, remote sensing, and GIS'
 
 const defaultTitle = 'Ayo Ayco - Tech Leader, Software Engineer, Web Developer'
 const defaultOgImage = 'ayo.png'
+const defaultOgFileType = 'image/png'
 
 let {
   title,
   description = defaultDescription,
   ogImage = defaultOgImage,
+  ogFileType = defaultOgFileType,
 } = Astro.props
 
 const baseURL = Astro.site?.toString().slice(0, -1) // ?? 'https://ayo.ayco.io'
@@ -35,7 +38,8 @@ const baseURL = Astro.site?.toString().slice(0, -1) // ?? 'https://ayo.ayco.io'
   <meta property="og:url" content={baseURL + Astro.url.pathname} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={`/${ogImage}`} />
+  <meta property="og:image:type" content={ogFileType} />
+  <meta property="og:image" content={ogImage} />
 
   <!-- Links -->
   <link rel="canonical" href={baseURL + Astro.url.pathname} />

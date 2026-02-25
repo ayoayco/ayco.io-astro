@@ -8,15 +8,34 @@ import { links } from '../constants/links'
 export interface Props {
   title?: string
   description?: string
-  ogImage?: string
 }
 
-const { title, description, ogImage } = Astro.props
+const { title, description } = Astro.props
+import { getImage } from 'astro:assets'
+
+// fetch mastodon account
+const response = await fetch(
+  'https://social.ayco.io/api/v1/accounts/lookup?acct=ayo'
+)
+const data = await response.json()
+const { avatar } = data
+const ogImage = await getImage({
+  src: avatar,
+  width: 400,
+  height: 400,
+  format: 'png',
+})
+const ogFileType = 'image/png'
 ---
 
 <!doctype html>
 <html lang="en">
-  <Head title={title} description={description} ogImage={ogImage} />
+  <Head
+    title={title}
+    description={description}
+    ogImage={ogImage.src}
+    ogFileType={ogFileType}
+  />
 
   <body class="h-card">
     <Nav links={links} />
