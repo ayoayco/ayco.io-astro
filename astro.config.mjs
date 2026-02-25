@@ -11,7 +11,8 @@ import icon from 'astro-icon'
 export default defineConfig({
   site: 'https://ayo.ayco.io',
   image: {
-    domains: ['cdn.bsky.app'],
+    domains: ['cdn.bsky.app', 'media.ayco.io'],
+    remotePatterns: [{ protocol: 'https' }],
   },
   integrations: [
     sitemap(),
