@@ -11,7 +11,7 @@ const response = await fetch(
   'https://social.ayco.io/api/v1/accounts/lookup?acct=ayo'
 )
 const data = await response.json()
-const { avatar } = data
+const { avatar, note } = data
 const avatarSize = 150
 ---
 
@@ -22,11 +22,7 @@ const avatarSize = 150
         <!-- h-card details -->
         <span class="p-name">Ayo Ayco</span>
         <a class="u-url u-uid" href="https://ayo.ayco.io">w</a>,
-        <p class="p-note">
-          Frontend guy who likes server adventures & works w/ linux. Looking to
-          specialize in web perf, but mostly feels like an impostor for now. Has
-          hobby projects.
-        </p>
+        <section class="p-note" set:html={note} />
       </div>
       <Picture
         class="u-photo highlighted-section__content__profile-picture"
