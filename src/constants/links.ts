@@ -47,8 +47,13 @@ export const footerLinks: Link[] = [
   },
   {
     text: 'GitHub',
-    url: 'https://ayco.io/gh',
+    url: 'https://github.com/ayo-run',
     icon: 'github',
+  },
+  {
+    text: 'CodePen',
+    url: 'https://codepen.io/ayo-run',
+    icon: 'codepen',
   },
   {
     text: 'Mastodon',
