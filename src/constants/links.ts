@@ -51,24 +51,19 @@ export const footerLinks: Link[] = [
     icon: 'github',
   },
   {
-    text: 'SourceHut',
-    url: 'https://sr.ht/~ayoayco',
-    icon: 'sourcehut',
-  },
-  {
     text: 'Mastodon',
     url: 'https://main.elk.zone/social.ayco.io/@ayo',
     icon: 'mastodon',
   },
   {
-    text: 'Pixelfed',
-    url: 'https://metapixl.com/@ayo',
-    icon: 'pixelfed',
-  },
-  {
     text: 'Bluesky',
     url: 'http://bsky.app/profile/ayo.run',
     icon: 'bluesky',
+  },
+  {
+    text: 'Pixelfed',
+    url: 'https://metapixl.com/@ayo',
+    icon: 'pixelfed',
   },
   {
     text: 'Instagram',
